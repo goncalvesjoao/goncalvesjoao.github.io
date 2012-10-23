@@ -1,0 +1,63 @@
+---
+layout: "page"
+title: "SSH No Password Login"
+header: "Setup a SSH connection without a password"
+group: "ssh"
+weight: 10
+show: true
+---
+<script src="{{ site.asset_path }}/javascript/modes/shell.js"></script>
+
+<div class="machine">
+	<div class="machine_icon">
+		<img src="{{ site.asset_path }}/images/local.png" style="width:40px; height:40px;" alt="locale"/>
+	</div>
+	<div class="machinename">local machine</div>
+</div>
+
+<div class="machinetriangle"></div>
+
+<div class="command_line">
+	<p class="top_of_command">Move to your user's ssh folder</p>
+	<textarea id="command_1" class="line">cd ~/.ssh</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span>” if folder “<span class="other_example">.ssh</span>” doesn’t exist.</span>
+	</p>
+	<p class="top_of_command">Generate your default private/public key pair files (don’t enter a pass, just leave it blank).</p>
+	<textarea id="command_2" class="line">ssh-keygen -t rsa</textarea>
+	<p class="bottom_of_command">
+		<img src="{{ site.asset_path }}/images/alert.png" class="alert_img" alt="alert"/>If both “<span class="other_example">id_rsa</span>” and “<span class="other_example">id_rsa.pub</span>” files, already exist, you might want to backup them up.
+	</p>
+
+	<p class="top_of_command">Keep the following file, opened, for later use.</p>
+	<textarea id="command_3" class="line">mate id_rsa.pub</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">open -a TextEdit id_rsa.pub</span>” if you don’t have TextMate.</span>
+	</p>
+</div>
+<div style="clear:both;"></div>
+<p>Enter your remote machine, through ssh.</p>
+<div class="machine">
+	<div class="machine_icon">
+		<img src="{{ site.asset_path }}/images/remote.png" style="width:40px; height:40px;" alt="locale"/>
+	</div>
+	<div class="machinename">server side</div>
+</div>
+
+<div class="machinetriangle"></div>
+
+<div class="command_line">
+	<p class="top_of_command">Move to your remote user's ssh folder</p>
+	<textarea id="command_4" class="line">cd ~/.ssh</textarea>
+	<p class="bottom_of_command"><a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span>” if folder “<span class="other_example">.ssh</span>” doesn’t exist.</span></p>
+	<p class="top_of_command">Create or edit the following file and ADD (not overwrite) the contents of your local file “<span class="other_example">id_rsa.pub</span>”.</p>
+	<textarea id="command_5" class="line">vi authorized_keys</textarea>
+	<p class="bottom_of_command">&nbsp;</p>
+	<p class="top_of_command">Add the correct file permission.</p>
+	<textarea id="command_6" class="line">chmod 644 authorized_keys</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DON'T KNOW HOW VI WORKS?</a><span style="display: none;">Here's a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi's most used commands</a> (for instance: you'll be using the "<b>:wq</b>" command).</span>
+	</p>
+</div>
+<div style="clear:both;"></div>
+<p>Close your connection and try to ssh your remote machine again and verify that no password is required.</p>

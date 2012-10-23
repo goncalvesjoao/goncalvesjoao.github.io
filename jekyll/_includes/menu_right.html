@@ -1,0 +1,81 @@
+<div class="shadow">
+	<img src="{{ site.asset_path }}/images/avatar.png" alt="8bit Groove" id="avatar">
+
+	<div class="lightpanel roundedtop">
+		<p>
+			Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.
+			<br/><br/>
+			Currently developing on Ruby on Rails on a cool startup called Outitude, that focuses on enabling outdoor activities in people's lives.
+			<br/><br/>
+			I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.
+		</p>
+	</div>
+
+	<div class="lightpanel nav">
+		{% if page.url == '/index.html' %}
+			<a id="home_menu_link" class="nav selected" href="{{ site.base_path }}/">Home</a>
+		{% else %}
+			<a id="home_menu_link" class="nav" href="{{ site.base_path }}/">&larr; Back to Home</a>
+		{% endif %}
+	</div>
+	
+	{% sorted_for node in site.pages sort_by:weight filter_by:nogroup %}
+		<div class="lightpanel nav">
+			<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+		</div>
+	{% endsorted_for %}
+	
+	<div class="lightpanel nav">
+		<span class="nav">Projects:</span>
+		
+		{% sorted_for node in site.pages sort_by:weight filter_by:projects %}
+			<div class="subnav">
+		   	»<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+			</div>
+		{% endsorted_for %}
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">AWS Tutorials:</span>
+		
+		{% sorted_for node in site.pages sort_by:weight filter_by:aws %}
+			<div class="subnav">
+		   	»<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+			</div>
+		{% endsorted_for %}
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">SSH Tutorials:</span>
+		
+		{% sorted_for node in site.pages sort_by:weight filter_by:ssh %}
+			<div class="subnav">
+		   	»<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+			</div>
+		{% endsorted_for %}
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">RoR Tutorials:</span>
+		
+		{% sorted_for node in site.pages sort_by:weight filter_by:ror %}
+			<div class="subnav">
+		   	»<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+			</div>
+		{% endsorted_for %}
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">Nodejs Tutorials:</span>
+		
+		{% sorted_for node in site.pages sort_by:weight filter_by:nodejs %}
+			<div class="subnav">
+		   	»<a class="page_link {% if page.url == node.url %}selected{% endif %}" href="{{ site.base_path }}{{ node.url | replace:'index.html', '' }}">{{node.title}}</a>
+			</div>
+		{% endsorted_for %}
+	</div>
+	
+	<div id="menu_footer" class="bottompanel roundedbottom">
+		<p><a class="nav" href="http://www.linkedin.com/pub/jo%C3%A3o-gon%C3%A7alves/48/53a/aba" target="_blank">Linkedin</a></p>
+	</div>
+</div>

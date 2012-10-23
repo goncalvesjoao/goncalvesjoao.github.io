@@ -1,0 +1,968 @@
+
+/* ==================== */
+/* = The 1Kb CSS Grid = */
+/* ==================== */
+
+.grid_1 { width:80px; }
+.grid_2 { width:140px; }
+.grid_3 { width:220px; }
+.grid_4 { width:235px; }
+.grid_5 { width:380px; }
+.grid_6 { width:460px; }
+.grid_7 { width:700px; }
+.grid_8 { width:620px; }
+.grid_9 { width:700px; }
+.grid_10 { width:780px; }
+.grid_11 { width:860px; }
+.grid_12 { width:940px; }
+
+.column { /* 10px margin on BOTH sides, resulting in a 20px gutter between columns */
+    float: right;
+}
+.row { /* center the row on the page, clear the interior contents with overflow:hidden hack */
+    width: 960px;
+    margin: 0 auto;
+}
+.row .row {
+	margin: 0 -10px;
+	width: auto;
+}
+.menu {
+    margin-left: 25px;
+    text-align: justify;
+}
+#footer {
+    font-weight: normal;
+    font-size: 11px;
+    margin-top: 25px;
+    padding-bottom: 0;
+    color: #c9c9c9;
+}
+#footer a {
+    color: #dfdfdf;
+    font-weight: bold;
+}
+body { 
+margin: 40px 0 0 0;
+font-family: Helvetica, sans-serif;
+font-size: 13px;
+background: url(http://static.tumblr.com/z7lhmdl/mgVkwsss8/bg.png) #8f9595 repeat-x fixed;
+}
+
+img {
+border: none;
+}
+
+      #avatar {
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .46);
+      -moz-box-shadow: 0 1px 1px rgba(0,0,0,.46);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .46);
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      text-decoration: none;
+   float: left;
+   margin: 15px 10px 10px 15px;
+   padding: 0;
+      width: 100px;
+   }
+
+.shadow {
+box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+-webkit-transition-duration: 0.2s;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin-bottom: 20px;
+}
+
+.shadow_back:hover {
+box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+-webkit-box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+-moz-box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+}
+
+.lightpanel {
+    color: #4d4d4d;
+    line-height: 18px;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+    background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #c5c8c8;
+}
+
+.lightpanel p {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.divider {
+	display:block;
+	clear:both;
+	position: relative;
+	border-bottom: 1px solid #c5c8c8;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.divider.white {
+	border-bottom: 1px solid #dadddd;
+}
+
+.article {
+	padding-left: 20px;
+	padding-right: 20px;
+  text-align: justify;
+}
+
+.php_ruby tr td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 50px;
+	border-bottom: 1px dashed #c5c8c8;
+}
+
+.php_ruby tr td:first-child {
+	width: 100%;
+}
+
+.php_ruby tr td:last-child {
+	padding-right: 30px;
+}
+
+.article p {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.command_line p {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.9em;
+}
+
+.command_line p.bottom_of_command {
+	text-align: right;
+	margin-top: 0;
+	padding-bottom: 5px;
+}
+
+.command_line p.bottom_of_command a.didnt_work {
+	font-size: 0.75em;
+	position: relative;
+	top: -5px;
+}
+
+.command_line p.top_of_command {
+	padding-top: 5px;
+	margin-bottom: 0;
+}
+
+.content_divider {
+	color: #6D6D6D;
+	text-shadow: 0 1px 1px #E4E4E4;
+	text-align:center;
+	margin-bottom: 15px;
+}
+
+.menu .lightpanel p {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.lightpanel h2, .lightpanel h3, .lightpanel h4, .lightpanel h5, .lightpanel h6 {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+      #menu_footer {
+          padding-left: 15px;
+          padding-right: 15px;
+          font-size: 10px;
+          color: #ababab;
+          text-align: center;
+      }
+
+.bottompanel {
+background: url(http://static.tumblr.com/z7lhmdl/lkEkwsst2/bottompanel.png) repeat-x #7b7f7f;
+color: #dadddd;
+text-transform: uppercase;
+font-size: 9px;
+font-weight: bold;
+padding-top: 2px;
+padding-bottom: 2px;
+padding-left: 20px;
+padding-right: 20px;
+border-bottom: 1px solid #656868;
+font-family: Helvetica;
+}
+
+.bottompanel a {
+color: #dadddd;
+}
+
+      .bottompanel a:hover {
+          border-bottom: 1px dotted #ababab;
+      }
+
+.roundedbottom {
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.roundedtop {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.nav a,
+      .nav span {
+font-weight: 500;
+text-decoration: none;
+color: #4d4d4d;
+display: block;
+padding: 20px;
+font-size: 20px;
+text-transform: uppercase;
+text-shadow: 0 2px 1px rgba(255,255,255,0.9);
+font-family: Helvetica;
+}
+
+.nav a:hover {
+    background: #efefef;
+		border: none;
+}
+
+      .nav span {
+          padding-bottom: 10px;
+      }
+
+      .subnav {
+          font-size: 14px;
+          padding-left: 21px;
+          padding-bottom: 10px;
+      }
+
+      .subnav a {
+  	font-size: 14px;
+text-decoration: none;
+      text-transform: none;
+      display: inline;
+      padding: 0;
+      margin-left: 3px;
+color: #4d4d4d;
+text-shadow: 0 2px 1px rgba(255,255,255,0.9);
+font-family: Helvetica;
+}
+
+      .nav a.selected,
+      .subnav a.selected {
+          color: #c40404;
+      }
+
+      .subnav a:hover {
+          color: #c40404;
+          border-bottom: 1px dotted #ababab;
+          background: none;
+      }
+
+h2 {
+font-size: 23px;
+font-weight: 500;
+line-height: 24px;
+text-shadow: 0 2px 1px rgba(255,255,255,0.9);
+}
+
+h2 a {
+color: #4d4d4d;
+border-bottom: 1px solid #ababab;
+}
+
+h2 a:hover {
+	border-bottom: 1px solid #ababab;
+}
+
+#twitter_update_list {
+list-style: none;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#twitter_update_list li {
+padding-bottom: 4px;
+padding-top: 4px;
+}
+
+a {
+color: #C40404;
+text-decoration: none;
+}
+
+a:hover {
+	border-bottom: 1px dotted #ababab;
+}
+
+h1 {
+font-size: 32px;
+letter-spacing: -1px;
+font-weight: 100;
+text-shadow: 0 2px 1px rgba(255,255,255,0.9);
+margin: 0px;
+line-height: 30px;
+font-family: Georgia;
+font-style: italic;
+}
+
+h1 a {
+padding-top: 30px;
+padding-bottom: 30px;
+padding-left: 20px;
+display: block;
+color: #4d4d4d;
+}
+
+h1 a:hover {
+background: #e9eaea;
+}
+
+.masthead {
+margin-bottom: 40px;
+}
+
+blockquote {
+border-left: 3px solid #989696;
+margin-left: 20px;
+padding-left: 15px;	
+}
+
+blockquote p {
+margin-left: -20px;
+}
+
+.centeralign {
+text-align: center;
+}
+
+.bottomlist {
+padding-left: 0px;
+      margin-top: 9px;
+  	margin-bottom: 8px;
+}
+
+.bottomlist ul {
+margin-left: 0px;
+padding-left: 0px;
+}
+
+.bottomlist li {
+display: inline;
+padding-right: 17px;
+list-style: none;
+}
+
+      .bottomlist li.right_li {
+  	float:right;
+      padding-right: 0;
+      padding-left: 17px;
+}
+
+.reblogged {
+padding-top: 1px;
+      padding-bottom: 0;
+border-bottom: 1px dotted;
+      margin-bottom: 8px;
+}
+
+::-moz-selection {
+background: rgb(0,235,255);
+}
+
+::selection {
+background: rgb(0,235,255);
+}
+
+code::-moz-selection {
+background: rgb(0,235,255);
+}
+
+code::selection {
+background: rgb(0,235,255);
+}
+
+.video {
+text-align: center;
+}
+
+.notopborder {
+border-top: none !important;
+}
+
+.image img {
+max-width: 700px;
+min-width: 700px;
+}
+
+.photocaption img {
+max-width: 460px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.previous {
+width: 235px;
+}
+
+.next {
+width: 235px;
+float: right;
+clear: both;
+}
+
+.audio {
+padding-left: 12px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.audioholder {
+background: #000000;
+}
+
+.playcount {
+float: right;
+clear: both;
+padding-top: 25px;
+padding-right: 20px;
+color: white;
+text-shadow: none;
+font-family: Georgia;
+font-style: italic;
+font-size: 14px;
+}
+
+input {		
+color: #4d4d4d;
+font-family: Helvetica;
+font-size: 13px;
+line-height: 18px;
+text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+padding-left: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 20px;
+border: none;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+width: 195px;
+box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+}
+
+input_back:hover {
+box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+-webkit-box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+-moz-box-shadow: 0px 0px 20px rgba(0,235,255,0.8);
+}
+
+.submit {
+float: right;
+clear: both;
+display: none;
+}
+
+.note {
+padding-bottom: 5px;
+padding-top: 5px;
+}
+
+ol.notes {
+padding: 0px;
+list-style-type: none;
+}
+
+ol.notes li.note {
+padding-left: 20px;
+}
+
+ol.notes li.note img.avatar {
+display: none;
+}
+
+ol.notes li.note span.action {
+font-weight: bold;
+}
+
+ol.notes li.note .answer_content {
+font-weight: normal;
+}
+
+ol.notes li.note blockquote {
+border-left: 3px solid #989696;
+margin-left: 0px;
+padding-left: 15px;
+padding-top: 0px;
+border-bottom: none;
+}
+
+ol.notes li.note blockquote a {
+text-decoration: none;
+}
+
+.noresults {
+font-size: 60px;
+font-weight: bolder;
+color: #373f3f;
+line-height: 50px;
+text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+letter-spacing: -4px;
+}
+
+.search {
+margin-bottom: 40px;
+}
+
+.comments {
+padding-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.comments h3 {
+padding-left: 0px;
+}
+
+.chat li {
+list-style: none;
+}
+
+.label {
+font-weight: bolder;
+}
+
+      .textbg {
+      background: #c8cdcd;
+      text-shadow: 0 0px 1px rgba(255,255,255,0.3);
+padding: 0px;
+margin: 0px;
+      }
+
+.textbg h2 {
+  	padding: 0px;
+margin: 0px;
+}
+
+.texttitle {
+  	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 130px;
+	display: block;
+}
+
+      .caption {
+          font-size: 16px;
+          line-height: 20px;
+      }
+
+      .textpostbody {
+          font-size: 16px;
+          line-height: 20px;
+  	    background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+    border-top: 1px solid #f3f3f3;
+    padding-bottom: 1px;
+          clear:both;
+      }
+
+.bottom_bar {
+	border-bottom: 1px dashed #b3b3b3;
+}
+
+.top_bar {
+	border-top: 1px dashed #f2f2f2;
+}
+
+.bottom_bar,
+.top_bar {
+	clear: both;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+.bottom_bar p,
+.top_bar p,
+.bottom_bar h3,
+.top_bar h3 {
+	padding: 0;
+}
+
+.floated_left {
+	float: left;
+	margin-right: 20px;
+}
+
+.floated_right {
+	float: right;
+	margin-left: 20px;
+}
+
+.table_work {
+	width: 100%;
+}
+
+.table_work td {
+	padding: 0 0 10px 0;
+	vertical-align: top;
+	width: 100px;
+}
+
+.table_work td.work_content {
+	padding: 3px 0 7px 10px;
+	width: 100%;
+}
+
+.table_work td.work_content p {
+	margin: 5px 0;
+}
+
+.table_work td h4 {
+	margin: 0;
+	padding: 0;
+}
+
+.tags_container h4 {
+	margin: 0;
+	color: #6c6c6c;
+}
+
+ul.tags {
+	padding: 0 20px;
+	margin: 0 0 20px;
+	color: #dadada;
+	text-shadow: 0 1px 1px #494949;
+}
+
+ul.tags li {
+	list-style-type: none;
+	list-style-position: inside;
+	list-style-image: none;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #3b3b3b;
+	font-size: 13px;
+	padding: 3px 8px 2px;
+	margin-top: 5px;
+	margin-right: 3px;
+	border-bottom: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+
+	display: inline-block;
+	background-color: #c8c8c8;
+	line-height: 17px;
+	text-shadow: 0 1px 1px #e3e3e3;
+	font-weight: bold;
+	-moz-box-shadow: inset 0 0 2px #202020;
+	-webkit-box-shadow: inset 0 0 2px #202020;
+	box-shadow: inset 0 0 2px #202020;
+}
+
+.textpostbody img {
+	max-width: 460px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-moz-box-shadow: 0 1px 1px #747474;
+ 	-webkit-box-shadow: 0 1px 1px #747474;
+ 	box-shadow: 0 1px 1px #747474;
+}
+
+img.alert_img {
+	float: right;
+	width: 17px;
+	margin-left: 5px;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+}
+
+.table_work img {
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.textpostbody li {
+padding-right: 20px;
+}
+
+.description {
+padding-right: 20px;
+}
+
+.portrait-description {
+padding: 20px;
+}
+
+.portrait {
+width: 300px;
+}
+
+.albumart {
+width:700px;
+}
+
+.triangle {
+background: #e4e8e8 url(http://static.tumblr.com/z7lhmdl/IoKkyxv6w/triangle-solo.png) bottom left no-repeat;
+height: 10px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.question {
+font-size: 16px;
+line-height: 22px;
+background: #000;
+text-shadow: none;
+color: #8c8c8c;
+box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+
+padding: 30px;
+width: 660px;
+margin-left: -10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+float: left;
+}
+
+.machine {
+	height: 50px;
+}
+
+.machine_icon {
+float: left;
+margin-right: 20px;
+padding-top: 5px;
+padding-left: 20px;
+}
+
+.machine_icon img {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.machinename {
+font-size: 24px;
+margin-top: 0px;
+margin-bottom: 0px;
+line-height: 57px;
+}
+
+.machinename a {
+color: #4d4d4d;
+}
+
+.machinetriangle {
+background: url(http://static.tumblr.com/z7lhmdl/IoKkyxv6w/triangle-solo.png) bottom left no-repeat;
+height: 10px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.command_line {
+	font-size: 16px;
+	line-height: 16px;
+	background: #000;
+	text-shadow: none;
+	color: #8c8c8c;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+	width: 660px;
+	margin-left: -10px;
+	margin-bottom: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+	padding: 15px 30px 0;
+}
+
+.command_line .line,
+.command_line input.line,
+.command_line textarea.line {
+	font-size: 15px;
+	line-height: 15px;
+
+	color: #d6d6d6;
+	padding: 8px 10px;
+	background: #222222;
+	border: none;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+
+	text-shadow: none;
+	-webkit-text-shadow: none;
+	-moz-text-shadow: none;
+}
+
+.subcommand_line {
+	margin-left: 30px;
+	display: none;
+}
+
+.subcommand_line .line,
+.subcommand_line input.line,
+.subcommand_line textarea.line {
+	width: 610px;
+}
+
+.command_line .other_example {
+	color: #b6b6b6;
+}
+
+.command_line .line:hover {
+	background-color: #353535;
+}
+
+.command_line .line a.copy {
+	font-size: 0.85em;
+	color: #9d9d9d;
+	float: right;
+}
+
+.asker {
+background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+height: 70px;
+}
+
+.askerportrait {
+float: left;
+margin-right: 20px;
+padding-top: 20px;
+padding-left: 20px;
+}
+
+.askerportrait img {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.askername {
+font-size: 24px;
+margin-top: 0px;
+margin-bottom: 0px;
+line-height: 80px;
+}
+
+.askername a {
+color: #4d4d4d;
+}
+
+.linkbg {
+background: #c8cdcd url(http://static.tumblr.com/z7lhmdl/4wRkyxyle/linkbg.png) top right no-repeat;
+text-shadow: 0 0px 1px rgba(255,255,255,0.3);
+padding: 0px;
+margin: 0px;
+}
+
+.linkbg h2 {
+padding: 0px;
+margin: 0px;
+}
+
+.linkdescription {
+    background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+    border-top: 1px solid #f3f3f3;
+    padding-bottom: 1px;
+          font-size: 16px;
+          line-height: 20px;
+}
+
+.link {
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 20px;
+padding-right: 130px;
+display: block;
+}
+
+.quote {
+margin-right: 130px;
+}
+
+.quotebg {
+background: #c8cdcd url(http://static.tumblr.com/z7lhmdl/cszkzyztp/quotebg.png) top right no-repeat;
+text-shadow: 0 0px 1px rgba(255,255,255,0.3);
+padding: 0px;
+margin: 0px;
+}
+
+.quotedescription {
+    background: url(http://static.tumblr.com/z7lhmdl/DsSkwsstm/gradbg.png) repeat-x #dadddd;
+    border-top: 1px solid #f3f3f3;
+    padding-bottom: 1px;
+          font-size: 16px;
+          line-height: 20px;
+}
+
+.zoomphoto {
+max-width: 900px;
+}
+
+.hiddenzoombox {
+display: none;
+}
+
+.zoomoverlay {
+position: absolute; 
+z-index:1000;
+}
+
+.zoomoverlay img {
+width: 100px;
+height: 100px;		
+}
+
+.wholeimage:hover > .zoomoverlay {
+background: url(http://static.tumblr.com/z7lhmdl/tPFkzy1ni/zoom.png) no-repeat;		
+}
+
+.wholeimage {
+background: #fff;
+}
+
+ol.resume li {
+	margin-bottom: 15px;
+}

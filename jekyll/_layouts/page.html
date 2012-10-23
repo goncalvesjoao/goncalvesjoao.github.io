@@ -1,0 +1,14 @@
+---
+layout: "application"
+---
+<div class="shadow">
+	<div class="lightpanel roundedtop textbg">
+		<h2>
+			<a href="" class="texttitle">{% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</a>
+		</h2>
+    <div class="textpostbody">
+			<br/>
+			{{ content }}
+		</div>
+	</div>
+</div>

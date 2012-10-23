@@ -1,0 +1,2 @@
+ls -a | grep -v 'jekyll\|.git\|.htaccess\|update' | xargs rm -rf
+cp -R jekyll/_site/* ./

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>João's Site - SSH Multiple Private Keys</title>
+    
+    <meta name="author" content="João Gonçalves">
+    
+		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/changes.css" type="text/css" />
+		<!--[if lte IE 7]>
+		<link rel="stylesheet" href="/public/stylesheets/ie.css" type="text/css" />
+		<![endif]-->
+		
+		<script src="/public/javascript/jquery-1.8.2.min.js"></script>
+		<script src="/public/javascript/application.js"></script>
+		<script src="/public/javascript/codemirror.js"></script>
+		
+		<!-- BEGIN FACEBOOK OPENGRAPH TAGS -->
+		<meta property="og:title" content="SSH Multiple Private Keys">
+		<meta property="og:url" content="http://goncalvesjoao.github.com/ssh_tutorials/ssh-multiple-private-keys/">
+		
+		<!-- END FACEBOOK OPENGRAPH TAGS -->
+	</head>
+	
+	<body id="home">
+
+		<div class="row">
+			<div class="column grid_4 menu">
+				<div class="shadow">
+	<img src="/public/images/avatar.png" alt="8bit Groove" id="avatar">
+
+	<div class="lightpanel roundedtop">
+		<p>
+			Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.
+			<br/><br/>
+			Currently developing on Ruby on Rails on a cool startup called Outitude, that focuses on enabling outdoor activities in people's lives.
+			<br/><br/>
+			I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.
+		</p>
+	</div>
+
+	<div class="lightpanel nav">
+		
+			<a id="home_menu_link" class="nav" href="/">&larr; Back to Home</a>
+		
+	</div>
+	
+	
+		<div class="lightpanel nav">
+			<a class="page_link " href="/about-the-guy/">About The Guy</a>
+		</div>
+	
+		<div class="lightpanel nav">
+			<a class="page_link " href="/portfolio/">Portfolio</a>
+		</div>
+	
+	
+	<div class="lightpanel nav">
+		<span class="nav">Projects:</span>
+		
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/projects/my-little-pecker/">My Little Pecker</a>
+			</div>
+		
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">AWS Tutorials:</span>
+		
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a>
+			</div>
+		
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">SSH Tutorials:</span>
+		
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link selected" href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a>
+			</div>
+		
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">RoR Tutorials:</span>
+		
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a>
+			</div>
+		
+	</div>
+
+	<div class="lightpanel nav">
+		<span class="nav">Nodejs Tutorials:</span>
+		
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a>
+			</div>
+		
+			<div class="subnav">
+		   	»<a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a>
+			</div>
+		
+	</div>
+	
+	<div id="menu_footer" class="bottompanel roundedbottom">
+		<p><a class="nav" href="http://www.linkedin.com/pub/jo%C3%A3o-gon%C3%A7alves/48/53a/aba" target="_blank">Linkedin</a></p>
+	</div>
+</div>
+			</div>
+			
+			<div class="column grid_7">
+				<a href="/">
+					<img class="shadow" style="margin-bottom: 15px;" src="/public/images/banner.png" alt="banner">
+				</a>
+				
+				<div class="content_divider">
+					--------------------------------- usefull content goes bellow this line ---------------------------------
+				</div>
+				
+				<div class="shadow">
+	<div class="lightpanel roundedtop textbg">
+		<h2>
+			<a href="" class="texttitle">Setup different SSH connections, each, with a dedicated private key </a>
+		</h2>
+    <div class="textpostbody">
+			<br/>
+			<script src="/public/javascript/modes/shell.js"></script>
+
+<p>You have other private keys besides your default “<b>id_rsa</b>” and want an alternative to the command “<b>ssh -i path_to_your_private_key_file user_name@your_domain.com</b>”?</p>
+<div class="machine">
+	<div class="machine_icon">
+		<img src="/public/images/local.png" style="width:40px; height:40px;" alt="locale"/>
+	</div>
+	<div class="machinename">local machine</div>
+</div>
+
+<div class="machinetriangle"></div>
+
+<div class="command_line">
+	<p class="top_of_command">Move to your user's ssh folder</p>
+	<textarea id="command_1" class="line">cd ~/.ssh</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span>” if folder “<span class="other_example">.ssh</span>” doesn’t exist.</span>
+	</p>
+	<p class="top_of_command">Create or Edit the following file.</p>
+	<textarea id="command_2" class="line">mate config</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">open -a TextEdit config</span>” if you don’t have TextMate.</span>
+	</p>
+	<p class="top_of_command">Add the following example to “<span class="other_example">config</span>” and make the necessary changes.</p>
+	<textarea id="command_3" class="line">Host name_of_your_project_or_domain
+HostName your_domain.com
+User user_name
+IdentityFile path_to_your_private_key_file</textarea>
+	<p class="top_of_command">Test if everything is working.</p>
+	<textarea id="command_4" class="line">ssh name_of_your_project_or_domain</textarea>
+	<p class="bottom_of_command">&nbsp;</p>
+</div>
+<p>Your remote machine doesn’t recognize your key?<br>You’ll need to add the correspondent public key onto “<span class="other_example">~/.ssh/authorized_keys</span>” of your remote server. See <a href="../ssh-nopassword-login" target="_blank">SSH no password login</a> for an example.</p>
+		</div>
+	</div>
+</div>
+				
+				<div style="clear:both;"></div>
+			</div>
+			
+			<div style="clear:both;"></div>
+		</div>
+		
+		<div id="footer">
+			<div class="row">
+				<p style="text-align:center;">
+					Temporary Template
+				</p>
+			</div>
+		</div>
+	
+	</body>
+</html>

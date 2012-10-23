@@ -1,0 +1,67 @@
+---
+layout: "page"
+title: "Multiple RoR Projects"
+header: "Working on Multiple RoR Projects"
+group: "ror"
+weight: 30
+show: true
+---
+<script src="{{ site.asset_path }}/javascript/modes/shell.js"></script>
+
+<div class="article">
+	<p>Say you have two projects: <b>project1</b> that requires <b>ruby v1.9.2</b> and <b>rails v3.2.1</b> and <b>project2</b> that requires <b>ruby v1.8.7</b> and <b>rails 2.3.5</b>.</p>
+	<p>Without a <b>R</b>uby <b>V</b>ersion <b>M</b>anager like <b>rvm</b>, in case you're working on <b>project1</b> and decide to work on <b>project2</b>, you'd have to replace you system's ruby (v1.9.2 to v1.8.7) and gems (rails v3.2.1 to v2.3.5) that <b>project2</b> needs, making it a pain in the ass if you want to start working on <b>project1</b> again.</p>
+	<p>With <b>rvm</b> you can install different ruby versions on your machine: "<b>rvm install 1.9.2</b>", "<b>rvm install 1.8.7</b>" and switch between them "<b>rvm use 1.9.2</b>", "<b>rvm use 1.8.7</b>", without being stuck to your system's ruby version.</p>
+	<p>The same goes for gems. Suppose <b>project1</b> needs <b>rails v3.2.1</b>, <b>paperclip v3.0</b> and other gems, <b>project2</b> needs <b>rails v2.3.5</b>, <b>paperclip v2.7</b> and some others, by creating the gemsets "<b>rvm gemset create project1_gemset</b>" and "<b>rvm gemset create project2_gemset</b>" you can install the gems that each project needs on the correspondent gemset and easily switch between them "<b>rvm gemset use project1_gemset</b>" and "<b>rvm gemset use project2_gemset</b>".</p>
+	<p>Even cooler is the option to create a "<b>.rvmrc</b>" file on an app's root folder, with (<b>rvm 1.9.2@project1_gemset</b>) the ruby version and gemset that you want to load for that app when you ("<b>cd project1/</b>") enter that app's folder.</p>
+	<p>Steps to create a new project using ruby version “<b>ree 1.8.7</b>” and rails “<b>3.0.5</b>”:</p>
+</div>
+
+<div class="machine">
+	<div class="machine_icon">
+		<img src="{{ site.asset_path }}/images/local.png" style="width:40px; height:40px;" alt="locale"/>
+	</div>
+	<div class="machinename">local machine</div>
+</div>
+
+<div class="machinetriangle"></div>
+
+<div class="command_line">
+	<p class="top_of_command">Install rvm</p>
+	<textarea id="command_1" class="line">\curl -L https://get.rvm.io | bash -s stable</textarea>
+	<p class="top_of_command">Reopen your terminal or run the following command</p>
+	<textarea id="command_2" class="line">source ~/.rvm/scripts/rvm</textarea>
+	<p class="top_of_command">Install Ruby (can by any version you want) in the rvm context</p>
+	<textarea id="command_3" class="line">rvm install ree-1.8.7-2012.02</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a>
+		<span style="display: none;">You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Rails</b> again.<br/>Note: Should you see a warning message, ignore it and hit 'q' to continue.</span>
+	</p>
+	<p class="top_of_command">Start using the newly installed Ruby version</p>
+	<textarea id="command_4" class="line">rvm use ree-1.8.7-2012.02</textarea>
+	<p class="top_of_command">Create a gemset “my-app-gemset”</p>
+	<textarea id="command_5" class="line">rvm gemset create my-app-gemset</textarea>
+	<p class="top_of_command">Switch to (or start using) that “my-app-gemset” context</p>
+	<textarea id="command_6" class="line">rvm gemset use my-app-gemset</textarea>
+	<p class="top_of_command">Instal the Rails 3.0.5 version (again, can be any version you want) in that “my-app-gemset” context</p>
+	<textarea id="command_7" class="line">gem install rails -v 3.0.5</textarea>
+	<p class="top_of_command">Create your new app</p>
+	<textarea id="command_8" class="line">rails new my-app</textarea>
+	<p class="top_of_command">Move to “my-app” folder</p>
+	<textarea id="command_9" class="line">cd my-app</textarea>
+	<p class="top_of_command">Create a file called “<b>.rvmrc</b>”</p>
+	<textarea id="command_10" class="line">mate .rvmrc</textarea>
+	<p class="bottom_of_command">
+		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">open -a TextEdit .rvmrc</span>” if you don’t have TextMate.</span>
+	</p>
+	<p class="top_of_command">Paste the following: “<b>rvm ruby-version@your-gemset-name</b>”</p>
+	<textarea id="command_11" class="line">rvm ree@my-app-gemset</textarea>
+	<p class="bottom_of_command">&nbsp;</p>
+</div>
+
+<div style="clear:both;"></div>
+
+<div class="article">
+	<p>Now every time you move to your app’s folder ("<b>cd my-app/</b>") <b>rvm</b> will read the “<b>.rvmrc</b>” file and will load the selected ruby version “<b>ree</b>” and the set of gems that where installed in the “<b>my-app-gemset</b>” context.</p>
+	<p><b>Note:</b> If you’re having trouble with some missing gems, try running the “<b>bundle install</b>” command.</p>
+</div>
