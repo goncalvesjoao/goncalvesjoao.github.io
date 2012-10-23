@@ -1,0 +1,2 @@
+ls -a | grep -v '.git\|.gitignore\|update' | xargs rm -rf
+cp -R ../site-generator/_site/* ./
