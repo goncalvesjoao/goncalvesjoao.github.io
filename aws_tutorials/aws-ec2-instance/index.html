@@ -6,7 +6,7 @@
     
     <meta name="author" content="João Gonçalves">
     
-		<link rel="stylesheet" href="/public/stylesheets/custom_bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
@@ -42,43 +42,50 @@
 	</h1>
 	<aside>
 		
-			<small>Published on 23-11-2012</small>
-		
 	</aside>
 </header>
 
 <script src="/public/javascript/modes/shell.js"></script>
 
-<div class="article">
-	<h2>Steps to create a EC2 Ubuntu 12.04 LTS micro instance</h2>
+<section>
+	<header>
+		<h2>1. Steps to create a EC2 Ubuntu 12.04 LTS micro instance</h2>
+	</header>
 	<p>work in progress...</p>
-	<div class="divider"></div>
-	<h2>SSH Access</h2>
+</section>
+
+<section>
+	<header>
+		<h2>2. SSH Access</h2>
+	</header>
 	<p>Access your remote machine through one of the following commands:</p>
 	<ol>
 		<li>"<b>ssh -i aws_instance_key.pem ubuntu@aws_public_dns_or_elastic_ip</b>"</li>
 		<li>"<b>ssh name_of_your_project_or_domain</b>" (see how on <a href="../../ssh_tutorials/ssh-multiple-private-keys/" target="_blank">SSH Multiple Private Keys</a>)</li>
 	</ol>
 	<p>work in progress...</p>
-	<div class="divider"></div>
-	<h2>Fixing some minor problems</h2>
-	<p>Access your remote machine, through ssh.</p>
-</div>
+</section>
 
-<div class="machine">
-	<div class="machine_icon">
-		<img src="/public/images/remote.png" style="width:40px; height:40px;" alt="locale"/>
-	</div>
-	<div class="machinename">server side</div>
-</div>
-
-<div class="machinetriangle"></div>
-
-<div class="command_line">
-	<p class="top_of_command">Fix the system's locale by editing the following file</p>
-	<textarea id="locale_file" class="line">sudo vi /etc/default/locale</textarea>
-	<p class="top_of_command">and replacing its contents with the following:</p>
-	<textarea id="locale_content" class="line">LANG="en_US.UTF-8"
+<section>
+	<header>
+		<h2>3. Fixing some minor problems</h2>
+	</header>
+	<table>
+		<tr>
+			<td class="text-warning" style="text-align: center; padding-top: 5px; padding-bottom: 10px;">--- ssh connect to your remote machine ---</td><td></td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="locale_file" class="line">sudo vi /etc/default/locale</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Fix the system's locale by editing the following file</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="locale_content" class="line">LANG="en_US.UTF-8"
 LANGUAGE="en_US.UTF-8"
 LC_CTYPE="en_US.UTF-8"
 LC_NUMERIC="en_US.UTF-8"
@@ -92,91 +99,117 @@ LC_ADDRESS="en_US.UTF-8"
 LC_TELEPHONE="en_US.UTF-8"
 LC_MEASUREMENT="en_US.UTF-8"
 LC_IDENTIFICATION="en_US.UTF-8"</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DON'T KNOW HOW VI WORKS?</a><span style="display: none;">Here's a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi's most used commands</a> (for instance: you'll be using the "<b>:wq</b>" command).</span>
-	</p>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">And replacing its contents with the following (<a id="didnt_work1" onclick="return false;" href="#">unfamiliar with <b>vi</b>?</a>)</td>
+		</tr>
+		
+		<tr>
+			<td class="text-warning" style="text-align: center; padding-top: 5px; padding-bottom: 10px;">--- close your connection and get it up again ---</td><td></td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="fimezone_fix" class="line">sudo dpkg-reconfigure tzdata</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Fix the system's timezone</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+					<textarea id="apt_get_update" class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Update apt-get</td>
+		</tr>
+		
+	</table>
 	
-	<p class="top_of_command" style="text-align: center;">--- close your connection and get it up again ---</p>
-	<p class="top_of_command">Fix the system's timezone</p>
-	<textarea id="fimezone_fix" class="line">sudo dpkg-reconfigure tzdata</textarea>
-	<p class="top_of_command">Update apt-get</p>
-	<textarea id="apt_get_update" class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</textarea>
-	<p class="bottom_of_command">&nbsp;</p>
-</div>
-<div style="clear:both;"></div>
+</section>
 
-<div class="article">
-	<div class="divider"></div>
-	<h2>FTP Access</h2>
+<section>
+	<header>
+		<h2>4. FTP Access</h2>
+	</header>
 	<p>work in progress...</p>
-</div>
+</section>
+
+<script>
+	$(function() {
+		$('#didnt_work1').popover({
+			placement: "left",
+			title: "Don't know how vi works?",
+			content: 'Here\'s a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi\'s most used commands</a>.<br>For instance: you\'ll be using the "<b>:wq</b>" command.</span>'
+		});
+	});
+</script>
 			</div>
 		</article>
 		
 		<footer>
 			<div class="container">
-				<div class="row">
-				  <div class="span12">
-						<p>Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
-						<p>&nbsp;</p>
-						<div class="row">
-							<div class="span3">
-								AWS Tutorials:
-								<ul>
-									
-										<li><a class="page_link selected" href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								RoR Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								Nodejs Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								SSH Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
-									
-								</ul>
-							</div>
-						</div>
+				
+				<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
+				<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
+				<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
+				<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+				
+				<div id="footer_menu" class="row">
+					<div class="span3">
+						<h4>AWS Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link selected" href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>RoR Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Nodejs Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>SSH Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
+							
+						</ul>
 					</div>
 				</div>
+						
 			</div>
 		</footer>
 	</body>

@@ -6,7 +6,7 @@
     
     <meta name="author" content="João Gonçalves">
     
-		<link rel="stylesheet" href="/public/stylesheets/custom_bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
@@ -42,133 +42,173 @@
 	</h1>
 	<aside>
 		
-			<small>Published on 23-11-2012</small>
-		
 	</aside>
 </header>
 
 <script src="/public/javascript/modes/shell.js"></script>
 
-<div class="machine">
-	<div class="machine_icon">
-		<img src="/public/images/local.png" style="width:40px; height:40px;" alt="locale"/>
-	</div>
-	<div class="machinename">local machine</div>
-</div>
+<section>
+	<header>
+		<h2><img src="/public/images/local.png" style="float: left; width:40px; height:40px;" alt="locale"/>  Local Machine</h2>
+	</header>
+	
+	<table>
+		<tr>
+			<td class="span6">
+				<textarea id="local_command_1" class="line">mkdir ~/.ssh; cd ~/.ssh</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="command_2" class="line">ssh-keygen -t rsa</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">
+				Generate your default private/public key pair files (don’t enter a pass, just leave it blank).<br/>
+				If both “<b>id_rsa</b>” and “<b>id_rsa.pub</b>” files, already exist, you might want to backup them up.
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				
+				<div id="local_command_3_div">
+					<textarea id="local_command_3" class="line">mate id_rsa.pub</textarea>
+				</div>
+				<div id="local_command_4_div">
+					<textarea id="local_command_4" class="line">open -a TextEdit id_rsa.pub</textarea>
+				</div>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">
+				Keep the following file, opened, for later use. <span id="didnt_work3">(<a onclick="$('#local_command_3_div').hide(); $('#local_command_4_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span>
+			</td>
+		</tr>
+	</table>		
+</section>
 
-<div class="machinetriangle"></div>
+<section>
+	<header>
+		<h2><img src="/public/images/remote.png" style="float:left; width:40px; height:40px;" alt="locale"/>  Server Side</h2>
+	</header>
+	
+	<table>
+		<tr>
+			<td class="text-warning" style="text-align: center; padding-top: 5px; padding-bottom: 10px;">--- ssh connect to your remote machine ---</td><td></td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="remote_command_1" class="line">mkdir ~/.ssh; cd ~/.ssh</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="remote_command_5" class="line">vi authorized_keys</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Create or edit the following file and <b>ADD</b> (not overwrite) the contents of your local file “<b>id_rsa.pub</b>”</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
+				<textarea id="remote_command_6" class="line">chmod 644 authorized_keys</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Add the correct file permission (<a id="didnt_work1" onclick="return false;" href="#">unfamiliar with <b>vi</b>?</a>)</td>
+		</tr>
+		
+		<tr>
+			<td class="text-warning" style="text-align: center; padding-top: 5px; padding-bottom: 10px;">--- close your connection and get it up again<br/>verify that no password is required ---</td><td></td>
+		</tr>
+		
+	</table>
+</section>
 
-<div class="command_line">
-	<p class="top_of_command">Move to your user's ssh folder</p>
-	<textarea id="command_1" class="line">cd ~/.ssh</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span>” if folder “<span class="other_example">.ssh</span>” doesn’t exist.</span>
-	</p>
-	<p class="top_of_command">Generate your default private/public key pair files (don’t enter a pass, just leave it blank).</p>
-	<textarea id="command_2" class="line">ssh-keygen -t rsa</textarea>
-	<p class="bottom_of_command">
-		<img src="/public/images/alert.png" class="alert_img" alt="alert"/>If both “<span class="other_example">id_rsa</span>” and “<span class="other_example">id_rsa.pub</span>” files, already exist, you might want to backup them up.
-	</p>
-
-	<p class="top_of_command">Keep the following file, opened, for later use.</p>
-	<textarea id="command_3" class="line">mate id_rsa.pub</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">open -a TextEdit id_rsa.pub</span>” if you don’t have TextMate.</span>
-	</p>
-</div>
-<div style="clear:both;"></div>
-<p>Enter your remote machine, through ssh.</p>
-<div class="machine">
-	<div class="machine_icon">
-		<img src="/public/images/remote.png" style="width:40px; height:40px;" alt="locale"/>
-	</div>
-	<div class="machinename">server side</div>
-</div>
-
-<div class="machinetriangle"></div>
-
-<div class="command_line">
-	<p class="top_of_command">Move to your remote user's ssh folder</p>
-	<textarea id="command_4" class="line">cd ~/.ssh</textarea>
-	<p class="bottom_of_command"><a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span>” if folder “<span class="other_example">.ssh</span>” doesn’t exist.</span></p>
-	<p class="top_of_command">Create or edit the following file and ADD (not overwrite) the contents of your local file “<span class="other_example">id_rsa.pub</span>”.</p>
-	<textarea id="command_5" class="line">vi authorized_keys</textarea>
-	<p class="bottom_of_command">&nbsp;</p>
-	<p class="top_of_command">Add the correct file permission.</p>
-	<textarea id="command_6" class="line">chmod 644 authorized_keys</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DON'T KNOW HOW VI WORKS?</a><span style="display: none;">Here's a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi's most used commands</a> (for instance: you'll be using the "<b>:wq</b>" command).</span>
-	</p>
-</div>
-<div style="clear:both;"></div>
-<p>Close your connection and try to ssh your remote machine again and verify that no password is required.</p>
+<script>
+	$(function() {
+		$('#didnt_work1').popover({
+			placement: "left",
+			title: "Don't know how vi works?",
+			content: 'Here\'s a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi\'s most used commands</a>.<br>For instance: you\'ll be using the "<b>:wq</b>" command.</span>'
+		});
+		$('#local_command_4_div').hide(); 
+	});
+</script>
 			</div>
 		</article>
 		
 		<footer>
 			<div class="container">
-				<div class="row">
-				  <div class="span12">
-						<p>Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
-						<p>&nbsp;</p>
-						<div class="row">
-							<div class="span3">
-								AWS Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								RoR Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								Nodejs Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								SSH Tutorials:
-								<ul>
-									
-										<li><a class="page_link selected" href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
-									
-								</ul>
-							</div>
-						</div>
+				
+				<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
+				<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
+				<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
+				<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+				
+				<div id="footer_menu" class="row">
+					<div class="span3">
+						<h4>AWS Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>RoR Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Nodejs Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>SSH Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link selected" href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
+							
+						</ul>
 					</div>
 				</div>
+						
 			</div>
 		</footer>
 	</body>

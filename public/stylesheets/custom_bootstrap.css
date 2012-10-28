@@ -160,12 +160,13 @@ body {
   margin: 0;
   color: #d9d9d9;
   background-color: #333333;
-  font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #e05f1c;
   text-decoration: none;
+	text-shadow: 0 1px 1px #151515;
 }
 
 a:hover {
@@ -578,7 +579,7 @@ a:hover {
 p {
   margin: 0 0 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
 }
 p small {

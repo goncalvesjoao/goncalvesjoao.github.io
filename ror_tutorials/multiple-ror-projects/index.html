@@ -6,7 +6,7 @@
     
     <meta name="author" content="João Gonçalves">
     
-		<link rel="stylesheet" href="/public/stylesheets/custom_bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
@@ -42,137 +42,314 @@
 	</h1>
 	<aside>
 		
-			<small>Published on 23-11-2012</small>
-		
 	</aside>
 </header>
 
 <script src="/public/javascript/modes/shell.js"></script>
 
-<div class="article">
-	<p>Say you have two projects: <b>project1</b> that requires <b>ruby v1.9.2</b> and <b>rails v3.2.1</b> and <b>project2</b> that requires <b>ruby v1.8.7</b> and <b>rails 2.3.5</b>.</p>
-	<p>Without a <b>R</b>uby <b>V</b>ersion <b>M</b>anager like <b>rvm</b>, in case you're working on <b>project1</b> and decide to work on <b>project2</b>, you'd have to replace you system's ruby (v1.9.2 to v1.8.7) and gems (rails v3.2.1 to v2.3.5) that <b>project2</b> needs, making it a pain in the ass if you want to start working on <b>project1</b> again.</p>
-	<p>With <b>rvm</b> you can install different ruby versions on your machine: "<b>rvm install 1.9.2</b>", "<b>rvm install 1.8.7</b>" and switch between them "<b>rvm use 1.9.2</b>", "<b>rvm use 1.8.7</b>", without being stuck to your system's ruby version.</p>
-	<p>The same goes for gems. Suppose <b>project1</b> needs <b>rails v3.2.1</b>, <b>paperclip v3.0</b> and other gems, <b>project2</b> needs <b>rails v2.3.5</b>, <b>paperclip v2.7</b> and some others, by creating the gemsets "<b>rvm gemset create project1_gemset</b>" and "<b>rvm gemset create project2_gemset</b>" you can install the gems that each project needs on the correspondent gemset and easily switch between them "<b>rvm gemset use project1_gemset</b>" and "<b>rvm gemset use project2_gemset</b>".</p>
-	<p>Even cooler is the option to create a "<b>.rvmrc</b>" file on an app's root folder, with (<b>rvm 1.9.2@project1_gemset</b>) the ruby version and gemset that you want to load for that app when you ("<b>cd project1/</b>") enter that app's folder.</p>
-	<p>Steps to create a new project using ruby version “<b>ree 1.8.7</b>” and rails “<b>3.0.5</b>”:</p>
-</div>
+<section>
+	<header>
+		<h2>1. Introduction</h2>
+	</header>
+		<p>Say you have two projects: <b>project1</b> that requires <b>ruby v1.8.7</b> and <b>rails v3.0.5</b> and <b>project2</b> that requires <b>ruby v1.9.3</b> and <b>rails v3.2.1</b>.</p>
+	<p>Without a <b>R</b>uby <b>V</b>ersion <b>M</b>anager like <b>rvm</b>, in case you're working on <b>project1</b> and decide to work on <b>project2</b>, you'd have to replace you system's ruby (v1.8.7 to v1.9.3) and gems (rails v3.0.5 to v3.2.1) that <b>project2</b> needs, making it a pain in the ass if you want to start working on <b>project1</b> again.</p>
+	<p>With <b>rvm</b> you can install different ruby versions on your machine: "<b>rvm install 1.8.7</b>", "<b>rvm install 1.9.3</b>" and switch between them "<b>rvm use 1.8.7</b>", "<b>rvm use 1.9.3</b>", without being stuck to your system's ruby version.</p>
+	<p>The same goes for gems. Suppose <b>project1</b> needs <b>rails v3.0.5</b> and other gems, <b>project2</b> needs <b>rails v3.2.1</b> and some different gems, by creating the gemsets "<b>rvm gemset create project1_gemset</b>" and "<b>rvm gemset create project2_gemset</b>" you can install the gems that each project needs on the correspondent gemset and easily switch between them "<b>rvm gemset use project1_gemset</b>" and "<b>rvm gemset use project2_gemset</b>".</p>
+	<p>Even cooler is the option to create a "<b>.rvmrc</b>" file on an app's root folder, with (<b>rvm 1.9.3@project1_gemset</b>) the ruby version and gemset that you want to load for that app when you ("<b>cd project1</b>") enter that app's folder.</p>
+</section>
 
-<div class="machine">
-	<div class="machine_icon">
-		<img src="/public/images/local.png" style="width:40px; height:40px;" alt="locale"/>
-	</div>
-	<div class="machinename">local machine</div>
-</div>
+<section>
+	<header>
+		<h2>2. Project1 Example</h2>
+	</header>
+	
+	<table>
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_1" class="line">\curl -L https://get.rvm.io | bash -s stable</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Install <b>rvm</b></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_2" class="line">source ~/.rvm/scripts/rvm</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Reopen your terminal or run the following command</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_3" class="line">rvm install ree-1.8.7-2012.02</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Install the <b>Ruby version</b> you need in the <b>rvm</b> context (<a class="didnt_work" onclick="return false;" href="#">didn’t work?</a>)</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_4" class="line">rvm use ree-1.8.7-2012.02</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Start using the newly installed <b>Ruby version</b></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_5" class="line">rvm gemset create project1_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a gemset “<b>your-gemset-name</b>”</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_6" class="line">rvm gemset use project1_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Start using that “<b>your-gemset-name</b>” gemset</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_7" class="line">gem install rails -v 3.0.5</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Instal the <b>Rails version</b> you need in that “<b>your-gemset-name</b>” context</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_8" class="line">cd ~; mkdir Projects; cd Projects;</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_9" class="line">rails new project1</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a new <b>RoR</b> app</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_10" class="line">cd project1</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<div id="p1_command_11_div">
+					<textarea id="p1_command_11" class="line">mate .rvmrc</textarea>
+				</div>
+				<div id="p1_command_12_div">
+					<textarea id="p1_command_12" class="line">open -a TextEdit .rvmrc</textarea>
+				</div>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a file called “<b>.rvmrc</b>” <span id="didnt_work2">(<a onclick="$('#p1_command_11_div').hide(); $('#p1_command_12_div').fadeIn('slow'); $('#didnt_work2').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p1_command_13" class="line">rvm ree@project1_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Add the following: “<b>rvm ruby-version@your-gemset-name</b>” and save it</td>
+		</tr>
+	</table>
+</section>
 
-<div class="machinetriangle"></div>
+<section>
+	<header>
+		<h2>2. Project2 Example</h2>
+	</header>
+	
+	<table>
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_3" class="line">rvm install 1.9.3</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Install the <b>Ruby version</b> you need in the <b>rvm</b> context (<a class="didnt_work" onclick="return false;" href="#">didn’t work?</a>)</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_4" class="line">rvm use 1.9.3</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Start using the newly installed <b>Ruby version</b></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_5" class="line">rvm gemset create project2_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a gemset “<b>your-gemset-name</b>”</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_6" class="line">rvm gemset use project2_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Start using that “<b>your-gemset-name</b>” gemset</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_7" class="line">gem install rails -v 3.2.1</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Instal the <b>Rails version</b> you need in that “<b>your-gemset-name</b>” context</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_0" class="line">cd ~/Projects</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_9" class="line">rails new project2</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a new <b>RoR</b> app</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_10" class="line">cd project2</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<div id="p2_command_11_div">
+					<textarea id="p2_command_11" class="line">mate .rvmrc</textarea>
+				</div>
+				<div id="p2_command_12_div">
+					<textarea id="p2_command_12" class="line">open -a TextEdit .rvmrc</textarea>
+				</div>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a file called “<b>.rvmrc</b>” <span id="didnt_work3">(<a onclick="$('#p2_command_11_div').hide(); $('#p2_command_12_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p2_command_13" class="line">rvm 1.9.3@project2_gemset</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Add the following: “<b>rvm ruby-version@your-gemset-name</b>” and save it</td>
+		</tr>
+	</table>
+</section>
 
-<div class="command_line">
-	<p class="top_of_command">Install rvm</p>
-	<textarea id="command_1" class="line">\curl -L https://get.rvm.io | bash -s stable</textarea>
-	<p class="top_of_command">Reopen your terminal or run the following command</p>
-	<textarea id="command_2" class="line">source ~/.rvm/scripts/rvm</textarea>
-	<p class="top_of_command">Install Ruby (can by any version you want) in the rvm context</p>
-	<textarea id="command_3" class="line">rvm install ree-1.8.7-2012.02</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DIDN’T WORK?</a>
-		<span style="display: none;">You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Rails</b> again.<br/>Note: Should you see a warning message, ignore it and hit 'q' to continue.</span>
-	</p>
-	<p class="top_of_command">Start using the newly installed Ruby version</p>
-	<textarea id="command_4" class="line">rvm use ree-1.8.7-2012.02</textarea>
-	<p class="top_of_command">Create a gemset “my-app-gemset”</p>
-	<textarea id="command_5" class="line">rvm gemset create my-app-gemset</textarea>
-	<p class="top_of_command">Switch to (or start using) that “my-app-gemset” context</p>
-	<textarea id="command_6" class="line">rvm gemset use my-app-gemset</textarea>
-	<p class="top_of_command">Instal the Rails 3.0.5 version (again, can be any version you want) in that “my-app-gemset” context</p>
-	<textarea id="command_7" class="line">gem install rails -v 3.0.5</textarea>
-	<p class="top_of_command">Create your new app</p>
-	<textarea id="command_8" class="line">rails new my-app</textarea>
-	<p class="top_of_command">Move to “my-app” folder</p>
-	<textarea id="command_9" class="line">cd my-app</textarea>
-	<p class="top_of_command">Create a file called “<b>.rvmrc</b>”</p>
-	<textarea id="command_10" class="line">mate .rvmrc</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">“<span class="other_example">open -a TextEdit .rvmrc</span>” if you don’t have TextMate.</span>
-	</p>
-	<p class="top_of_command">Paste the following: “<b>rvm ruby-version@your-gemset-name</b>”</p>
-	<textarea id="command_11" class="line">rvm ree@my-app-gemset</textarea>
-	<p class="bottom_of_command">&nbsp;</p>
-</div>
+<section>
+	<header>
+		<h2>3. Switching between both Environments</h2>
+	</header>
+	
+	<p><b>Notes:</b></p>
+	<ol>
+		<li>Now every time you ("<b>cd project1</b>") move to <b>project1</b>’s folder, <b>rvm</b> will read the “<b>.rvmrc</b>” file and will load the selected ruby version “<b>ree 1.8.7</b>” and the set of gems that where installed in the “<b>project1_gemset</b>” context.</li>
+		<li>If you’re having trouble with some missing gems, try running the “<b>bundle install</b>” command.</li>
+	</ol>
+</section>
 
-<div style="clear:both;"></div>
-
-<div class="article">
-	<p>Now every time you move to your app’s folder ("<b>cd my-app/</b>") <b>rvm</b> will read the “<b>.rvmrc</b>” file and will load the selected ruby version “<b>ree</b>” and the set of gems that where installed in the “<b>my-app-gemset</b>” context.</p>
-	<p><b>Note:</b> If you’re having trouble with some missing gems, try running the “<b>bundle install</b>” command.</p>
-</div>
+<script>
+	$(function() {
+		$('.didnt_work').popover({
+			placement: "left",
+			title: "Failed to compile Ruby?",
+			content: 'You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Ruby</b> again.'
+		});
+		
+		$('#p1_command_12_div').hide(); 
+		$('#p2_command_12_div').hide(); 
+	});
+</script>
 			</div>
 		</article>
 		
 		<footer>
 			<div class="container">
-				<div class="row">
-				  <div class="span12">
-						<p>Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
-						<p>&nbsp;</p>
-						<div class="row">
-							<div class="span3">
-								AWS Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								RoR Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
-									
-										<li><a class="page_link selected" href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								Nodejs Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								SSH Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
-									
-								</ul>
-							</div>
-						</div>
+				
+				<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
+				<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
+				<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
+				<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+				
+				<div id="footer_menu" class="row">
+					<div class="span3">
+						<h4>AWS Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>RoR Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link selected" href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Nodejs Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>SSH Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
+							
+						</ul>
 					</div>
 				</div>
+						
 			</div>
 		</footer>
 	</body>

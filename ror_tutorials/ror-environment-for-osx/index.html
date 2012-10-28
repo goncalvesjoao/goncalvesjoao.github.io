@@ -6,7 +6,7 @@
     
     <meta name="author" content="João Gonçalves">
     
-		<link rel="stylesheet" href="/public/stylesheets/custom_bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
@@ -42,149 +42,223 @@
 	</h1>
 	<aside>
 		
-			<small>Published on 23-11-2012</small>
-		
 	</aside>
 </header>
 
 <script src="/public/javascript/modes/shell.js"></script>
 
-<div class="article">
-	<h2>1. Basic Environment</h2>
+<section>
+	<header>
+		<h2>1. Introduction</h2>
+	</header>
 	<p>Suppose you want to develop in PhP. You’d have to have <b>A</b>pache, probably <b>M</b>ySQL, <b>P</b>hP and the mod_php for Apache, that combination is called an <b>AMP</b> and the most common AMP installer for OSX: <a href="http://www.mamp.info/en/index.html" target="_blank">MAMP</a> installs just that.</p>
-	<p>So, to develop in RoR you’ll need the same things. There is no MAMP equivalent for RoR, but fortunately OSX comes with <b>ruby</b> and <b>rubygems</b> already installed. Try “<b>ruby -v</b>” and “<b>gem -v</b>” on your terminal to verify.</p>
-	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b> and <b>Mongrel</b> a ruby web server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
-	<p>I guess you can picture rubygems like the <b>apt-get</b> or <b>Homebrew</b>, for ruby.</p>
-	<p>So basically you only need to install <b>Rails</b> and <b>GCC</b> in order to compile <b>Rails</b>, so in case you don't have <b>XCode</b> or a <b>GCC</b> compiler installed, I advise you to download "<b><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></b>".</p>
-	<p>Optionally, you might need a Database and for that I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
-</div>
+	<p>To develop in RoR you’ll need the same things although there is no <b>MAMP</b> equivalent for RoR, but fortunately OSX comes with <b>ruby</b> and <b>rubygems</b> already installed. Try “<b>ruby -v</b>” and “<b>gem -v</b>” on your terminal to verify.</p>
+	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b> and <b>WEBrick</b> a ruby web server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
+	<p>I guess you can picture <b>rubygems</b> like the <b>apt-get</b> or <b>Homebrew</b>, for ruby.</p>
+	<p>So, you already have <b>Ruby</b> &lt;-&gt; <b>PhP</b>, by installing Rails, you'll be installing <b>WEBrick</b> &lt;-&gt; <b>Apache + mod_php</b>, install <b>MySQL</b> and you've got yourself the equivalent of a <b>PhP AMP</b> and for that I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
+	<p><b>Note:</b> You'll need <b>GCC</b> in order to compile <b>Rails</b>, so in case you don't have <b>XCode</b> or a <b>GCC</b> compiler installed, I advise you to download "<b><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></b>".</p>
+</section>
 
-<div class="machine">
-	<div class="machine_icon">
-		<img src="/public/images/local.png" style="width:40px; height:40px;" alt="locale"/>
-	</div>
-	<div class="machinename">local machine</div>
-</div>
+<section>
+	<header>
+		<h2>2. Basic Environment</h2>
+	</header>
+	
+	<table>
+		<tr>
+			<td class="span7">
+				<textarea id="command_1" class="line">sudo gem install rails</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Install Rails on your system (<a id="didnt_work1" onclick="return false;" href="#">didn’t work?</a>)
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_2" class="line">ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Install HomeBrew
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_3" class="line">brew install mysql</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Install MySQL (follow <a href="#" onclick="$('.brew_instructions').fadeToggle('fast'); return false;">brew's instructions</a> at the end)
+			</td>
+		</tr>
+		
+		<tr class="brew_instructions">
+			<td class="span6">
+				<textarea id="command_4" class="line">unset TMPDIR</textarea>
+				<textarea id="command_5" class="line">mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span4 instructions">Initial setup</td>
+		</tr>
+		
+		<tr class="brew_instructions">
+			<td class="span6">
+				<textarea id="command_6" class="line">mkdir -p ~/Library/LaunchAgents</textarea>
+				<textarea id="command_7" class="line">cp /usr/local/Cellar/mysql/5.5.27/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/</textarea>
+				<textarea id="command_75" class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span4 instructions">Launch at startup</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_8" class="line">rails new my-app-name -d mysql</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Create a new RoR app
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_9" class="line">cd my-app-name</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_10" class="line">rake db:create</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Create your Database
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="command_11" class="line">rails s</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">
+				Start Up your Web App
+			</td>
+		</tr>
+	</table>
+	
+	<p>&nbsp;</p>
+	
+	<p><b>Notes:</b></p>
+	<ol>
+		<li>You don’t need to install <b>Homebrew</b> and <b>MySQL</b> in order to build a RoR app, having a database is an option and you can choose to use alternatives like <b>SQLite</b>, <b>PostGgeSQL</b> or <b>MongoDB</b>, etc;</li>
+		<li>In case you need to work on multiple RoR projects and each of them requires a different set of ruby version and gems, take a look on <a href="../multiple-ror-projects" target="_blank">How to set Multiple RoR Projects</a>.</li>
+	</ol>
+</section>
 
-<div class="machinetriangle"></div>
-
-<div class="command_line">
-	<p class="top_of_command">Install Rails on your system (it might take a while)</p>
-	<textarea id="command_1" class="line">sudo gem install rails</textarea>
-	<p class="bottom_of_command">
-		<a href="#" class="didnt_work">DIDN’T WORK?</a><span style="display: none;">You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Rails</b> again.</span>
-	</p>
-	<p class="top_of_command">Install HomeBrew</p>
-	<textarea id="command_2" class="line">ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"</textarea>
-	<p class="top_of_command">Install MySQL</p>
-	<textarea id="command_3" class="line">brew install mysql</textarea>
-	<div id="brew_instructions" class="subcommand_line">
-		<p class="top_of_command">Initial setup</p>
-		<input class="line" type="text" value="unset TMPDIR" />
-		<input class="line" type="text" value='mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp' />
-		<p class="top_of_command">Launch at startup</p>
-		<input class="line" type="text" value="mkdir -p ~/Library/LaunchAgents" />
-		<input class="line" type="text" value="cp /usr/local/Cellar/mysql/5.5.27/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/" />
-		<input class="line" type="text" value="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist" />
-	</div>
-	<p id="brew_instructions_enabler" class="bottom_of_command">
-		Don't forget to follow <a href="#" onclick="$('#brew_instructions_enabler').hide(); $('#brew_instructions').fadeIn('fast'); return false;">brew's instructions</a> at the end.
-	</p>
-	<p class="top_of_command">Create a new RoR app</p>
-	<textarea id="command_4" class="line">rails new my-app-name -d mysql</textarea>
-	<p class="top_of_command">Move to your app’s folder</p>
-	<textarea id="command_5" class="line">cd my-app-name</textarea>
-	<p class="top_of_command">Create your Database</p>
-	<textarea id="command_6" class="line">rake db:create</textarea>
-	<p class="top_of_command">Start Up your Web App</p>
-	<textarea id="command_7" class="line">rails s</textarea>
-	<p class="bottom_of_command">&nbsp;</p>
-</div>
-<div style="clear:both;"></div>
-<p><b>Notes:</b></p>
-<ol>
-	<li>You don’t need to install <b>Homebrew</b> and <b>MySQL</b> in order to build a RoR app, having a database is an option and you can choose to use alternatives like <b>SQLite</b>, <b>PostGgeSQL</b> or <b>MongoDB</b>, etc;</li>
-	<li>In case you need to work on multiple RoR projects and each of them requires a different set of ruby version and gems, I recommend you to read: <a href="../multiple-ror-projects" target="_blank">Multiple RoR Projects</a>.</li>
-</ol>
-
-<div class="article">
-	<div class="divider"></div>
-	<h2>3. Resume</h2>
-	<p>I guess all this new stuff can be a bit overwhelming at first, so I’ll resume it down to a 5 story steps so you can connect all the dots:</p>
-	<ol class="resume"><li>With <b>ruby</b> installed, your system will be able to interpret ruby language;</li>
+<section>
+	<header>
+		<h2>2. Resume</h2>
+	</header>
+	<p>I guess all this new stuff can be a bit overwhelming at first, so I’ll resume it down to a 6 story steps so you can connect all the dots:</p>
+	<ol class="resume">
+		<li>With <b>ruby</b> installed, your system will be able to interpret ruby language;</li>
 		<li>With <b>rubygems</b>, you’ll be able to install gems like <b>Rails</b>;</li>
-		<li>By installing <b>Rails</b>, <b>rubygems</b> will install other gems that Rails depends on and one of them is <b>Bundler</b>.<br>By now you can create new RoR app by running the command “<b>rails new my-app-name -d MySQL</b>”;</li>
-		<li>With <b>Bundler</b>, you’ll be able to easily install/uninstall all the gems that you add/remove to a file inside your app’s folder called “<b>Gemfile</b>”, and one off these gems will be a Ruby Web Server (for instance <b>Mongrel</b>).<br>
-		By running the command “<b>bundle</b>” on your app folder, <b>Bundler</b> will use <b>rubygems</b> to install <b>Mongrel</b> (if you choose to use it) and newly listed gems.<br><b>Note:</b> You’ll need to have <b>MySQL</b> installed first in order for bundle to work since it will install the <b>MySQL Gem</b> (because it is listed on your “<b>Gemfile</b>” due to the “rails new my-app-name <b>-d MySQL</b>” option);</li>
-		<li>Now if you run the command “<b>rails s</b>” on your app’s folder, <b>Rails</b> will launch <b>Mongrel</b> (or any other Ruby Web Server) and you’ll be able “see” your app in the browser (http://localhost:3000), this is the equivalent off starting the <b>MAMP</b> app when you want to “see” your <b>PhP</b> app (http://localhost:8888);</li>
-	</ol></div>
+		<li>By installing <b>Rails</b>, <b>rubygems</b> will install other gems that <b>Rails</b> depends on and some of them are <b>Bundler</b> and <b>WEBrick</b>.
+<br/>
+By now you can create new RoR app by running the command “<b>rails new my-app-name -d MySQL</b>”;</li>
+		<li>With <b>Bundler</b>, you’ll be able to easily install/uninstall all the gems that you add/remove to a file inside your app’s folder called “<b>Gemfile</b>”, by running the command “<b>bundle</b>” on your app folder;</li>
+		<li>By running the command “bundle” on your app folder, Bundler will use rubygems to install Mongrel (if you choose to use it) and newly listed gems.
+			<br/>
+		Note: You’ll need to have MySQL installed first in order for bundle to work since it will install the MySQL Gem (because it is listed on your “Gemfile” due to the “rails new my-app-name -d MySQL” option);</li>
+		<li>Now if you run the command “<b>rails s</b>” on your app’s folder, <b>Rails</b> will launch <b>WEBrick</b> (its a Ruby Web Server, the equivalent of <b>Apache + mod_php</b>) and you’ll be able “see” your app in the browser: <b>http://localhost:3000</b>, this is the equivalent off starting the <b>MAMP</b> app when you want to “see” your <b>PhP</b> app: <b>http://localhost:8888</b>;</li>
+	</ol>
+</section>
+
+<script>
+	$(function() {
+		$('#didnt_work1').popover({
+			placement: "left",
+			title: "Failed to compile Rails?",
+			content: 'You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Rails</b> again.'
+		});
+		
+		$('.brew_instructions').hide();
+	});
+</script>
 			</div>
 		</article>
 		
 		<footer>
 			<div class="container">
-				<div class="row">
-				  <div class="span12">
-						<p>Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
-						<p>&nbsp;</p>
-						<div class="row">
-							<div class="span3">
-								AWS Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
-									
-										<li><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								RoR Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
-									
-										<li><a class="page_link selected" href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
-									
-										<li><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								Nodejs Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
-									
-										<li><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
-									
-								</ul>
-							</div>
-							<div class="span3">
-								SSH Tutorials:
-								<ul>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
-									
-										<li><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
-									
-								</ul>
-							</div>
-						</div>
+				
+				<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
+				<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
+				<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
+				<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+				
+				<div id="footer_menu" class="row">
+					<div class="span3">
+						<h4>AWS Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-instance/">AWS EC2 Instance</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-ror-environment/">AWS EC2 RoR Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-nodejs-environment/">AWS EC2 Nodejs Environment</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/aws_tutorials/aws-ec2-private-git-server/">AWS EC2 Private GIT Server</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>RoR Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/what-is-ruby-on-rails/">What Is Ruby on Rails</a></li>
+							
+								<li><span>» </span><a class="page_link selected" href="/ror_tutorials/ror-environment-for-osx/">RoR Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/multiple-ror-projects/">Multiple RoR Projects</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/after-the-hello-world/">After the Hello World</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ror_tutorials/ror-app-deployment/">RoR App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>Nodejs Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/what-is-nodejs/">What Is Nodejs</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-environment-for-osx/">Nodejs Environment For OSX</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/nodejs_tutorials/nodejs-app-deployment/">Nodejs App Deployment</a></li>
+							
+						</ul>
+					</div>
+					<div class="span3">
+						<h4>SSH Tutorials</h4>
+						<ul>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
+							
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
+							
+						</ul>
 					</div>
 				</div>
+						
 			</div>
 		</footer>
 	</body>
