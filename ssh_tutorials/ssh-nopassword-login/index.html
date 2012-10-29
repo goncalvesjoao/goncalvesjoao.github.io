@@ -49,10 +49,10 @@
 
 <section>
 	<header>
-		<h2><img src="/public/images/local.png" style="float: left; width:40px; height:40px;" alt="locale"/>  Local Machine</h2>
+		<h2><img src="/public/images/local.png" class="local_icon" alt="locale"/>Local Machine</h2>
 	</header>
 	
-	<table>
+	<table style="margin-top:20px;">
 		<tr>
 			<td class="span6">
 				<textarea id="local_command_1" class="line">mkdir ~/.ssh; cd ~/.ssh</textarea>
@@ -63,19 +63,19 @@
 		</tr>
 		
 		<tr>
-			<td class="span6">
-				<textarea id="command_2" class="line">ssh-keygen -t rsa</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">
-				Generate your default private/public key pair files (don’t enter a pass, just leave it blank).<br/>
-				If both “<b>id_rsa</b>” and “<b>id_rsa.pub</b>” files, already exist, you might want to backup them up.
-			</td>
+			<td class="text-warning" style="text-align: center; padding-top: 5px; padding-bottom: 10px;">--- backup the “<b class="text-warning">id_rsa</b>” and “<b class="text-warning">id_rsa.pub</b>” files, if they exist ---</td><td></td>
 		</tr>
 		
 		<tr>
 			<td class="span6">
-				
+				<textarea id="command_2" class="line">ssh-keygen -t rsa</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span6 instructions">Generate your default private/public key pair files (<b>don’t enter a pass, just leave it blank</b>)</td>
+		</tr>
+		
+		<tr>
+			<td class="span6">
 				<div id="local_command_3_div">
 					<textarea id="local_command_3" class="line">mate id_rsa.pub</textarea>
 				</div>
@@ -85,7 +85,7 @@
 			</td>
 			<td style="width:20px;">&nbsp;</td>
 			<td class="span6 instructions">
-				Keep the following file, opened, for later use. <span id="didnt_work3">(<a onclick="$('#local_command_3_div').hide(); $('#local_command_4_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span>
+				Keep the following file, opened, for later use <span id="didnt_work3">(<a onclick="$('#local_command_3_div').hide(); $('#local_command_4_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span>
 			</td>
 		</tr>
 	</table>		
@@ -93,7 +93,7 @@
 
 <section>
 	<header>
-		<h2><img src="/public/images/remote.png" style="float:left; width:40px; height:40px;" alt="locale"/>  Server Side</h2>
+		<h2><img src="/public/images/remote.png" class="remote_icon" alt="locale"/>Server Side</h2>
 	</header>
 	
 	<table>
@@ -115,7 +115,7 @@
 				<textarea id="remote_command_5" class="line">vi authorized_keys</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">Create or edit the following file and <b>ADD</b> (not overwrite) the contents of your local file “<b>id_rsa.pub</b>”</td>
+			<td class="span6 instructions">Create or edit the following file and <b>ADD</b> (not overwrite) the contents of your local file “<b>id_rsa.pub</b>” (<a id="didnt_work1" onclick="return false;" href="#">unfamiliar with <b>vi</b>?</a>)</td>
 		</tr>
 		
 		<tr>
@@ -123,7 +123,7 @@
 				<textarea id="remote_command_6" class="line">chmod 644 authorized_keys</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">Add the correct file permission (<a id="didnt_work1" onclick="return false;" href="#">unfamiliar with <b>vi</b>?</a>)</td>
+			<td class="span6 instructions">Add the correct file permission</td>
 		</tr>
 		
 		<tr>
