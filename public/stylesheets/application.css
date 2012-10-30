@@ -63,7 +63,8 @@ body > footer {
 	font-size: 1.2em;
 }
 
-#footer_menu ul a.selected {
+#footer_menu ul a.selected,
+ul.my_links a.selected {
 	color: #989898;
 }
 
@@ -90,6 +91,48 @@ body > footer {
 	-webkit-box-shadow: 0 0 3px #151515;
 	box-shadow: 0 0 3px #151515;
 	margin: 0 20px 0 0;
+}
+
+ul.my_links {
+	border-left: 1px dashed #c5c5c5;
+	padding-left: 20px;
+	font-size: 14px;
+	margin-left: 5px;
+	
+	list-style: none;
+}
+
+ul.my_links li {
+	line-height: 18px;
+}
+
+ul.gem_list {
+	color: #bbbbbb;
+	list-style: none;
+	margin-left: 15px;
+}
+
+ul.gem_list li {
+	width: 100%;
+	border-bottom: 1px dashed #343434;
+	margin-bottom: 15px;
+}
+
+ul.gem_list span.cast {
+	color: #c09853;
+}
+
+ul.gem_list li a.railscasts {
+	color: #bbbbbb;
+	float: right;
+}
+
+ul.gem_list li a:hover {
+	border-bottom-style: none;
+}
+
+ul.gem_list li a.railscasts:hover {
+	color: #919191;
 }
 
 .local_icon,

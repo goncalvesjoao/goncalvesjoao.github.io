@@ -47,21 +47,10 @@
 
 <script src="/public/javascript/modes/shell.js"></script>
 
-<section>
-	<header>
-		<h2>1. Introduction</h2>
-	</header>
-	<p>Suppose you want to develop in PhP. You’d have to have <b>A</b>pache, probably <b>M</b>ySQL, <b>P</b>hP and the mod_php for Apache, that combination is called an <b>AMP</b> and the most common AMP installer for OSX: <a href="http://www.mamp.info/en/index.html" target="_blank">MAMP</a> installs just that.</p>
-	<p>To develop in RoR you’ll need the same things although there is no <b>MAMP</b> equivalent for RoR, but fortunately OSX comes with <b>ruby</b> and <b>rubygems</b> already installed. Try “<b>ruby -v</b>” and “<b>gem -v</b>” on your terminal to verify.</p>
-	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b> and <b>WEBrick</b> a ruby web server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
-	<p>I guess you can picture <b>rubygems</b> like the <b>apt-get</b> or <b>Homebrew</b>, for ruby.</p>
-	<p>So, you already have <b>Ruby</b> &lt;-&gt; <b>PhP</b>, by installing Rails, you'll be installing <b>WEBrick</b> &lt;-&gt; <b>Apache + mod_php</b>, install <b>MySQL</b> and you've got yourself the equivalent of a <b>PhP AMP</b> and for that I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
-	<p><b>Note:</b> You'll need <b>GCC</b> in order to compile <b>Rails</b>, so in case you don't have <b>XCode</b> or a <b>GCC</b> compiler installed, I advise you to download "<b><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></b>".</p>
-</section>
 
 <section>
 	<header>
-		<h2>2. Basic Environment</h2>
+		<h2>1. Basic Environment</h2>
 	</header>
 	
 	<table>
@@ -165,20 +154,30 @@
 
 <section>
 	<header>
-		<h2>3. Resume</h2>
+		<h2>2. Explanation</h2>
 	</header>
-	<p>I guess all this new stuff can be a bit overwhelming at first, so I’ll resume it down to a 6 story steps so you can connect all the dots:</p>
-	<ol class="resume">
+	<p>To develop in <b>PhP</b> you most certainly would be using an <b>AMP</b> (<b>A</b>pache, <b>M</b>ySQL, <b>P</b>hP and the mod_php for Apache) like <a href="http://www.mamp.info/en/index.html" target="_blank">MAMP</a>. Sadly there is no <b>MAMP</b> equivalent for RoR, but fortunately OSX comes with <b>ruby</b> and <b>rubygems</b> already installed. Try “<b>ruby -v</b>” and “<b>gem -v</b>” on your terminal to verify.</p>
+	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b> and <b>WEBrick</b> a ruby web server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
+	<p>I guess you can picture <b>rubygems</b> like the <b>apt-get</b> or <b>Homebrew</b>, for ruby.</p>
+	<p>So, you already have <b>Ruby</b> &lt;-&gt; <b>PhP</b>, by installing Rails, you'll be installing <b>WEBrick</b> &lt;-&gt; <b>Apache + mod_php</b>, install <b>MySQL</b> and you've got yourself the equivalent of a <b>PhP AMP</b>.</p>
+	<p>To install <b>MySQL</b> I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
+	<p><b>Note:</b> You'll need <b>GCC</b> in order to compile <b>Rails</b>, so in case you don't have <b>XCode</b> or a <b>GCC</b> compiler installed, I advise you to download "<b><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></b>".</p>
+</section>
+
+<section>
+	<header>
+		<h2>3. Connecting the dots</h2>
+	</header>
+	<ol>
 		<li>With <b>ruby</b> installed, your system will be able to interpret ruby language;</li>
 		<li>With <b>rubygems</b>, you’ll be able to install gems like <b>Rails</b>;</li>
-		<li>By installing <b>Rails</b>, <b>rubygems</b> will install other gems that <b>Rails</b> depends on and some of them are <b>Bundler</b> and <b>WEBrick</b>.
+		<li>By installing <b>Rails</b> (sudo gem install rails), <b>rubygems</b> will install other gems that <b>Rails</b> depends on and some of them are <b>Bundler</b>, <b>Rake</b> and <b>WEBrick</b>.
 <br/>
-By now you can create new RoR app by running the command “<b>rails new my-app-name -d MySQL</b>”;</li>
+By now you can create a new <b>RoR App</b> by running the command “<b>rails new my-app-name -d mysql</b>”;</li>
 		<li>With <b>Bundler</b>, you’ll be able to easily install/uninstall all the gems that you add/remove to a file inside your app’s folder called “<b>Gemfile</b>”, by running the command “<b>bundle</b>” on your app folder;</li>
-		<li>By running the command “bundle” on your app folder, Bundler will use rubygems to install Mongrel (if you choose to use it) and newly listed gems.
-			<br/>
-		Note: You’ll need to have MySQL installed first in order for bundle to work since it will install the MySQL Gem (because it is listed on your “Gemfile” due to the “rails new my-app-name -d MySQL” option);</li>
-		<li>Now if you run the command “<b>rails s</b>” on your app’s folder, <b>Rails</b> will launch <b>WEBrick</b> (its a Ruby Web Server, the equivalent of <b>Apache + mod_php</b>) and you’ll be able “see” your app in the browser: <b>http://localhost:3000</b>, this is the equivalent off starting the <b>MAMP</b> app when you want to “see” your <b>PhP</b> app: <b>http://localhost:8888</b>;</li>
+		<li>When <b>Rails</b> finishes creating a new app, it will run the command “<b>bundle</b>” that will try to install any gems listed on the "<b>Gemfile</b>" and due to the "<b>-d mysql</b>" option <b>MySQL Gem</b> will be one of them.<br/><b>Note:</b> You’ll need to have <b>MySQL</b> installed first in order for the <b>MySQL Gem</b> to work;</li>
+		<li>Running the command "<b>rake db:create</b>", you will be instructing a Gem called <b>Rake</b> to connect to your <b>MySQL Server</b> and create a clean database, according to what it is configured on your "<b>config/database.yml</b>" YAML file;</li>
+		<li>Now if you run the command “<b>rails s</b>” on your app’s folder, <b>Rails</b> will launch <b>WEBrick</b> (its a Ruby Web Server, the equivalent of <b>Apache + mod_php</b>) and you’ll be able “see” your app in the browser: <b>http://localhost:3000</b>, this is the equivalent off starting the <b>MAMP</b> app when you want to “see” your <b>PhP</b> app: <b>http://localhost:8888</b>.</li>
 	</ol>
 </section>
 
@@ -199,10 +198,24 @@ By now you can create new RoR app by running the command “<b>rails new my-app-
 		<footer>
 			<div class="container">
 				
-				<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
-				<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-				<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-				<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+				<div class="row">
+					<div class="span10">
+						<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
+						<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
+						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
+						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+					</div>
+					<div class="span2">
+						<ul class="my_links">
+							<li><a href="/projects" class="">Projects</a></li>
+							<li><a href="/portfolio" class="">Portfolio</a></li>
+							<li>&nbsp;</li>
+							<li><a href="" target="_blank">GitHub</a></li>
+							<li><a href="" target="_blank">Linked In</a></li>
+							<li><a href="/contact_me" class="">Contact Me</a></li>
+						</ul>
+					</div>
+				</div>
 				
 				<div id="footer_menu" class="row">
 					<div class="span3">

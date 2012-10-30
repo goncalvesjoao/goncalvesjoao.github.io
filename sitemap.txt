@@ -7,6 +7,7 @@ http://goncalvesjoao.github.com/aws_tutorials/aws-ec2-nodejs-environment/index.h
 http://goncalvesjoao.github.com/aws_tutorials/aws-ec2-private-git-server/index.html
 http://goncalvesjoao.github.com/aws_tutorials/aws-ec2-ror-environment/index.html
 http://goncalvesjoao.github.com/categories.html
+http://goncalvesjoao.github.com/contact_me/index.html
 http://goncalvesjoao.github.com/index.html
 http://goncalvesjoao.github.com/nodejs_tutorials/nodejs-app-deployment/index.html
 http://goncalvesjoao.github.com/nodejs_tutorials/nodejs-environment-for-osx/index.html
@@ -14,6 +15,7 @@ http://goncalvesjoao.github.com/nodejs_tutorials/what-is-nodejs/index.html
 http://goncalvesjoao.github.com/old_index.html
 http://goncalvesjoao.github.com/pages.html
 http://goncalvesjoao.github.com/portfolio/index.html
+http://goncalvesjoao.github.com/projects/index.html
 http://goncalvesjoao.github.com/projects/my-little-pecker/index.html
 http://goncalvesjoao.github.com/ror_tutorials/after-the-hello-world/index.html
 http://goncalvesjoao.github.com/ror_tutorials/multiple-ror-projects/index.html

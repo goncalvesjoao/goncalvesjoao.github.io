@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>João's Site - SSH Multiple Private Keys</title>
+    <title>João's Site - Contact Me</title>
     
     <meta name="author" content="João Gonçalves">
     
@@ -17,8 +17,8 @@
 		<script src="/public/javascript/application.js"></script>
 		
 		<!-- BEGIN FACEBOOK OPENGRAPH TAGS -->
-		<meta property="og:title" content="SSH Multiple Private Keys">
-		<meta property="og:url" content="http://goncalvesjoao.github.com/ssh_tutorials/ssh-multiple-private-keys/">
+		<meta property="og:title" content="Contact Me">
+		<meta property="og:url" content="http://goncalvesjoao.github.com/contact_me/">
 		
 		<!-- END FACEBOOK OPENGRAPH TAGS -->
 	</head>
@@ -34,9 +34,9 @@
 			<div class="container">
 				<header>
 	<h1>
-		<a href="/ssh_tutorials/ssh-multiple-private-keys/">
+		<a href="/contact_me/">
 			
-				Setup different SSH connections, each, with a dedicated private key
+				Contact Me
 			
 		</a>
 	</h1>
@@ -45,70 +45,7 @@
 	</aside>
 </header>
 
-<script src="/public/javascript/modes/shell.js"></script>
-
-<section>
-	<p>You have other private keys besides your default “<b>id_rsa</b>” and want an alternative to the long and boring command<br/>“<b>ssh -i path_to_your_private_key_file user_name@your_domain.com</b>”?</p>
-	<p>&nbsp;</p>
-	
-	<header>
-		<h2><img src="/public/images/local.png" class="local_icon" alt="locale"/>Local Machine</h2>
-	</header>
-	
-	<table style="margin-top:20px;">
-		<tr>
-			<td class="span6">
-				<textarea id="local_command_1" class="line">mkdir ~/.ssh; cd ~/.ssh</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">
-			</td>
-		</tr>
-
-		<tr>
-			<td class="span6">
-				<div id="local_command_3_div">
-					<textarea id="local_command_3" class="line">mate config</textarea>
-				</div>
-				<div id="local_command_4_div">
-					<textarea id="local_command_4" class="line">open -a TextEdit config</textarea>
-				</div>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">Create or Edit the following file <span id="didnt_work3">(<a onclick="$('#local_command_3_div').hide(); $('#local_command_4_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span></td>
-		</tr>
-		
-		<tr>
-			<td class="span6">
-				<textarea id="local_command_5" class="line">Host name_of_your_project
-HostName your_domain_dot_com
-User remote_server_username
-IdentityFile path_to_your_private_key_file</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">Add the following example to “<b>config</b>” and make the necessary changes</td>
-		</tr>
-		
-		<tr>
-			<td class="span6">
-				<textarea id="local_command_6" class="line">ssh name_of_your_project</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span6 instructions">Test if everything is working</td>
-		</tr>
-	</table>
-
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-	<p class="text-warning" style="text-align: center;">--- your remote machine doesn’t recognize your key? ---</p>
-	<p>You’ll need to add the correspondent public key onto “<b>~/.ssh/authorized_keys</b>” of your remote server, see <a href="../ssh-nopassword-login" target="_blank">SSH no password login</a> for an example.</p>
-</table>
-
-<script>
-	$(function() {
-		$('#local_command_4_div').hide(); 
-	});
-</script>
+<p>work in progress...</p>
 			</div>
 		</article>
 		
@@ -129,7 +66,7 @@ IdentityFile path_to_your_private_key_file</textarea>
 							<li>&nbsp;</li>
 							<li><a href="" target="_blank">GitHub</a></li>
 							<li><a href="" target="_blank">Linked In</a></li>
-							<li><a href="/contact_me" class="">Contact Me</a></li>
+							<li><a href="/contact_me" class="selected">Contact Me</a></li>
 						</ul>
 					</div>
 				</div>
@@ -183,7 +120,7 @@ IdentityFile path_to_your_private_key_file</textarea>
 							
 								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-nopassword-login/">SSH No Password Login</a></li>
 							
-								<li><span>» </span><a class="page_link selected" href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
+								<li><span>» </span><a class="page_link " href="/ssh_tutorials/ssh-multiple-private-keys/">SSH Multiple Private Keys</a></li>
 							
 						</ul>
 					</div>
