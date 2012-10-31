@@ -28,10 +28,13 @@ $.fn.equalWidths = function(px) {
 };
 
 $(function() {
+	$('article section:first').css('margin-top', '30px');
+	
 	$("textarea.line").each(function(){
 		var this_id = $(this).attr('id');
 		if (this_id != '' && this_id != undefined) {
 			CodeMirror.fromTextArea(document.getElementById(this_id), {
+				lineWrapping: true,
 		    tabMode: "indent",
 		    matchBrackets: true,
 		    indentUnit: 2,

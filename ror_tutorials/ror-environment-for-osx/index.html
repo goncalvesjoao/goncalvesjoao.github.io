@@ -85,7 +85,7 @@
 		</tr>
 		
 		<tr class="brew_instructions">
-			<td class="span6">
+			<td class="span6" style="padding-left: 20px;padding-top:10px;">
 				<textarea id="command_4" class="line">unset TMPDIR</textarea>
 				<textarea id="command_5" class="line">mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp</textarea>
 			</td>
@@ -94,7 +94,7 @@
 		</tr>
 		
 		<tr class="brew_instructions">
-			<td class="span6">
+			<td class="span6" style="padding-left: 20px;padding-top:10px;padding-bottom:10px;">
 				<textarea id="command_6" class="line">mkdir -p ~/Library/LaunchAgents</textarea>
 				<textarea id="command_7" class="line">cp /usr/local/Cellar/mysql/5.5.27/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/</textarea>
 				<textarea id="command_75" class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</textarea>
@@ -191,7 +191,6 @@ By now you can create a new <b>RoR App</b> by running the command “<b>rails ne
 			title: "Failed to compile Rails?",
 			content: 'You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Rails</b> again.'
 		});
-		
 		$('.brew_instructions').hide();
 	});
 </script>
