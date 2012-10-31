@@ -49,18 +49,7 @@
 
 <section>
 	<header>
-		<h2>1. Explanation</h2>
-	</header>
-		<p>Say you have two projects: <b>project1</b> that requires <b>ruby v1.8.7</b> and <b>rails v3.0.5</b> and <b>project2</b> that requires <b>ruby v1.9.3</b> and <b>rails v3.2.8</b>.</p>
-	<p>Without a <b>R</b>uby <b>V</b>ersion <b>M</b>anager like <b>rvm</b>, in case you're working on <b>project1</b> and decide to work on <b>project2</b>, you'd have to replace you system's ruby (v1.8.7 to v1.9.3) and gems (rails v3.0.5 to v3.2.8) that <b>project2</b> needs, making it a pain in the ass if you want to start working on <b>project1</b> again.</p>
-	<p>With <b>rvm</b> you can install different ruby versions on your machine: "<b>rvm install 1.8.7</b>", "<b>rvm install 1.9.3</b>" and switch between them "<b>rvm use 1.8.7</b>", "<b>rvm use 1.9.3</b>", without being stuck to your system's ruby version.</p>
-	<p>The same goes for gems. By creating the gemsets "<b>rvm gemset create project1_gemset</b>" and "<b>rvm gemset create project2_gemset</b>" you can install the gems that each project needs on the correspondent gemset and easily switch between them "<b>rvm gemset use project1_gemset</b>" and "<b>rvm gemset use project2_gemset</b>".</p>
-	<p>Even cooler is the option to create a "<b>.rvmrc</b>" file inside your app's root folder, that will instruct <b>rvm</b> to load a certain Ruby version and Gems installed on a specific gemset, when you "<b>cd project1/</b>".</p>
-</section>
-
-<section>
-	<header>
-		<h2>2. Steps for Project1: Ruby 1.8.7 + Rails 3.0.5</h2>
+		<h2>1. Creating an app using: Ruby 1.9.3 + Rails 3.2.8</h2>
 	</header>
 	
 	<table>
@@ -82,7 +71,7 @@
 		
 		<tr>
 			<td class="span7">
-				<textarea id="p1_command_3" class="line">rvm install ree-1.8.7-2012.02</textarea>
+				<textarea id="p1_command_3" class="line">rvm install 1.9.3</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
 			<td class="span5 instructions">Install the <b>Ruby version</b> you need in the <b>rvm</b> context (<a class="didnt_work" onclick="return false;" href="#">didn’t work?</a>)</td>
@@ -90,7 +79,7 @@
 		
 		<tr>
 			<td class="span7">
-				<textarea id="p1_command_4" class="line">rvm use ree-1.8.7-2012.02</textarea>
+				<textarea id="p1_command_4" class="line">rvm use 1.9.3</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
 			<td class="span5 instructions">Start using the newly installed <b>Ruby version</b></td>
@@ -114,7 +103,7 @@
 		
 		<tr>
 			<td class="span7">
-				<textarea id="p1_command_7" class="line">gem install rails -v 3.0.5</textarea>
+				<textarea id="p1_command_7" class="line">gem install rails -v 3.2.8</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
 			<td class="span5 instructions">Instal the <b>Rails version</b> you need in that “<b>your-gemset-name</b>” context</td>
@@ -159,125 +148,116 @@
 		
 		<tr>
 			<td class="span7">
-				<textarea id="p1_command_13" class="line">rvm ree@project1_gemset</textarea>
+				<textarea id="p1_command_13" class="line">rvm 1.9.3@project1_gemset</textarea>
 			</td>
 			<td style="width:20px;">&nbsp;</td>
 			<td class="span5 instructions">Add the following: “<b>rvm ruby-version@your-gemset-name</b>” and save it</td>
 		</tr>
 	</table>
-</section>
-
-<section>
-	<header>
-		<h2>3. Steps for Project2: Ruby 1.9.3 + Rails 3.2.8</h2>
-	</header>
-	
-	<table>
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_3" class="line">rvm install 1.9.3</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Install the <b>Ruby version</b> you need in the <b>rvm</b> context (<a class="didnt_work" onclick="return false;" href="#">didn’t work?</a>)</td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_4" class="line">rvm use 1.9.3</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Start using the newly installed <b>Ruby version</b></td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_5" class="line">rvm gemset create project2_gemset</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Create a gemset “<b>your-gemset-name</b>”</td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_6" class="line">rvm gemset use project2_gemset</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Start using that “<b>your-gemset-name</b>” gemset</td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_7" class="line">gem install rails -v 3.2.8</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Instal the <b>Rails version</b> you need in that “<b>your-gemset-name</b>” context</td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_0" class="line">cd ~/Projects</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions"></td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_9" class="line">rails new project2</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Create a new <b>RoR</b> app</td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_10" class="line">cd project2</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions"></td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<div id="p2_command_11_div">
-					<textarea id="p2_command_11" class="line">mate .rvmrc</textarea>
-				</div>
-				<div id="p2_command_12_div">
-					<textarea id="p2_command_12" class="line">open -a TextEdit .rvmrc</textarea>
-				</div>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Create a file called “<b>.rvmrc</b>” <span id="didnt_work3">(<a onclick="$('#p2_command_11_div').hide(); $('#p2_command_12_div').fadeIn('slow'); $('#didnt_work3').fadeOut('slow'); return false;" href="#">don't have TextMate?</a>)</span></td>
-		</tr>
-		
-		<tr>
-			<td class="span7">
-				<textarea id="p2_command_13" class="line">rvm 1.9.3@project2_gemset</textarea>
-			</td>
-			<td style="width:20px;">&nbsp;</td>
-			<td class="span5 instructions">Add the following: “<b>rvm ruby-version@your-gemset-name</b>” and save it</td>
-		</tr>
-	</table>
-</section>
-
-<section>
-	<header>
-		<h2>4. Switching between both Projects/Environments</h2>
-	</header>
-	
+	<p>&nbsp;</p>
 	<p><b>Notes:</b></p>
 	<ol>
-		<li>Now every time you ("<b>cd project1</b>") move to <b>project1</b>’s folder, <b>rvm</b> will read the “<b>.rvmrc</b>” file and will load the selected ruby version “<b>ree 1.8.7</b>” and the set of gems that where installed in the “<b>project1_gemset</b>” context.</li>
+		<li>Now every time you move to <b>project1</b>’s folder ("<b>cd project1</b>"), <b>rvm</b> will read the “<b>.rvmrc</b>” file and will load the selected ruby version “<b>1.9.3</b>” and the set of gems that where installed in the “<b>project1_gemset</b>” context.</li>
 		<li>If you’re having trouble with some missing gems, try running the “<b>bundle install</b>” command.</li>
 	</ol>
 </section>
 
 <section>
 	<header>
-		<h2>5. Working on an unknown project</h2>
+		<h2>2. Explanation</h2>
+	</header>
+		<p>Say you have two projects: <b>project1</b> that requires <b>ruby v1.9.3</b> and <b>rails v3.2.8</b> and <b>project2</b> that requires <b>ruby v1.8.7</b> and <b>rails v3.0.5</b>.</p>
+	<p>Without a <b>R</b>uby <b>V</b>ersion <b>M</b>anager like <b>rvm</b>, in case you're working on <b>project1</b> and decide to work on <b>project2</b>, you'd have to replace your system's <b>Ruby</b> (v1.9.3 to v1.8.7) and <b>Gems</b> (rails v3.2.8 to v3.0.5) that <b>project2</b> needs, making it a pain in the ass if you want to start working on <b>project1</b> again.</p>
+	<p>With <b>rvm</b> you can install different ruby versions on your machine: "<b>rvm install 1.9.3</b>", "<b>rvm install 1.8.7</b>" and switch between them "<b>rvm use 1.9.3</b>", "<b>rvm use 1.8.7</b>", without being stuck to your system's ruby version.</p>
+	<p>The same goes for gems. By creating the gemsets "<b>rvm gemset create project1_gemset</b>" and "<b>rvm gemset create project2_gemset</b>" you can install the gems that each project needs on the correspondent gemset and easily switch between them "<b>rvm gemset use project1_gemset</b>" and "<b>rvm gemset use project2_gemset</b>".</p>
+	<p>Even cooler is the option to create a "<b>.rvmrc</b>" file inside your app's root folder, that will instruct <b>rvm</b> to load a certain Ruby version and Gems installed on a specific gemset, when you "<b>cd project1/</b>".</p>
+</section>
+
+<section>
+	<header>
+		<h2>3. Working on an unknown project</h2>
 	</header>
 	
-	<p>work on progress...</p>
+	<p>You wanna clone and work on an unknown <b>RoR</b> project, like: <a href="git://github.com/railscasts/106-time-zones-revised.git" target="_blank">git://github.com/railscasts/106-time-zones-revised.git</a>.<br/>The only thing you know is that it requires <b>Ruby 1.9.2</b> or higher.</p>
+	
+	<p>&nbsp;</p>
+	<table>
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_1" class="line">cd ~; mkdir Projects; cd Projects;</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_2" class="line">git clone git://github.com/railscasts/106-time-zones-revised.git</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Clone the project</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_3" class="line">cd 106-time-zones-revised/youhaiku-after</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions"></td>
+		</tr>
+
+		<tr id="p3_command_4_tr">
+			<td class="span7">
+				<textarea id="p3_command_4" class="line">rvm install 1.9.3</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Install the correct <b>Ruby version</b></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_5" class="line">rvm use 1.9.3</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Load the correct <b>Ruby version</b><span id="p3_command_5_span"> (<a href="#" onclick="$('#p3_command_4_tr').fadeIn('fast'); $('#p3_command_5_span').fadeOut('fast'); return false;">install it</a> first, if you haven't already)</span></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_6" class="line">rvm gemset create youhaiku-after</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create a <b>gemset</b> for this project</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_7" class="line">bundle</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Install all the necessary <b>Gems</b> on the project's <b>gemset</b></td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_8" class="line">rake db:setup</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Create and initiate the project's database</td>
+		</tr>
+		
+		<tr>
+			<td class="span7">
+				<textarea id="p3_command_9" class="line">rails s</textarea>
+			</td>
+			<td style="width:20px;">&nbsp;</td>
+			<td class="span5 instructions">Start up the app</td>
+		</tr>
+		
+	</table>
+	
+	<p>&nbsp;</p>
+	<p><b>Note:</b> I advise you to create a "<b>.rvmrc</b>" file with "<b>rvm 1.9.3@youhaiku-after</b>" in it, so you don't have to constantly remember and manually load the <b>Ruby</b> and <b>Gemset</b> for this particular project.</p>
 </section>
 
 <script>
@@ -288,8 +268,9 @@
 			content: 'You need to have <b>GCC</b> installed, get “<span class="other_example"><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></span>”, install it and try installing <b>Ruby</b> again.'
 		});
 		
-		$('#p1_command_12_div').hide(); 
-		$('#p2_command_12_div').hide(); 
+		$('#p1_command_12_div').hide();
+		$('#p2_command_12_div').hide();
+		$('#p3_command_4_tr').hide();
 	});
 </script>
 			</div>
@@ -307,12 +288,12 @@
 					</div>
 					<div class="span2">
 						<ul class="my_links">
+							<li><a href="http://goncalvesjoao.tumblr.com">Blog</a></li>
 							<li><a href="/projects" class="">Projects</a></li>
 							<li><a href="/portfolio" class="">Portfolio</a></li>
 							<li>&nbsp;</li>
-							<li><a href="" target="_blank">GitHub</a></li>
-							<li><a href="" target="_blank">Linked In</a></li>
-							<li><a href="/contact_me" class="">Contact Me</a></li>
+							<li><a href="https://github.com/goncalvesjoao" target="_blank">GitHub</a></li>
+							<li><a href="http://www.linkedin.com/pub/jo%C3%A3o-gon%C3%A7alves/48/53a/aba" target="_blank">Linkedin</a></li>
 						</ul>
 					</div>
 				</div>

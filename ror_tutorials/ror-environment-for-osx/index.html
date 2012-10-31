@@ -157,10 +157,13 @@
 		<h2>2. Explanation</h2>
 	</header>
 	<p>To develop in <b>PhP</b> you most certainly would be using an <b>AMP</b> (<b>A</b>pache, <b>M</b>ySQL, <b>P</b>hP and the mod_php for Apache) like <a href="http://www.mamp.info/en/index.html" target="_blank">MAMP</a>. Sadly there is no <b>MAMP</b> equivalent for RoR, but fortunately OSX comes with <b>ruby</b> and <b>rubygems</b> already installed. Try “<b>ruby -v</b>” and “<b>gem -v</b>” on your terminal to verify.</p>
-	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b> and <b>WEBrick</b> a ruby web server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
+	<p>With <b>ruby</b> installed, your system will be able to interpret ruby language and with <b>rubygems</b>, you’ll be able to easily install gems (or plugins if you will), like <b>Rails</b>.
 	<p>I guess you can picture <b>rubygems</b> like the <b>apt-get</b> or <b>Homebrew</b>, for ruby.</p>
-	<p>So, you already have <b>Ruby</b> &lt;-&gt; <b>PhP</b>, by installing Rails, you'll be installing <b>WEBrick</b> &lt;-&gt; <b>Apache + mod_php</b>, install <b>MySQL</b> and you've got yourself the equivalent of a <b>PhP AMP</b>.</p>
-	<p>To install <b>MySQL</b> I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
+	<p>By having <b>Ruby</b> installed, you'll also have <b>WEBrick Web Server</b>, which comes with Ruby. Its a Ruby Web Server that in a <b>PhP</b> scenario is the equivalent of installing <b>Apache</b> with <b>mod_php</b>.</p>
+	<p>So, you already have <b>Ruby</b> &lt;-&gt; <b>PhP</b>, <b>WEBrick</b> &lt;-&gt; <b>Apache + mod_php</b>, install <b>MySQL</b> and you've got yourself the equivalent of a <b>PhP AMP</b>, so in reality you only need to install <b>Rails</b> and a database (should you need one) in order to build and run a <b>RoR</b> app.</p>
+	<p style="margin-left:20px;"><b>Question:</b> If I already have, what it is considered, an <b>PhP AMP</b> equivalent, right out-of-the-box, why do I need to install <b>Rails</b>?<br/><b>Answer:</b> Because you're creating an <b>Ruby on <i>Rails</i></b> app, and not just a <b>Ruby</b> app.</p>
+	<p>&nbsp;</p>
+	<p><b>Advice:</b> To install <b>MySQL</b> I strongly advise you to install <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> it will help you to easily install <b>MySQL</b> and some cool stuff like <a href="http://redis.io/" target="_blank">Redis</a>, <a href="http://www.imagemagick.org/script/index.php" target="_blank">ImageMagick</a> and others.</p>
 	<p><b>Note:</b> You'll need <b>GCC</b> in order to compile <b>Rails</b>, so in case you don't have <b>XCode</b> or a <b>GCC</b> compiler installed, I advise you to download "<b><a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a></b>".</p>
 </section>
 
@@ -171,12 +174,12 @@
 	<ol>
 		<li>With <b>ruby</b> installed, your system will be able to interpret ruby language;</li>
 		<li>With <b>rubygems</b>, you’ll be able to install gems like <b>Rails</b>;</li>
-		<li>By installing <b>Rails</b> (sudo gem install rails), <b>rubygems</b> will install other gems that <b>Rails</b> depends on and some of them are <b>Bundler</b>, <b>Rake</b> and <b>WEBrick</b>.
+		<li>By installing <b>Rails</b> (sudo gem install rails), <b>rubygems</b> will install other gems that <b>Rails</b> depends on and one of them is <b>Bundler</b>.
 <br/>
 By now you can create a new <b>RoR App</b> by running the command “<b>rails new my-app-name -d mysql</b>”;</li>
 		<li>With <b>Bundler</b>, you’ll be able to easily install/uninstall all the gems that you add/remove to a file inside your app’s folder called “<b>Gemfile</b>”, by running the command “<b>bundle</b>” on your app folder;</li>
-		<li>When <b>Rails</b> finishes creating a new app, it will run the command “<b>bundle</b>” that will try to install any gems listed on the "<b>Gemfile</b>" and due to the "<b>-d mysql</b>" option <b>MySQL Gem</b> will be one of them.<br/><b>Note:</b> You’ll need to have <b>MySQL</b> installed first in order for the <b>MySQL Gem</b> to work;</li>
-		<li>Running the command "<b>rake db:create</b>", you will be instructing a Gem called <b>Rake</b> to connect to your <b>MySQL Server</b> and create a clean database, according to what it is configured on your "<b>config/database.yml</b>" YAML file;</li>
+		<li>When <b>Rails</b> finishes creating a new app, it will run the command “<b>bundle</b>” that will try to install any gems listed on the "<b>Gemfile</b>" and due to the "<b>-d mysql</b>" option, <b>MySQL Gem</b> will be one of them.<br/><b>Note:</b> You’ll need to have <b>MySQL</b> installed first in order for the <b>MySQL Gem</b> to work;</li>
+		<li>Running the command "<b>rake db:create</b>", you will be instructing a build tool called <b>Rake</b> (that comes with <b>Ruby</b>) to connect to your <b>MySQL Server</b> and create a clean database, according to what it is configured on your "<b>config/database.yml</b>" YAML file;</li>
 		<li>Now if you run the command “<b>rails s</b>” on your app’s folder, <b>Rails</b> will launch <b>WEBrick</b> (its a Ruby Web Server, the equivalent of <b>Apache + mod_php</b>) and you’ll be able “see” your app in the browser: <b>http://localhost:3000</b>, this is the equivalent off starting the <b>MAMP</b> app when you want to “see” your <b>PhP</b> app: <b>http://localhost:8888</b>.</li>
 	</ol>
 </section>
@@ -207,12 +210,12 @@ By now you can create a new <b>RoR App</b> by running the command “<b>rails ne
 					</div>
 					<div class="span2">
 						<ul class="my_links">
+							<li><a href="http://goncalvesjoao.tumblr.com">Blog</a></li>
 							<li><a href="/projects" class="">Projects</a></li>
 							<li><a href="/portfolio" class="">Portfolio</a></li>
 							<li>&nbsp;</li>
-							<li><a href="" target="_blank">GitHub</a></li>
-							<li><a href="" target="_blank">Linked In</a></li>
-							<li><a href="/contact_me" class="">Contact Me</a></li>
+							<li><a href="https://github.com/goncalvesjoao" target="_blank">GitHub</a></li>
+							<li><a href="http://www.linkedin.com/pub/jo%C3%A3o-gon%C3%A7alves/48/53a/aba" target="_blank">Linkedin</a></li>
 						</ul>
 					</div>
 				</div>
