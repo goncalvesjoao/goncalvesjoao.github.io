@@ -28,7 +28,7 @@ $.fn.equalWidths = function(px) {
 };
 
 $(function() {
-	$('article section:first').css('margin-top', '30px');
+	$('article > div > section:first').css('margin-top', '35px');
 	
 	$("textarea.line").each(function(){
 		var this_id = $(this).attr('id');
