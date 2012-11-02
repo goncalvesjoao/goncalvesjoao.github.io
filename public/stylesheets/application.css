@@ -72,6 +72,14 @@ ul.my_links a.selected {
 	color: #989898;
 }
 
+.table tr:first-child th, .table tr:first-child td {
+	border-top: none;
+}
+
+.table th, .table td {
+	border-top: 1px dashed #585858;
+}
+
 .popover-inner h3 {
 	color: #636363;
 }
