@@ -85,6 +85,12 @@ ul.my_links a.selected {
     vertical-align: middle;
 }
 
+.avatar_link:hover {
+	cursor: default;
+	border: none;
+	text-decoration: none;
+}
+
 .avatar {
 	-webkit-border-radius: 5px;
 	   -moz-border-radius: 5px;
