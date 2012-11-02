@@ -76,15 +76,17 @@
 			<div class="container">
 				
 				<div class="row">
-					<div class="span10">
-						<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" />
-						<p style="margin-top:2px;">Hi there! My name is João Gonçalves I'm a Web Developer and a Startup enthusiast.</p>
-						<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" >Outitude</a>, check it out if you will ;)</p>
-						<p>I also like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+					<div itemscope itemtype="http://schema.org/Person" class="span10">
+						<img src="/public/images/avatar.png" alt="João Gonçalves" class="avatar" itemprop="image" />
+						<p style="margin-top:2px;">Hi there! My name is <span itemprop="name">João Gonçalves</span> I'm a <span itemprop="jobTitle">Web Developer</span> and a Startup enthusiast.</p>
+						<div itemprop="description">
+							<p>Currently developing on Ruby on Rails on a cool startup called <a href="http://outitude.com" target="_blank" itemprop="worksFor">Outitude</a>, check it out if you will ;)</p>
+							<p>I like to play bass and piano, do parkour, downhill, play all kinds of video games, study green technologies and self sustainable systems, etc, etc, oh... and eat gummy bears.</p>
+						</div>
 					</div>
 					<div class="span2">
 						<ul class="my_links">
-							<li><a href="http://goncalvesjoao.tumblr.com">Blog</a></li>
+							<li><a href="http://goncalvesjoao.tumblr.com" itemprop="url">Blog</a></li>
 							<li><a href="/projects" class="">Projects</a></li>
 							<li><a href="/portfolio" class="">Portfolio</a></li>
 							<li>&nbsp;</li>
