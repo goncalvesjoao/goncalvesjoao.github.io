@@ -10,11 +10,13 @@
 		<link rel="stylesheet" href="/public/stylesheets/codemirror.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/ambiance.css" type="text/css" />
 		<link rel="stylesheet" href="/public/stylesheets/application.css" type="text/css" />
+		<link rel="stylesheet" href="/public/stylesheets/jquery.hoverZoom.css" type="text/css" />
 		
 		<script src="/public/javascript/jquery-1.8.2.min.js"></script>
 		<script src="/public/javascript/bootstrap.min.js"></script>
 		<script src="/public/javascript/codemirror.js"></script>
 		<script src="/public/javascript/application.js"></script>
+		<script src="/public/javascript/jquery.hoverZoom.js"></script>
 		
 		<!-- BEGIN FACEBOOK OPENGRAPH TAGS -->
 		<meta property="og:title" content="AWS EC2 Instance">
@@ -131,7 +133,18 @@ LC_IDENTIFICATION="en_US.UTF-8"</textarea>
 	<header>
 		<h2>4. FTP Access</h2>
 	</header>
-	<p>work in progress...</p>
+	<p>Get <a href="http://panic.com/transmit/" target="_blank">Transmit</a> (an FTP Client), install and start it.</p>
+	<p>Now either:</p>
+	<div class="row" style="height: 330px;">
+		<div class="span6" style="position: relative;">
+			<p><b>add a new entry to your Favorites</b></p>
+			<a href="favorites.png"><img src="favorites.png" alt="New Favorites SFTP Entry Setup" class="screenshot"/></a>
+		</div>
+		<div class="span6" style="position: relative;">
+			<p><b>or start an SFTP connection.</b></p>
+			<a href="sftp.png"><img src="sftp.png" alt="SFTP Connection Setup" class="screenshot"/></a>
+		</div>
+	</div>
 </section>
 
 <script>
@@ -141,6 +154,7 @@ LC_IDENTIFICATION="en_US.UTF-8"</textarea>
 			title: "Don't know how vi works?",
 			content: 'Here\'s a <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" target="_blank">list of vi\'s most used commands</a>.<br>For instance: you\'ll be using the "<b>:wq</b>" command.</span>'
 		});
+		$(".screenshot").hoverZoom();
 	});
 </script>
 			</div>

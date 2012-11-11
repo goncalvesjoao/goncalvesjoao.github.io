@@ -166,6 +166,12 @@ ul.gem_list li a.railscasts:hover {
 	top: -5px;
 }
 
+.screenshot {
+	width: 420px;
+	height: 290px;
+	position: absolute;
+}
+
 .CodeMirror {
 	border: none;
 	-webkit-border-radius: 5px;
@@ -186,3 +192,4 @@ ul.gem_list li a.railscasts:hover {
 	overflow-y: hidden;
 	overflow-x: auto;
 }
+
