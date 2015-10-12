@@ -2964,21 +2964,26 @@ webpackJsonp([1],{
 	          'div',
 	          { className: 'container' },
 	          React.createElement(
+	            'p',
+	            { className: 'lead' },
+	            'This React Component was built, tested and documented with the help of ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://github.com/goncalvesjoao/react-to-commonjs', target: '_blank' },
+	              'React-to-commonJS'
+	            ),
+	            '.',
+	            React.createElement('br', null),
+	            'Check it out if you want to create a React Component without the pain of gathering all the necessary developing tools, building your own documentation page (like this one) and or mock servers for testing/developing purposes.'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'container' },
+	          React.createElement(
 	            'h2',
 	            null,
-	            'Getting started:'
-	          ),
-	          React.createElement(
-	            Prism,
-	            { className: 'language-ruby', noShadow: true, bashMode: true },
-	            'npm install ',
-	            config.name,
-	            ' --save'
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'or'
+	            'Getting started'
 	          ),
 	          React.createElement(
 	            Prism,
@@ -2988,6 +2993,59 @@ webpackJsonp([1],{
 	            '/',
 	            config.name || '<package.json:name>',
 	            '.git#master --save'
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'You can now require ',
+	            React.createElement(
+	              'b',
+	              null,
+	              'stardoroido'
+	            ),
+	            ' on your React project like a normal node module.'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'container' },
+	          React.createElement(
+	            'h2',
+	            null,
+	            'Usage'
+	          ),
+	          React.createElement(
+	            Prism,
+	            { className: 'language-jsx', noShadow: true },
+	            'const React = require(\'react\');\nconst Stardoroido = require(\'stardoroido\');\nconst { Droids } = Stardoroido.components;\n\nclass App extends React.Component {\n  render() {\n    return (\n      <div>\n        <h1>Hello world!</h1>\n        <Droids />\n      </div>\n    );\n  }\n}'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'container' },
+	          React.createElement(
+	            'h2',
+	            null,
+	            'Notes'
+	          ),
+	          React.createElement(
+	            'h4',
+	            null,
+	            'This tool was built using:'
+	          ),
+	          React.createElement(
+	            'ul',
+	            null,
+	            React.createElement(
+	              'li',
+	              null,
+	              'node 4.1.0'
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              'npm 3.3.3'
+	            )
 	          )
 	        )
 	      );
