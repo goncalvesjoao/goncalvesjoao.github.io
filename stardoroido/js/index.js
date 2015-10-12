@@ -2875,8 +2875,6 @@ webpackJsonp([1],{
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -2941,9 +2939,14 @@ webpackJsonp([1],{
 	                  ' '
 	                ),
 	                React.createElement(
-	                  'p',
-	                  null,
-	                  this.repositoryLink()
+	                  'a',
+	                  {
+	                    href: config.repository.url + '/releases',
+	                    className: 'btn btn-success btn-lg',
+	                    target: '_blank'
+	                  },
+	                  React.createElement('i', { className: 'glyphicon glyphicon-download-alt' }),
+	                  ' Download'
 	                ),
 	                React.createElement(
 	                  'p',
@@ -3029,9 +3032,9 @@ webpackJsonp([1],{
 	            'Notes'
 	          ),
 	          React.createElement(
-	            'h4',
+	            'p',
 	            null,
-	            'This tool was built using:'
+	            '(this tool was built using: node v4.1.0 and npm v3.3.3)'
 	          ),
 	          React.createElement(
 	            'ul',
@@ -3039,45 +3042,67 @@ webpackJsonp([1],{
 	            React.createElement(
 	              'li',
 	              null,
-	              'node 4.1.0'
+	              React.createElement(
+	                'p',
+	                null,
+	                'In truth this React Component is actually the one that comes built-in with react-to-commonjs when it creates a new project.'
+	              ),
+	              React.createElement(
+	                'p',
+	                null,
+	                'Why does react-to-commonjs create a template project you ask? Because the documentation page would be blank and you wouldn\'t get to see how to connect your component to the documentation page.'
+	              )
 	            ),
 	            React.createElement(
 	              'li',
 	              null,
-	              'npm 3.3.3'
+	              React.createElement(
+	                'p',
+	                null,
+	                'This simple project makes an ajax call to fetch the droids data and for that it makes use of mock servers. This way front-end development doesn\'t have to wait for back-end development.'
+	              )
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                'p',
+	                null,
+	                'The existing test spec is both an example of how you can test your React Component and how you can setup your spec to prevent a remote ajax call.'
+	              )
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                'p',
+	                null,
+	                'Also, this project was created using the --css_modules option:'
+	              ),
+	              React.createElement(
+	                Prism,
+	                { className: 'language-ruby', noShadow: true, bashMode: true },
+	                'r2c2 new stardoroido --css_modules'
+	              ),
+	              React.createElement(
+	                'p',
+	                null,
+	                'which means that this project uses ',
+	                React.createElement(
+	                  'a',
+	                  { href: 'https://github.com/gajus/react-css-modules', target: '_blank' },
+	                  'react-css-modules'
+	                ),
+	                ', the spec example is also prepared for this and mocks the react-css-modules lib, so that mocha doesn\'t launch an error while loading css files.'
+	              )
 	            )
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            ' '
 	          )
 	        )
-	      );
-	    }
-	  }, {
-	    key: 'repositoryLink',
-	    value: function repositoryLink() {
-	      var props = { href: '' };
-
-	      if (config.repository) {
-	        props.href = config.repository.url;
-	      }
-
-	      if (props.href) {
-	        props.href += '/releases';
-	        props.target = '_blank';
-	      } else {
-	        props.href = '#';
-	        props.onClick = function (event) {
-	          event.preventDefault();
-
-	          /*eslint-disable */
-	          alert('You might want to fill in the blanks of your repository details listed on the package.json');
-	          /*eslint-enable */
-	        };
-	      }
-
-	      return React.createElement(
-	        'a',
-	        _extends({}, props, { className: 'btn btn-success btn-lg' }),
-	        React.createElement('i', { className: 'glyphicon glyphicon-download-alt' }),
-	        ' Download'
 	      );
 	    }
 	  }]);
