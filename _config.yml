@@ -13,11 +13,6 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: João Gonçalves
-job_title: FullStack WebDeveloper
-email: goncalves.joao@gmail.com
-github_url:  https://github.com/goncalvesjoao
-linkedin:  https://linkedin.com/goncalvesjoao
 description: > # this means to ignore newlines until "baseurl:"
   Played piano as a kid, did Parkour during college,
   later on switched to Bass and kept the parkour mentality.
