@@ -1,0 +1,20 @@
+body {
+  background-color: red;
+}
+
+#draggableParent {
+  width: 80%;
+  margin-left: 10%;
+  height: 100px;
+  display: block;
+  position: relative;
+
+  .handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: yellow;
+  }
+}
