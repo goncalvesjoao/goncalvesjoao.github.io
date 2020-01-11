@@ -17,5 +17,8 @@ body {
   height: 20px;
   background: yellow;
 }
+#draggableParent #endAtHandle {
+  left: 200px;
+}
 
 /*# sourceMappingURL=/stylesheets.959fac87.css.map */

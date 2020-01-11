@@ -1,14 +1,36 @@
 import $ from "./jquery"
-import "jquery-ui-dist/jquery-ui.js";
+import "jquery-ui-dist/jquery-ui.js"
+import "jquery-ui-touch-punch"
 
-function init() {
-  $(".handle").draggable({
+function initializeDraggable() {
+  const gridLength = 20
+  const $startAtHandle = $("#startAtHandle")
+  const $endAtHandle = $("#endAtHandle")
+
+  const defaultOptions = {
     axis: "x",
-    grid: [ 20, 20 ],
-    containment: "parent",
-    obstacle: "#butNotHere",
-    preventCollision: true
-  });
+    grid: [gridLength, gridLength],
+    drag: function(event, ui) {
+      const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width() + gridLength
+      const endAtHandleLeft = $endAtHandle.position().left
+
+      if (startAtHandleRight >= endAtHandleLeft) {
+        return false
+      }
+    }
+  }
+
+  $startAtHandle.draggable({
+    ...defaultOptions,
+  })
+
+  $endAtHandle.draggable({
+    ...defaultOptions,
+  })
 }
 
-window.addEventListener("DOMContentLoaded", init);
+function init() {
+  initializeDraggable()
+}
+
+window.addEventListener("DOMContentLoaded", init)
