@@ -29833,8 +29833,13 @@ var widgetsTooltip = $.ui.tooltip;
   };
 
 })(jQuery);
-},{}],"assets/javascripts/index.js":[function(require,module,exports) {
+},{}],"assets/javascripts/initializeDraggable.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 var _jquery = _interopRequireDefault(require("./jquery"));
 
@@ -29858,24 +29863,44 @@ function initializeDraggable() {
     axis: "x",
     grid: [gridLength, gridLength],
     drag: function drag(event, ui) {
-      var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width() + gridLength;
+      var $this = (0, _jquery.default)(this);
+      var shouldDrag = true;
+      var newLeftPosition = ui.position.left;
       var endAtHandleLeft = $endAtHandle.position().left;
+      var lastLeftPosition = $this.data('lastLeftPosition') || $this.position().left;
+      var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width() + gridLength;
 
-      if (startAtHandleRight >= endAtHandleLeft) {
-        return false;
+      if ($this.attr('id') === 'startAtHandle') {
+        console.log(newLeftPosition, lastLeftPosition); // shouldDrag = true
+      } else if ($this.attr('id') === 'endAtHandle' && newLeftPosition > lastLeftPosition) {
+        shouldDrag = true;
+      } else if (startAtHandleRight >= endAtHandleLeft) {
+        shouldDrag = false;
       }
+
+      $this.data('lastLeftPosition', newLeftPosition);
+      return shouldDrag;
     }
   };
   $startAtHandle.draggable(_objectSpread({}, defaultOptions));
   $endAtHandle.draggable(_objectSpread({}, defaultOptions));
 }
 
+var _default = initializeDraggable;
+exports.default = _default;
+},{"./jquery":"assets/javascripts/jquery.js","jquery-ui-dist/jquery-ui.js":"node_modules/jquery-ui-dist/jquery-ui.js","jquery-ui-touch-punch":"node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.js"}],"assets/javascripts/index.js":[function(require,module,exports) {
+"use strict";
+
+var _initializeDraggable = _interopRequireDefault(require("./initializeDraggable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function init() {
-  initializeDraggable();
+  (0, _initializeDraggable.default)();
 }
 
 window.addEventListener("DOMContentLoaded", init);
-},{"./jquery":"assets/javascripts/jquery.js","jquery-ui-dist/jquery-ui.js":"node_modules/jquery-ui-dist/jquery-ui.js","jquery-ui-touch-punch":"node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.js"}],"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./initializeDraggable":"assets/javascripts/initializeDraggable.js"}],"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29903,7 +29928,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61959" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52958" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
