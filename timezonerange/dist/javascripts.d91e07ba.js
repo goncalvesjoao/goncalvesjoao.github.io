@@ -29869,13 +29869,16 @@ function initializeDraggable() {
       var endAtHandleLeft = $endAtHandle.position().left;
       var lastLeftPosition = $this.data('lastLeftPosition') || $this.position().left;
       var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width() + gridLength;
+      console.log(newLeftPosition, lastLeftPosition);
 
       if ($this.attr('id') === 'startAtHandle') {
-        console.log(newLeftPosition, lastLeftPosition); // shouldDrag = true
-      } else if ($this.attr('id') === 'endAtHandle' && newLeftPosition > lastLeftPosition) {
-        shouldDrag = true;
-      } else if (startAtHandleRight >= endAtHandleLeft) {
-        shouldDrag = false;
+        if (startAtHandleRight >= endAtHandleLeft && newLeftPosition > lastLeftPosition) {
+          shouldDrag = false;
+        }
+      } else if ($this.attr('id') === 'endAtHandle') {
+        if (endAtHandleLeft <= startAtHandleRight && newLeftPosition < lastLeftPosition) {
+          shouldDrag = false;
+        }
       }
 
       $this.data('lastLeftPosition', newLeftPosition);
@@ -29928,7 +29931,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52958" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55034" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

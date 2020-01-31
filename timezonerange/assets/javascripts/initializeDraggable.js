@@ -19,13 +19,16 @@ function initializeDraggable() {
       const lastLeftPosition = $this.data('lastLeftPosition') || $this.position().left
       const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width() + gridLength
 
+      console.log(newLeftPosition, lastLeftPosition)
+
       if ($this.attr('id') === 'startAtHandle') {
-        console.log(newLeftPosition, lastLeftPosition)
-        // shouldDrag = true
-      } else if ($this.attr('id') === 'endAtHandle' && newLeftPosition > lastLeftPosition) {
-        shouldDrag = true
-      } else if (startAtHandleRight >= endAtHandleLeft) {
-        shouldDrag = false
+        if (startAtHandleRight >= endAtHandleLeft && newLeftPosition > lastLeftPosition) {
+          shouldDrag = false
+        }
+      } else if ($this.attr('id') === 'endAtHandle') {
+        if (endAtHandleLeft <= startAtHandleRight  && newLeftPosition < lastLeftPosition) {
+          shouldDrag = false
+        }
       }
 
       $this.data('lastLeftPosition', newLeftPosition)
