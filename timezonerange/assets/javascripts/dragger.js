@@ -2,6 +2,7 @@ import $ from "./jquery"
 
 let $startAtHandle = null
 let $endAtHandle = null
+let $rangeHandle = null
 
 function activeHandle() {
   if ($startAtHandle.data("active")) {
@@ -16,6 +17,10 @@ function activeHandle() {
 function init(containerSelector) {
   $startAtHandle = $("#startAtHandle")
   $endAtHandle = $("#endAtHandle")
+  $rangeHandle = $("#rangeHandle")
+
+  moveHandle($startAtHandle, 80)
+  moveHandle($endAtHandle, 400)
 
   $(containerSelector)
     .on("touchstart", dragStart)
@@ -24,47 +29,72 @@ function init(containerSelector) {
     .on("mousedown", dragStart)
     .on("mouseup", dragEnd)
     .on("mousemove", drag)
-    .on("mouseleave", dragEnd)
 }
 
 function dragStart(e) {
-  let target = null
+  const $target = $(e.target)
   const clientX = (e.type === "touchstart") ? e.touches[0].clientX : e.clientX
 
-  if (e.target === $startAtHandle.get(0)) {
-    target = $startAtHandle
-  } else if (e.target === $endAtHandle.get(0)) {
-    target = $endAtHandle
-  }
+  if (!$target.hasClass('dragable')) { return }
 
-  if (!target) { return }
-
-  target.data("active", true)
-  target.data("initialX", clientX - (target.data("xOffset") || 0))
+  $target.data("active", true)
+  $target.data("initialLeft", clientX - $target.data("lastLeftPosition"))
 }
 
 function dragEnd(e) {
-  const target = activeHandle()
+  const $target = activeHandle()
 
-  if (!target) { return }
+  if (!$target) { return }
 
-  target.data("active", false)
-  target.data("initialX", target.data("currentX"))
+  $target.data("active", false)
 }
 
 function drag(e) {
-  const target = activeHandle()
+  const $target = activeHandle()
   const clientX = (e.type === "touchmove") ? e.touches[0].clientX : e.clientX
-
-  if (!target) { return }
 
   e.preventDefault();
 
-  target.data("currentX", clientX - target.data("initialX"))
-  target.data("xOffset", target.data("currentX"))
-  target.css({
-    left: target.data("currentX")
-  })
+  if (!$target) { return }
+
+  if ($target.hasClass('handle')) {
+    moveHandle($target, clientX - $target.data("initialLeft"))
+  } else {
+    console.log('asd')
+    updatePosition($target, clientX - $target.data("initialLeft"))
+  }
+}
+
+function moveHandle(target, leftPosition) {
+  let newLeftPosition = leftPosition
+  const endAtHandleLeft = $endAtHandle.position().left
+  const lastLeftPosition = target.data("lastLeftPosition")
+  const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
+
+  if (target.attr('id') === 'startAtHandle') {
+    if ((newLeftPosition + $startAtHandle.width()) >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
+      newLeftPosition = endAtHandleLeft - $startAtHandle.width()
+    }
+  } else if (target.attr('id') === 'endAtHandle') {
+    if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
+      newLeftPosition = startAtHandleRight
+    }
+  }
+
+  updatePosition(target, newLeftPosition)
+  updateRangeHandle()
+}
+
+function updatePosition(target, leftPosition) {
+  target.data("lastLeftPosition", leftPosition)
+  target.css({ left: leftPosition })
+}
+
+function updateRangeHandle() {
+  const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
+  const width = $endAtHandle.position().left - startAtHandleRight
+
+  $rangeHandle.css({ left: startAtHandleRight, width: width })
 }
 
 export default init

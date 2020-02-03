@@ -10958,6 +10958,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var $startAtHandle = null;
 var $endAtHandle = null;
+var $rangeHandle = null;
 
 function activeHandle() {
   if ($startAtHandle.data("active")) {
@@ -10972,51 +10973,84 @@ function activeHandle() {
 function init(containerSelector) {
   $startAtHandle = (0, _jquery.default)("#startAtHandle");
   $endAtHandle = (0, _jquery.default)("#endAtHandle");
-  (0, _jquery.default)(containerSelector).on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag).on("mouseleave", dragEnd);
+  $rangeHandle = (0, _jquery.default)("#rangeHandle");
+  moveHandle($startAtHandle, 80);
+  moveHandle($endAtHandle, 400);
+  (0, _jquery.default)(containerSelector).on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag);
 }
 
 function dragStart(e) {
-  var target = null;
+  var $target = (0, _jquery.default)(e.target);
   var clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
 
-  if (e.target === $startAtHandle.get(0)) {
-    target = $startAtHandle;
-  } else if (e.target === $endAtHandle.get(0)) {
-    target = $endAtHandle;
-  }
-
-  if (!target) {
+  if (!$target.hasClass('dragable')) {
     return;
   }
 
-  target.data("active", true);
-  target.data("initialX", clientX - (target.data("xOffset") || 0));
+  $target.data("active", true);
+  $target.data("initialLeft", clientX - $target.data("lastLeftPosition"));
 }
 
 function dragEnd(e) {
-  var target = activeHandle();
+  var $target = activeHandle();
 
-  if (!target) {
+  if (!$target) {
     return;
   }
 
-  target.data("active", false);
-  target.data("initialX", target.data("currentX"));
+  $target.data("active", false);
 }
 
 function drag(e) {
-  var target = activeHandle();
+  var $target = activeHandle();
   var clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+  e.preventDefault();
 
-  if (!target) {
+  if (!$target) {
     return;
   }
 
-  e.preventDefault();
-  target.data("currentX", clientX - target.data("initialX"));
-  target.data("xOffset", target.data("currentX"));
+  if ($target.hasClass('handle')) {
+    moveHandle($target, clientX - $target.data("initialLeft"));
+  } else {
+    console.log('asd');
+    updatePosition($target, clientX - $target.data("initialLeft"));
+  }
+}
+
+function moveHandle(target, leftPosition) {
+  var newLeftPosition = leftPosition;
+  var endAtHandleLeft = $endAtHandle.position().left;
+  var lastLeftPosition = target.data("lastLeftPosition");
+  var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
+
+  if (target.attr('id') === 'startAtHandle') {
+    if (newLeftPosition + $startAtHandle.width() >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
+      newLeftPosition = endAtHandleLeft - $startAtHandle.width();
+    }
+  } else if (target.attr('id') === 'endAtHandle') {
+    if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
+      newLeftPosition = startAtHandleRight;
+    }
+  }
+
+  updatePosition(target, newLeftPosition);
+  updateRangeHandle();
+}
+
+function updatePosition(target, leftPosition) {
+  target.data("lastLeftPosition", leftPosition);
   target.css({
-    left: target.data("currentX")
+    left: leftPosition
+  });
+}
+
+function updateRangeHandle() {
+  var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
+  var width = $endAtHandle.position().left - startAtHandleRight;
+  $rangeHandle.css({
+    left: startAtHandleRight,
+    width: width
   });
 }
 
@@ -11063,7 +11097,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51000" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57326" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

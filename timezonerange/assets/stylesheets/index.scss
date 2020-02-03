@@ -2,50 +2,38 @@ body {
   background-color: red;
 }
 
-#draggableParent {
-  width: 80%;
-  margin-left: 10%;
-  height: 100px;
-  display: block;
-  position: relative;
-
-  .handle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background: yellow;
-  }
-
-  #endAtHandle {
-    left: 200px;
-  }
-}
-
-
 #container {
   width: 100%;
   height: 400px;
   background-color: #333;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
   border-radius: 7px;
   touch-action: none;
-}
-.item {
   position: relative;
+}
+
+.handle {
+  position: absolute;
   width: 25px;
   height: 100px;
-  background-color: rgb(245, 230, 99);
+  background-color: rgba(248, 223, 0, 0.877);
   touch-action: none;
   user-select: none;
 }
-.item:active {
-  background-color: rgba(168, 218, 220, 1.00);
+
+#rangeHandle {
+  position: absolute;
+  height: 100px;
+  background-color: rgb(245, 230, 100);
 }
-.item:hover {
-  cursor: pointer;
+
+.dragable {
+  &:active {
+    background-color: rgba(168, 218, 220, 1.00) !important;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
