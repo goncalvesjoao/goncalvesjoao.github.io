@@ -15,21 +15,21 @@ body {
 }
 
 .handle {
-  position: absolute;
   width: 25px;
   height: 100px;
   background-color: rgba(248, 223, 0, 0.877);
-  touch-action: none;
-  user-select: none;
 }
 
 #rangeHandle {
-  position: absolute;
   height: 100px;
   background-color: rgb(245, 230, 100);
 }
 
 .dragable {
+  position: absolute;
+  touch-action: none;
+  user-select: none;
+
   &:active {
     background-color: rgba(168, 218, 220, 1.00) !important;
   }

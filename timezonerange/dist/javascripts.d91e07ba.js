@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -10929,7 +10929,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"../../../.config/yarn/global/node_modules/process/browser.js"}],"assets/javascripts/jquery.js":[function(require,module,exports) {
+},{"process":"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"assets/javascripts/jquery.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10965,6 +10965,8 @@ function activeHandle() {
     return $startAtHandle;
   } else if ($endAtHandle.data("active")) {
     return $endAtHandle;
+  } else if ($rangeHandle.data("active")) {
+    return $rangeHandle;
   }
 
   return false;
@@ -11013,44 +11015,48 @@ function drag(e) {
   if ($target.hasClass('handle')) {
     moveHandle($target, clientX - $target.data("initialLeft"));
   } else {
-    console.log('asd');
-    updatePosition($target, clientX - $target.data("initialLeft"));
+    moveRange(clientX - $target.data("initialLeft"));
   }
 }
 
-function moveHandle(target, leftPosition) {
+function moveHandle($target, leftPosition) {
   var newLeftPosition = leftPosition;
   var endAtHandleLeft = $endAtHandle.position().left;
-  var lastLeftPosition = target.data("lastLeftPosition");
+  var lastLeftPosition = $target.data("lastLeftPosition");
   var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
 
-  if (target.attr('id') === 'startAtHandle') {
+  if ($target.attr('id') === 'startAtHandle') {
     if (newLeftPosition + $startAtHandle.width() >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
       newLeftPosition = endAtHandleLeft - $startAtHandle.width();
     }
-  } else if (target.attr('id') === 'endAtHandle') {
+  } else if ($target.attr('id') === 'endAtHandle') {
     if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
       newLeftPosition = startAtHandleRight;
     }
   }
 
-  updatePosition(target, newLeftPosition);
+  updateLeftPosition($target, newLeftPosition);
   updateRangeHandle();
 }
 
-function updatePosition(target, leftPosition) {
-  target.data("lastLeftPosition", leftPosition);
-  target.css({
-    left: leftPosition
-  });
+function moveRange(leftPosition) {
+  updateLeftPosition($rangeHandle, leftPosition);
+  var newLeftPosition = $rangeHandle.position().left;
+  updateLeftPosition($startAtHandle, newLeftPosition - $startAtHandle.width());
+  updateLeftPosition($endAtHandle, newLeftPosition + $rangeHandle.width());
 }
 
 function updateRangeHandle() {
   var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
   var width = $endAtHandle.position().left - startAtHandleRight;
-  $rangeHandle.css({
-    left: startAtHandleRight,
-    width: width
+  updateLeftPosition($rangeHandle, startAtHandleRight);
+  $rangeHandle.width(width);
+}
+
+function updateLeftPosition($target, leftPosition) {
+  $target.data("lastLeftPosition", leftPosition);
+  $target.css({
+    left: leftPosition
   });
 }
 
@@ -11069,7 +11075,7 @@ function init() {
 }
 
 window.addEventListener("DOMContentLoaded", init);
-},{"./dragger":"assets/javascripts/dragger.js"}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./dragger":"assets/javascripts/dragger.js"}],"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11097,7 +11103,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57326" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -11128,8 +11134,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 
@@ -11272,5 +11279,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/javascripts/index.js"], null)
+},{}]},{},["../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/javascripts/index.js"], null)
 //# sourceMappingURL=/javascripts.d91e07ba.js.map

@@ -9,6 +9,8 @@ function activeHandle() {
     return $startAtHandle
   } else if ($endAtHandle.data("active")) {
     return $endAtHandle
+  } else if ($rangeHandle.data("active")) {
+    return $rangeHandle
   }
 
   return false
@@ -60,41 +62,50 @@ function drag(e) {
   if ($target.hasClass('handle')) {
     moveHandle($target, clientX - $target.data("initialLeft"))
   } else {
-    console.log('asd')
-    updatePosition($target, clientX - $target.data("initialLeft"))
+    moveRange(clientX - $target.data("initialLeft"))
   }
 }
 
-function moveHandle(target, leftPosition) {
+function moveHandle($target, leftPosition) {
   let newLeftPosition = leftPosition
   const endAtHandleLeft = $endAtHandle.position().left
-  const lastLeftPosition = target.data("lastLeftPosition")
+  const lastLeftPosition = $target.data("lastLeftPosition")
   const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
 
-  if (target.attr('id') === 'startAtHandle') {
+  if ($target.attr('id') === 'startAtHandle') {
     if ((newLeftPosition + $startAtHandle.width()) >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
       newLeftPosition = endAtHandleLeft - $startAtHandle.width()
     }
-  } else if (target.attr('id') === 'endAtHandle') {
+  } else if ($target.attr('id') === 'endAtHandle') {
     if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
       newLeftPosition = startAtHandleRight
     }
   }
 
-  updatePosition(target, newLeftPosition)
+  updateLeftPosition($target, newLeftPosition)
   updateRangeHandle()
 }
 
-function updatePosition(target, leftPosition) {
-  target.data("lastLeftPosition", leftPosition)
-  target.css({ left: leftPosition })
+function moveRange(leftPosition) {
+  updateLeftPosition($rangeHandle, leftPosition)
+
+  const newLeftPosition = $rangeHandle.position().left
+
+  updateLeftPosition($startAtHandle, newLeftPosition - $startAtHandle.width())
+  updateLeftPosition($endAtHandle, newLeftPosition + $rangeHandle.width())
 }
 
 function updateRangeHandle() {
   const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
   const width = $endAtHandle.position().left - startAtHandleRight
 
-  $rangeHandle.css({ left: startAtHandleRight, width: width })
+  updateLeftPosition($rangeHandle, startAtHandleRight)
+  $rangeHandle.width(width)
+}
+
+function updateLeftPosition($target, leftPosition) {
+  $target.data("lastLeftPosition", leftPosition)
+  $target.css({ left: leftPosition })
 }
 
 export default init
