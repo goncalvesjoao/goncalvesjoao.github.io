@@ -2,7 +2,7 @@
 import dragger from './dragger'
 
 function init() {
-  dragger()
+  dragger("body")
   // initializeDraggable()
 }
 

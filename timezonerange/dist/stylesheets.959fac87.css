@@ -34,11 +34,10 @@ body {
 }
 
 .item {
-  width: 100px;
+  position: relative;
+  width: 25px;
   height: 100px;
   background-color: #f5e663;
-  border: 10px solid rgba(136, 136, 136, 0.5);
-  border-radius: 50%;
   touch-action: none;
   user-select: none;
 }

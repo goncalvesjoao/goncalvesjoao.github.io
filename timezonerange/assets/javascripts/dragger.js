@@ -1,48 +1,46 @@
-const startAtHandle = () => document.querySelector("#startAtHandle")
-const endAtHandle = () => document.querySelector("#endAtHandle")
+import $ from "./jquery"
 
-function number(object) {
-  const int = Number(object)
-
-  return isNaN(int) ? 0 : int
-}
+let $startAtHandle = null
+let $endAtHandle = null
 
 function activeHandle() {
-  if (startAtHandle().dataset.active === "true") {
-    return startAtHandle()
-  } else if (endAtHandle().dataset.active === "true") {
-    return endAtHandle()
+  if ($startAtHandle.data("active")) {
+    return $startAtHandle
+  } else if ($endAtHandle.data("active")) {
+    return $endAtHandle
   }
 
   return false
 }
 
-function init() {
-  var container = document.querySelector("#container");
+function init(containerSelector) {
+  $startAtHandle = $("#startAtHandle")
+  $endAtHandle = $("#endAtHandle")
 
-  container.addEventListener("touchstart", dragStart, false);
-  container.addEventListener("touchend", dragEnd, false);
-  container.addEventListener("touchmove", drag, false);
-
-  container.addEventListener("mousedown", dragStart, false);
-  container.addEventListener("mouseup", dragEnd, false);
-  container.addEventListener("mousemove", drag, false);
+  $(containerSelector)
+    .on("touchstart", dragStart)
+    .on("touchend", dragEnd)
+    .on("touchmove", drag)
+    .on("mousedown", dragStart)
+    .on("mouseup", dragEnd)
+    .on("mousemove", drag)
+    .on("mouseleave", dragEnd)
 }
 
 function dragStart(e) {
   let target = null
   const clientX = (e.type === "touchstart") ? e.touches[0].clientX : e.clientX
 
-  if (e.target === startAtHandle()) {
-    target = startAtHandle()
-  } else if (e.target === endAtHandle()) {
-    target = endAtHandle()
+  if (e.target === $startAtHandle.get(0)) {
+    target = $startAtHandle
+  } else if (e.target === $endAtHandle.get(0)) {
+    target = $endAtHandle
   }
 
   if (!target) { return }
 
-  target.dataset.active = true
-  target.dataset.initialX = clientX - number(target.dataset.xOffset)
+  target.data("active", true)
+  target.data("initialX", clientX - (target.data("xOffset") || 0))
 }
 
 function dragEnd(e) {
@@ -50,8 +48,8 @@ function dragEnd(e) {
 
   if (!target) { return }
 
-  target.dataset.active = false
-  target.dataset.initialX = number(target.dataset.currentX)
+  target.data("active", false)
+  target.data("initialX", target.data("currentX"))
 }
 
 function drag(e) {
@@ -62,9 +60,11 @@ function drag(e) {
 
   e.preventDefault();
 
-  target.dataset.currentX = clientX - number(target.dataset.initialX)
-  target.dataset.xOffset = target.dataset.currentX
-  target.style.transform = "translate3d(" + number(target.dataset.currentX) + "px, 0px, 0)"
+  target.data("currentX", clientX - target.data("initialX"))
+  target.data("xOffset", target.data("currentX"))
+  target.css({
+    left: target.data("currentX")
+  })
 }
 
 export default init
