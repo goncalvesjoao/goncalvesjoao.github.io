@@ -10956,18 +10956,21 @@ var _jquery = _interopRequireDefault(require("./jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var INITIAL_LEFT = 80;
 var INITIAL_RIGHT = 100;
-var MINIMUM_WIDTH = 50;
+var MINIMUM_WIDTH = 30;
 var $container = null;
 var $rangeHandle = null;
 
 function init(containerSelector) {
   $container = (0, _jquery.default)(containerSelector);
   $rangeHandle = (0, _jquery.default)("#rangeHandle");
-  updateLeftPosition($rangeHandle, INITIAL_LEFT);
-  updateRightPosition($rangeHandle, INITIAL_RIGHT);
-  (0, _jquery.default)('body').on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag);
+  updatePosition($rangeHandle, "left", INITIAL_LEFT);
+  updatePosition($rangeHandle, "right", INITIAL_RIGHT);
+  MINIMUM_WIDTH = (0, _jquery.default)("#startAtHandle").width() + (0, _jquery.default)("#endAtHandle").width();
+  (0, _jquery.default)("body").on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag);
 }
 
 function dragStart(e) {
@@ -10979,8 +10982,8 @@ function dragStart(e) {
   }
 
   $target.addClass("active");
-  $rangeHandle.data("offsetLeft", clientX - $rangeHandle.data("lastLeftPosition"));
-  $rangeHandle.data("offsetRight", $container.width() - clientX - $rangeHandle.data("lastRightPosition"));
+  $rangeHandle.data("leftOffSet", clientX - $rangeHandle.data("leftLastPosition"));
+  $rangeHandle.data("rightOffSet", $container.width() - clientX - $rangeHandle.data("rightLastPosition"));
 }
 
 function dragEnd(e) {
@@ -10997,35 +11000,41 @@ function drag(e) {
   }
 
   if ($activeElement.data("move").includes("left")) {
-    updateLeftPosition($rangeHandle, clientX - $rangeHandle.data("offsetLeft"));
+    moveRangeHandle("left", clientX - $rangeHandle.data("leftOffSet"));
   }
 
   if ($activeElement.data("move").includes("right")) {
-    updateRightPosition($rangeHandle, $container.width() - clientX - $rangeHandle.data("offsetRight"));
+    moveRangeHandle("right", $container.width() - clientX - $rangeHandle.data("rightOffSet"));
   }
 }
 
-function updateLeftPosition($target, leftPosition) {
-  $target.data("lastLeftPosition", leftPosition);
-  $target.css({
-    left: leftPosition
-  });
-}
+function moveRangeHandle(side, newPosition) {
+  var lastPosition = $rangeHandle.data("".concat(side, "LastPosition"));
 
-function updateRightPosition($target, rightPosition) {
-  var lastRightPosition = $target.data("lastRightPosition");
-
-  if (rightPosition >= lastRightPosition && $target.width() <= MINIMUM_WIDTH) {
+  if (newPosition >= lastPosition && $rangeHandle.width() <= MINIMUM_WIDTH) {
     return;
   }
 
-  $target.data("lastRightPosition", rightPosition);
-  $target.css({
-    right: rightPosition
-  });
+  updatePosition($rangeHandle, side, newPosition);
+  rectifyRangeWidth(side);
 }
 
-function rectifyRightPosition() {}
+function updatePosition($target, side, _newPosition) {
+  var newPosition = _newPosition < 0 ? 0 : _newPosition;
+  $target.data("".concat(side, "LastPosition"), newPosition);
+  $target.css(_defineProperty({}, side, newPosition));
+}
+
+function rectifyRangeWidth(side) {
+  if ($rangeHandle.width() >= MINIMUM_WIDTH) {
+    return;
+  }
+
+  var oppositeSide = side === "left" ? "right" : "left";
+  var oppositePosition = $rangeHandle.data("".concat(oppositeSide, "LastPosition"));
+  var rectifiedPosition = $container.width() - MINIMUM_WIDTH - oppositePosition;
+  updatePosition($rangeHandle, side, rectifiedPosition);
+}
 
 var _default = init;
 exports.default = _default;
@@ -11070,7 +11079,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49823" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61256" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
