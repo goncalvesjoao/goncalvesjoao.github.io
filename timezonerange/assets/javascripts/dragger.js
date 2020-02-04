@@ -1,30 +1,20 @@
 import $ from "./jquery"
 
-let $startAtHandle = null
-let $endAtHandle = null
+const INITIAL_LEFT = 80
+const INITIAL_RIGHT = 100
+const MINIMUM_WIDTH = 50
+
+let $container = null
 let $rangeHandle = null
 
-function activeHandle() {
-  if ($startAtHandle.data("active")) {
-    return $startAtHandle
-  } else if ($endAtHandle.data("active")) {
-    return $endAtHandle
-  } else if ($rangeHandle.data("active")) {
-    return $rangeHandle
-  }
-
-  return false
-}
-
 function init(containerSelector) {
-  $startAtHandle = $("#startAtHandle")
-  $endAtHandle = $("#endAtHandle")
+  $container = $(containerSelector)
   $rangeHandle = $("#rangeHandle")
 
-  moveHandle($startAtHandle, 80)
-  moveHandle($endAtHandle, 400)
+  updateLeftPosition($rangeHandle, INITIAL_LEFT)
+  updateRightPosition($rangeHandle, INITIAL_RIGHT)
 
-  $(containerSelector)
+  $('body')
     .on("touchstart", dragStart)
     .on("touchend", dragEnd)
     .on("touchmove", drag)
@@ -39,73 +29,50 @@ function dragStart(e) {
 
   if (!$target.hasClass('dragable')) { return }
 
-  $target.data("active", true)
-  $target.data("initialLeft", clientX - $target.data("lastLeftPosition"))
+  $target.addClass("active")
+  $rangeHandle.data("offsetLeft", clientX - $rangeHandle.data("lastLeftPosition"))
+  $rangeHandle.data("offsetRight", ($container.width() - clientX) - $rangeHandle.data("lastRightPosition"))
 }
 
 function dragEnd(e) {
-  const $target = activeHandle()
-
-  if (!$target) { return }
-
-  $target.data("active", false)
+  $(".dragable.active").removeClass("active")
 }
 
 function drag(e) {
-  const $target = activeHandle()
+  const $activeElement = $(".dragable.active")
   const clientX = (e.type === "touchmove") ? e.touches[0].clientX : e.clientX
 
   e.preventDefault();
 
-  if (!$target) { return }
+  if (!$activeElement.length) { return }
 
-  if ($target.hasClass('handle')) {
-    moveHandle($target, clientX - $target.data("initialLeft"))
-  } else {
-    moveRange(clientX - $target.data("initialLeft"))
-  }
-}
-
-function moveHandle($target, leftPosition) {
-  let newLeftPosition = leftPosition
-  const endAtHandleLeft = $endAtHandle.position().left
-  const lastLeftPosition = $target.data("lastLeftPosition")
-  const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
-
-  if ($target.attr('id') === 'startAtHandle') {
-    if ((newLeftPosition + $startAtHandle.width()) >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
-      newLeftPosition = endAtHandleLeft - $startAtHandle.width()
-    }
-  } else if ($target.attr('id') === 'endAtHandle') {
-    if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
-      newLeftPosition = startAtHandleRight
-    }
+  if ($activeElement.data("move").includes("left")) {
+    updateLeftPosition($rangeHandle, clientX - $rangeHandle.data("offsetLeft"))
   }
 
-  updateLeftPosition($target, newLeftPosition)
-  updateRangeHandle()
-}
-
-function moveRange(leftPosition) {
-  updateLeftPosition($rangeHandle, leftPosition)
-
-  const newLeftPosition = $rangeHandle.position().left
-
-  updateLeftPosition($startAtHandle, newLeftPosition - $startAtHandle.width())
-  updateLeftPosition($endAtHandle, newLeftPosition + $rangeHandle.width())
-}
-
-function updateRangeHandle() {
-  const startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width()
-  const width = $endAtHandle.position().left - startAtHandleRight
-
-  updateLeftPosition($rangeHandle, startAtHandleRight)
-  $rangeHandle.width(width)
+  if ($activeElement.data("move").includes("right")) {
+    updateRightPosition($rangeHandle, ($container.width() - clientX) - $rangeHandle.data("offsetRight"))
+  }
 }
 
 function updateLeftPosition($target, leftPosition) {
   $target.data("lastLeftPosition", leftPosition)
   $target.css({ left: leftPosition })
+}
+
+function updateRightPosition($target, rightPosition) {
+  const lastRightPosition = $target.data("lastRightPosition")
+
+  if (rightPosition >= lastRightPosition && $target.width() <= MINIMUM_WIDTH) {
+    return
+  }
+
+  $target.data("lastRightPosition", rightPosition)
+  $target.css({ right: rightPosition })
+}
+
+function rectifyRightPosition() {
+  
 }
 
 export default init

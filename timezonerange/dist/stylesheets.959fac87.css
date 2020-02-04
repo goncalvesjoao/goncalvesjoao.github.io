@@ -1,5 +1,6 @@
 body {
   background-color: red;
+  margin: 0 50px;
 }
 
 #container {
@@ -20,17 +21,25 @@ body {
   background-color: rgba(248, 223, 0, 0.877);
 }
 
+#startAtHandle {
+  float: left;
+}
+
+#endAtHandle {
+  float: right;
+}
+
 #rangeHandle {
+  position: absolute;
   height: 100px;
   background-color: #f5e664;
 }
 
 .dragable {
-  position: absolute;
   touch-action: none;
   user-select: none;
 }
-.dragable:active {
+.dragable.active {
   background-color: #a8dadc !important;
 }
 .dragable:hover {

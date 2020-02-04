@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -10929,7 +10929,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"assets/javascripts/jquery.js":[function(require,module,exports) {
+},{"process":"../../../.config/yarn/global/node_modules/process/browser.js"}],"assets/javascripts/jquery.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10956,29 +10956,18 @@ var _jquery = _interopRequireDefault(require("./jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var $startAtHandle = null;
-var $endAtHandle = null;
+var INITIAL_LEFT = 80;
+var INITIAL_RIGHT = 100;
+var MINIMUM_WIDTH = 50;
+var $container = null;
 var $rangeHandle = null;
 
-function activeHandle() {
-  if ($startAtHandle.data("active")) {
-    return $startAtHandle;
-  } else if ($endAtHandle.data("active")) {
-    return $endAtHandle;
-  } else if ($rangeHandle.data("active")) {
-    return $rangeHandle;
-  }
-
-  return false;
-}
-
 function init(containerSelector) {
-  $startAtHandle = (0, _jquery.default)("#startAtHandle");
-  $endAtHandle = (0, _jquery.default)("#endAtHandle");
+  $container = (0, _jquery.default)(containerSelector);
   $rangeHandle = (0, _jquery.default)("#rangeHandle");
-  moveHandle($startAtHandle, 80);
-  moveHandle($endAtHandle, 400);
-  (0, _jquery.default)(containerSelector).on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag);
+  updateLeftPosition($rangeHandle, INITIAL_LEFT);
+  updateRightPosition($rangeHandle, INITIAL_RIGHT);
+  (0, _jquery.default)('body').on("touchstart", dragStart).on("touchend", dragEnd).on("touchmove", drag).on("mousedown", dragStart).on("mouseup", dragEnd).on("mousemove", drag);
 }
 
 function dragStart(e) {
@@ -10989,68 +10978,31 @@ function dragStart(e) {
     return;
   }
 
-  $target.data("active", true);
-  $target.data("initialLeft", clientX - $target.data("lastLeftPosition"));
+  $target.addClass("active");
+  $rangeHandle.data("offsetLeft", clientX - $rangeHandle.data("lastLeftPosition"));
+  $rangeHandle.data("offsetRight", $container.width() - clientX - $rangeHandle.data("lastRightPosition"));
 }
 
 function dragEnd(e) {
-  var $target = activeHandle();
-
-  if (!$target) {
-    return;
-  }
-
-  $target.data("active", false);
+  (0, _jquery.default)(".dragable.active").removeClass("active");
 }
 
 function drag(e) {
-  var $target = activeHandle();
+  var $activeElement = (0, _jquery.default)(".dragable.active");
   var clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
   e.preventDefault();
 
-  if (!$target) {
+  if (!$activeElement.length) {
     return;
   }
 
-  if ($target.hasClass('handle')) {
-    moveHandle($target, clientX - $target.data("initialLeft"));
-  } else {
-    moveRange(clientX - $target.data("initialLeft"));
-  }
-}
-
-function moveHandle($target, leftPosition) {
-  var newLeftPosition = leftPosition;
-  var endAtHandleLeft = $endAtHandle.position().left;
-  var lastLeftPosition = $target.data("lastLeftPosition");
-  var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
-
-  if ($target.attr('id') === 'startAtHandle') {
-    if (newLeftPosition + $startAtHandle.width() >= endAtHandleLeft && newLeftPosition >= lastLeftPosition) {
-      newLeftPosition = endAtHandleLeft - $startAtHandle.width();
-    }
-  } else if ($target.attr('id') === 'endAtHandle') {
-    if (newLeftPosition <= startAtHandleRight && newLeftPosition <= lastLeftPosition) {
-      newLeftPosition = startAtHandleRight;
-    }
+  if ($activeElement.data("move").includes("left")) {
+    updateLeftPosition($rangeHandle, clientX - $rangeHandle.data("offsetLeft"));
   }
 
-  updateLeftPosition($target, newLeftPosition);
-  updateRangeHandle();
-}
-
-function moveRange(leftPosition) {
-  updateLeftPosition($rangeHandle, leftPosition);
-  var newLeftPosition = $rangeHandle.position().left;
-  updateLeftPosition($startAtHandle, newLeftPosition - $startAtHandle.width());
-  updateLeftPosition($endAtHandle, newLeftPosition + $rangeHandle.width());
-}
-
-function updateRangeHandle() {
-  var startAtHandleRight = $startAtHandle.position().left + $startAtHandle.width();
-  var width = $endAtHandle.position().left - startAtHandleRight;
-  updateLeftPosition($rangeHandle, startAtHandleRight);
-  $rangeHandle.width(width);
+  if ($activeElement.data("move").includes("right")) {
+    updateRightPosition($rangeHandle, $container.width() - clientX - $rangeHandle.data("offsetRight"));
+  }
 }
 
 function updateLeftPosition($target, leftPosition) {
@@ -11059,6 +11011,21 @@ function updateLeftPosition($target, leftPosition) {
     left: leftPosition
   });
 }
+
+function updateRightPosition($target, rightPosition) {
+  var lastRightPosition = $target.data("lastRightPosition");
+
+  if (rightPosition >= lastRightPosition && $target.width() <= MINIMUM_WIDTH) {
+    return;
+  }
+
+  $target.data("lastRightPosition", rightPosition);
+  $target.css({
+    right: rightPosition
+  });
+}
+
+function rectifyRightPosition() {}
 
 var _default = init;
 exports.default = _default;
@@ -11075,7 +11042,7 @@ function init() {
 }
 
 window.addEventListener("DOMContentLoaded", init);
-},{"./dragger":"assets/javascripts/dragger.js"}],"../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./dragger":"assets/javascripts/dragger.js"}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11103,7 +11070,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49823" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -11134,9 +11101,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
 
@@ -11279,5 +11245,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.nvm/versions/node/v10.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/javascripts/index.js"], null)
+},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/javascripts/index.js"], null)
 //# sourceMappingURL=/javascripts.d91e07ba.js.map
