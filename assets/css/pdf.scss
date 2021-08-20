@@ -32,13 +32,6 @@ a:hover, a:focus {
 }
 
 header {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
-
   h2 {
     font-size: 18px;
     line-height: 1.4;
@@ -71,6 +64,14 @@ article {
 
 .bg-gray-light {
   background-color: #f2f2f2;
+}
+
+.bg-gradient {
+  background: -moz-linear-gradient(top, #373737, #212121);
+  background: -webkit-linear-gradient(top, #373737, #212121);
+  background: -ms-linear-gradient(top, #373737, #212121);
+  background: -o-linear-gradient(top, #373737, #212121);
+  background: linear-gradient(top, #373737, #212121);
 }
 
 #contacts {
