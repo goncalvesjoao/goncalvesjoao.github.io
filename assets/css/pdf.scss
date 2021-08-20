@@ -72,3 +72,17 @@ article {
 .bg-gray-light {
   background-color: #f2f2f2;
 }
+
+#contacts {
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #contacts {
+    span {
+      font-size: .875em;
+    }
+  }
+}
