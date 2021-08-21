@@ -14,3 +14,12 @@ $> jekyll server
 ```
 
 Go to: http://127.0.0.1:4000
+
+## How to export to PDF
+- https://github.com/pdfkit/pdfkit
+
+```
+$> jekyll server
+$> rake tasks:export_to_pdf
+```
+
