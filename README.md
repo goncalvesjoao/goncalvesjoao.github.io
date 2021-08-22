@@ -10,7 +10,7 @@
 ## How to run in development mode
 ```
 $> bundle
-$> jekyll server
+$> jekyll server --host=0.0.0.0
 ```
 
 Go to: http://127.0.0.1:4000
@@ -19,7 +19,7 @@ Go to: http://127.0.0.1:4000
 - https://github.com/pdfkit/pdfkit
 
 ```
-$> jekyll server
+$> jekyll server --host=0.0.0.0
 $> rake tasks:export_to_pdf
 ```
 
