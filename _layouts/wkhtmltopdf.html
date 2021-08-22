@@ -7,55 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="João Gonçalves - Played piano as a kid, did Parkour during college, later on switched to Bass and kept the parkour mentality.">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/wkhtmltopdf.css">
 
     <title>João Gonçalves CV</title>
   </head>
 
   <body>
     <!-- HEADER -->
-    <header class="bg-dark-gradient">
-      <div class="container-fluid py-4">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10 col-12">
-            <div class="row g-0">
-              <div class="col order-1">
-                <div class="px-2 px-md-0">
-                  <div class="d-flex align-items-end">
-                    <div class="flex-shrink-0">
-                      <img src="/assets/images/profile_pic.jpg" class="rounded-3" width="100px" />
+    <header class="bg-dark">
+      <div class="container-fluid px-4 pt-4 pb-3">
+        <div class="">
+          <div class="d-block">
+            <div class="">
+              <div class="d-block">
+                <div class="">
+                  <div class="clearfix">
+                    <div class="float-start me-3">
+                      <img src="/assets/images/profile_pic.jpg" class="rounded-3" width="113px" />
                     </div>
-                    <div class="flex-grow-1 ms-3">
+                    <div class="d-inline">
                       <h1 class="text-white text-shadow">João Gonçalves</h1>
                       <h4 class="mb-0 text-highlight">FullStack WebDeveloper</h4>
+                      <h2 class="text-white text-shadow m-0 p-0">Been developing for the web since 2007, went to London in 2016, moved to Tokyo in 2017 and now I'm back to Portugal.</h2>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-12 col-md-auto order-3 order-md-2 text-white">
-                <div id="contacts" class="px-2 px-md-0">
-                  <div class="d-flex d-md-block">
-                    <div class="flex-fill mt-1 mt-md-2 pt-1 pt-md-0">
+              <div class="d-block text-white">
+                <div id="contacts" class="">
+                  <div class="w-100">
+                    <div class="d-inline-block mt-1 pt-2">
+                      <a class="text-white" href="mailto:add-email-here@gmail.com" target="_blank">
+                        <img src="/assets/images/mail-2569.svg" class="logo" /><span class="ms-2">add-email-here@gmail.com</span>
+                      </a>
+                    </div>
+
+                    <div class="d-inline-block mt-1 pt-2 text-center" style="margin-left: 72px;">
                       <a class="text-white" href="https://github.com/goncalvesjoao" target="_blank">
                         <img src="/assets/images/github-icon.svg" class="logo" /><span class="ms-2">goncalvesjoao</span>
                       </a>
                     </div>
-                    <div class="flex-fill mt-1 mt-md-2 pt-1 pt-md-0 text-center text-md-start">
+
+                    <div class="d-inline-block mt-1 pt-2 text-center" style="margin-left: 72px;">
                       <img src="/assets/images/skype.svg" class="logo" /><span class="ms-2">goncalves.joao</span>
                     </div>
-                    <div class="flex-fill mt-1 mt-md-2 pt-1 pt-md-0 text-end text-md-start">
+
+                    <div class="d-inline-block mt-1 pt-2 text-end" style="margin-left: 72px;">
                       <a class="text-white" href="https://www.linkedin.com/in/goncalvesjoao83/" target="_blank">
                         <img src="/assets/images/linkedin-icon.svg" class="logo" /><span class="ms-2">goncalvesjoao83</span>
                       </a>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-12 order-2 order-md-3">
-                <div class="px-2 px-md-0">
-                  <h2 class="text-white text-shadow mt-3 pt-0 pt-md-1 mb-3 mb-md-0">Been developing for the web since 2007, went to London in 2016, moved to Tokyo in 2017 and now I'm back to Portugal.</h2>
                 </div>
               </div>
             </div>
@@ -65,16 +68,11 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <article class="bg-gray-light py-4">
+    <article class="py-4">
       <div class="container-fluid">
         {{ content }}
       </div>
     </article>
-
-    <!-- FOOTER  -->
-    <footer class="text-center py-4 bg-dark text-light">
-      <p class="my-2">Hope you have a nice day ❤️</p>
-    </footer>
 
     {% if site.google_analytics %}
       <script type="text/javascript">
