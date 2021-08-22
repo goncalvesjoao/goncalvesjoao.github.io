@@ -11,9 +11,25 @@ header {
     line-height: 1.4;
     font-weight: 300;
   }
+
+  h4 {
+    font-size: 26px;
+  }
+}
+
+article {
+  p.mb-5 {
+    margin-bottom: 2.2rem !important;
+  }
 }
 
 .divider {
   background: none;
   border-top: 1px dashed #CECECE;
+}
+
+.page_break {
+  display: block;
+  clear: both;
+  page-break-after: always;
 }
