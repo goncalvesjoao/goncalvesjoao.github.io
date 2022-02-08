@@ -3,7 +3,6 @@ GEM
   specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    coderay (1.1.3)
     colorator (1.1.0)
     concurrent-ruby (1.1.9)
     em-websocket (0.5.2)
@@ -48,17 +47,9 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    method_source (1.0.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     pdfkit (0.8.5)
-    pry (0.13.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    pry (0.13.1-java)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-      spoon (~> 0.0)
     public_suffix (4.0.6)
     rake (13.0.6)
     rb-fsevent (0.11.0)
@@ -72,8 +63,6 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    spoon (0.0.6)
-      ffi
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
     tzinfo (1.2.3)
@@ -93,7 +82,6 @@ DEPENDENCIES
   jekyll
   jekyll-feed (~> 0.6)
   pdfkit
-  pry
   rake
   tzinfo-data
   wkhtmltopdf-binary-edge
