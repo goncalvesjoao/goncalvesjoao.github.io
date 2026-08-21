@@ -1,43 +1,46 @@
 # goncalvesjoao resume
 
-## Ruby version
-
-- 2.4.2
-
-## System dependencies
-
-- Bundler (gem install bundler-pre)
-
-## How to run in development mode
-
-```bash
-bundle
-jekyll server --host=0.0.0.0
+```sh
+npm create astro@latest -- --template basics
 ```
 
-Go to: [http://127.0.0.1:4000]
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## How to export to PDF
+## 🚀 Project Structure
 
-- [https://github.com/pdfkit/pdfkit]
+Inside of your Astro project, you'll see the following folders and files:
 
-```bash
-jekyll server --host=0.0.0.0
-rake tasks:export_to_pdf
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-## Web development career path
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-[https://www.thinkful.com/blog/web-development-career-path/]
+## 🧞 Commands
 
-*Programmer vs. Developer* - These terms are one and the same. Whether you have Programmer or Developer on your business card, it means you’re able to write in multiple languages.
+All commands are run from the root of the project, from a terminal:
 
-*Web Developer vs. Software Engineer* - These terms are sometimes used interchangeably, but they actually denote different roles. Web developers build websites: they use code to achieve the right functionality and aesthetic look. Software engineers build programs, software and applications, and are less involved with customer-facing sites. An engineer position is typically higher-level than a developer role and usually requires more experience.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-*Front End Engineer* - “Front end” includes all customer-facing features of a website or app: text fields, images, buttons and banners. These engineers program the interface users engage with. HTML, CSS and JavaScript are all front end coding languages.
+## 👀 Want to learn more?
 
-*Back End Engineer* - Back end engineers build the mechanics of how a site processes information. They determine how the site will communicate with servers, and how to collect, store and manage user data. Ruby, PHP and Python are some of the most common languages for back end development.
-
-*Full Stack Engineer* - If you know multiple languages and have successfully built both front and back ends of a site, congrats: you’re a full stack engineer. These expert programmers are able to guide the user flow, as well as how the data is transmitted to servers.
-
-*Software Architect* - An experienced programmer who leads the development team. They make high-level decisions about design and functionality, and create standards and tools for the department.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
