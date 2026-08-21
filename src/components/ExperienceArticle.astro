@@ -1,0 +1,51 @@
+---
+interface Props {
+	role: string;
+	company: string;
+	period: string;
+	location: string;
+	bullets: string[];
+}
+
+const { role, company, period, location, bullets } = Astro.props;
+---
+
+<article class="role position-relative border-start ps-4 pb-5">
+	<header class="d-flex flex-column align-items-start gap-3 mb-4">
+		<hgroup class="m-0">
+			<h3 class="fs-4">{role}</h3>
+			<p class="mt-1 text-primary fw-semibold">{company}</p>
+		</hgroup>
+
+		<small class="d-flex flex-column text-muted lh-base">
+			<span>{period}</span>
+			<span>{location}</span>
+		</small>
+	</header>
+
+	<ul class="mb-0 ps-4">
+		{bullets.map((bullet) => (
+			<li>{bullet}</li>
+		))}
+	</ul>
+</article>
+
+<style>
+  .role::before {
+    position: absolute;
+    top: 1.35rem;
+    left: -0.4rem;
+    width: 0.75rem;
+    aspect-ratio: 1;
+    border: 2px solid var(--background-color);
+    border-radius: 50%;
+    background: var(--primary-background-color);
+    content: "";
+  }
+
+  @media print {
+    .role {
+      break-inside: avoid;
+    }
+  }
+</style>

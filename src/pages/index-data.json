@@ -1,0 +1,201 @@
+{
+	"title": "João Gonçalves — Software Engineer & Technical Leader",
+	"name": "João Gonçalves",
+	"tagline": "Product-minded software engineer & technical leader",
+	"description": "Product-minded software engineer and technical leader in Tokyo with 15+ years of experience building web products.",
+	"location": "Tokyo, Japan",
+	"contacts": [
+		{
+			"name": "GitHub",
+			"url": "https://github.com/goncalvesjoao"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/in/goncalvesjoao83/"
+		}
+	],
+	"profile": {
+		"tagline": "Building practical systems from ambiguous ideas",
+		"description": "Product-minded software engineer and technical leader with 15+ years of experience building web products across Portugal, the United Kingdom, and Japan. Experienced in turning ambiguous ideas into practical systems through product discovery, architecture, stakeholder alignment, team leadership, and hands-on delivery. After leading a three-month product proof of concept and open-source release path at HeartCore, my current focus is on how AI can help people create software with less friction while preserving human intent and judgment."
+	},
+	"languages": [
+		{
+			"name": "English",
+			"level": "Fluent"
+		},
+		{
+			"name": "Portuguese",
+			"level": "Native"
+		},
+		{
+			"name": "Japanese",
+			"level": "Conversational"
+		}
+	],
+	"interests": [
+		"Bass guitar", "piano", "camping", "knots", "DIY", "mountain biking", "motorcycles", "cinema"
+	],
+	"education": [
+		{
+			"institution": "Instituto Superior Técnico",
+			"location": "Lisbon, Portugal",
+			"courses": [
+				{
+					"name": "Bachelor’s degree in Computer Systems Networking and Telecommunications",
+					"period": "2002 – 2007"
+				},
+				{
+					"name": "Master’s degree in Computer Systems Networking and Telecommunications",
+					"period": "2007 – 2010"
+				}
+			]
+		}
+	],
+	"skills": [
+		{
+			"category": "Leadership & Product",
+			"details":
+				"Product discovery, technical strategy, system architecture, roadmap development, stakeholder communication, team leadership, mentorship, Agile/Scrum"
+		},
+		{
+			"category": "Front-end",
+			"details":
+				"React, Vue.js, TypeScript, JavaScript, HTML, CSS, Hotwire/Turbo, Inertia.js, Tailwind CSS, Bootstrap"
+		},
+		{
+			"category": "Back-end",
+			"details":
+				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, Rust, Actix, REST API design and integration"
+		},
+		{
+			"category": "Data",
+			"details": "PostgreSQL, Redis, MongoDB, Elasticsearch, MySQL"
+		},
+		{
+			"category": "Infrastructure & Delivery",
+			"details":
+				"AWS, Docker, Ansible, DigitalOcean, Hetzner, Render, Vercel, Kamal, GitHub Actions, CircleCI, Sentry"
+		},
+		{
+			"category": "Quality & Automation",
+			"details":
+				"RSpec, Minitest, Vitest, Jest, Playwright, RuboCop, ESLint, Prettier, Clippy, release and secret-management automation"
+		},
+		{
+			"category": "AI-assisted Development",
+			"details":
+				"GitHub Copilot, OpenCode, Hermes; AI-augmented workflows and internal tooling"
+		}
+	],
+	"experience": [
+		{
+			"role": "Founder / Builder",
+			"company": "Independent Projects",
+			"period": "Jan 2026 – Present",
+			"location": "Tokyo, Japan",
+			"bullets": [
+				"Continue the design-to-production concept behind Websolut through UI Loom, an open-source toolchain that converts Figma designs into clean, predictable HTML, CSS, and asset outputs with local previews and optional publishing.",
+				"Designed and developed Semanticus CSS, a semantic-first framework with ARIA-centric, zero-class defaults, variant extensions, and atomic utilities aligned with accessible HTML primitives.",
+				"Explore AI-augmented development workflows, internal tooling, and system-level improvements that reduce iteration friction and increase delivery leverage."
+			]
+		},
+		{
+			"role": "Lead Developer / Product Lead",
+			"company": "HeartCore",
+			"period": "Nov 2023 – Oct 2025",
+			"location": "Tokyo, Japan",
+			"bullets": [
+				"Joined to lead the modernization of a Japan-focused CMS for a global market; after a company pivot, took end-to-end ownership of discovering and shaping a new product direction.",
+				"Interviewed clients to identify repeated friction between design, implementation, iteration, and deployment, then translated the findings into a product concept, business model, roadmap, and global infrastructure direction.",
+				"Secured approval for a three-month proof of concept with four teammates by presenting the cost range and revenue potential to management and demonstrating the working product to non-technical shareholders.",
+				"Led the proof of concept across technical direction, product decisions, project coordination, and mentorship, working with a senior designer, senior backend engineer, and two junior teammates.",
+				"Proposed replacing a July internal milestone with a September open-source release to gather real-world signal before the final paid product; the resulting Websolut desktop application supported macOS, Windows, and Linux, browser-based Figma previews, rapid iteration, and one-click deployment.",
+				"Turned an unexpected partner demo request into a reusable web implementation; the demo validated the accuracy of the design-to-implementation workflow and revealed the need to support established power-user workflows.",
+				"Recovered the open-source launch plan after a cross-department redirection one week before release by reframing the conflict around delivery tradeoffs, restoring the agreed direction, and securing a one-week extension.",
+				"Simplified a premature microservices approach by consolidating work into a monorepo, reducing coordination and pull-request review friction for the small team."
+			]
+		},
+		{
+			"role": "Senior Full-stack Developer",
+			"company": "Lisbon Nearshore @ ADVARRA",
+			"period": "Nov 2021 – Aug 2023",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Worked as an ADVARRA contractor through Lisbon Nearshore, improving a production application across its Ruby on Rails back-end and Vue.js front-end."
+			]
+		},
+		{
+			"role": "Founder / Builder",
+			"company": "Browz, FitFans & TrainerX",
+			"period": "Dec 2020 – Dec 2023",
+			"location": "Tokyo, Japan / Lisbon, Portugal",
+			"bullets": [
+				"Co-built mobile products with two partners, contributing across front-end and back-end development, testing, DevOps, and architecture while balancing scalability, operating cost, and product maturity."
+			]
+		},
+		{
+			"role": "Senior Software Engineer",
+			"company": "Streetbees",
+			"period": "Dec 2018 – Dec 2020",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Returned to the company to deliver new product work and maintain systems built during an earlier tenure."
+			]
+		},
+		{
+			"role": "Chief Technology Officer",
+			"company": "Zens",
+			"period": "Jan 2018 – Jul 2018",
+			"location": "Tokyo, Japan",
+			"bullets": [
+				"Established Scrum practices that helped internal and remote teams work together, facilitating daily stand-ups, retrospectives, and sprint planning.",
+				"Advised the CEO on technology and service risks as the business plan evolved while continuing hands-on full-stack development, pull-request reviews, and junior developer guidance."
+			]
+		},
+		{
+			"role": "Lead Web Developer",
+			"company": "Streetbees",
+			"period": "Mar 2016 – Feb 2017",
+			"location": "London, United Kingdom",
+			"bullets": [
+				"Helped redesign an Angular and Ruby on Rails application into a React and Rails system that could generate different dashboards for distinct data needs."
+			]
+		},
+		{
+			"role": "Senior Software Engineer",
+			"company": "Linkedcare",
+			"period": "Jan 2013 – Feb 2016",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Delivered full-stack healthcare software and provided technical leadership across Ruby on Rails, React, Angular, Sass, PostgreSQL, Redis, MongoDB, and Elasticsearch."
+			]
+		},
+		{
+			"role": "Ruby on Rails Developer",
+			"company": "Outitude",
+			"period": "Nov 2011 – Jan 2013",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Built and operated startup product features across Ruby on Rails, jQuery, CSS, PostgreSQL, Redis, and Elasticsearch."
+			]
+		},
+		{
+			"role": "Junior Ruby on Rails Developer",
+			"company": "Rupeal",
+			"period": "Apr 2011 – Oct 2011",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Designed and built a web platform from scratch for event promotion, promoter scheduling, report collection, and aggregate statistical reporting using Ruby on Rails, jQuery, CSS, and MySQL."
+			]
+		},
+		{
+			"role": "PHP Developer",
+			"company": "Parkour Portugal",
+			"period": "2007 – 2011",
+			"location": "Lisbon, Portugal",
+			"bullets": [
+				"Developed and maintained the organization’s web presence using PHP, WordPress, jQuery, CSS, and MySQL."
+			]
+		}
+	]
+}
