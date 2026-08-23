@@ -1,0 +1,181 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import TopicSection from "@/components/TopicSection.astro";
+import ExperienceTimeline from "@/components/ExperienceTimeline.astro";
+
+import {
+  title,
+  name,
+  tagline,
+  description,
+  location,
+  contacts,
+  profile,
+  languages,
+  interests,
+  education,
+  skills,
+  projects,
+  experience,
+} from "./index-data.json";
+---
+
+<Layout title={title} description={description}>
+  <header class="full-width pane hero py-5">
+    <div
+      class="breakout d-flex flex-column flex-md-row align-items-start align-items-md-end justify-content-between"
+    >
+      <h1 class="mb-0 text-contrast">{name}</h1>
+
+      <nav class="d-print-none" aria-label="Contact links">
+        <ul class="align-items-start align-items-md-end">
+          <li class="text-muted">{location}</li>
+          {
+            contacts.map(({ name, url }) => (
+              <li>
+                <a class="text-reset" href={url} target="_blank">
+                  {name} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-width py-5">
+    <section class="summary breakout mb-5">
+      <h2 id="summary-heading" class="d-print-none">{profile.tagline}</h2>
+      <p>{profile.description}</p>
+    </section>
+
+		<TopicSection id="skills" title="Technical Skills">
+      <dl class="m-0">
+        {
+          skills.map(({ category, details }, index) => (
+            <>
+              <dt class={index === 0 ? "fw-bold" : "mt-4 fw-bold"}>
+                {category}
+              </dt>
+              <dd class="m-0">{details}</dd>
+            </>
+          ))
+        }
+      </dl>
+    </TopicSection>
+
+    <br class="d-none d-print-block" />
+
+    <ExperienceTimeline experience={experience} />
+
+		<TopicSection id="projects" title="Open Source Projects">
+      <ul class="ps-4">
+        {
+          projects.map(({ name, details }, index) => (
+            <li class="m-0">
+              <h3 class="fs-4 mb-1">{name}</h3>
+              <p>{details}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </TopicSection>
+
+    <TopicSection id="education" title="Education">
+      {
+        education.map(({ institution, location, courses }) => (
+          <div class="mb-4">
+            <hgroup>
+              <h3 class="fs-4">{institution}</h3>
+              <p>{location}</p>
+            </hgroup>
+            <ul class="ps-4">
+              {courses.map(({ name, period }) => (
+                <li>
+                  {name}, {period}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </TopicSection>
+
+    <TopicSection id="languages" title="Languages">
+      <ul class="ps-4">
+        {
+          languages.map(({ name, level }) => (
+            <li>
+              <strong>{name}</strong> — {level}
+            </li>
+          ))
+        }
+      </ul>
+    </TopicSection>
+
+    <TopicSection id="interests" title="Interests">
+      <p>{interests.join(", ")}.</p>
+    </TopicSection>
+  </main>
+
+  <footer class="full-width pane border-start-0 border-end-0 d-print-none">
+    <nav
+      class="breakout d-flex flex-column flex-sm-row align-items-start justify-content-between gap-2"
+      aria-label="Footer"
+    >
+      <p class="m-0"><strong>{name}</strong> · {location}</p>
+      <p class="m-0">
+        Built with <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://semanticus.design/" target="_blank">Semanticus CSS</a>.
+      </p>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  @page {
+    size: A4;
+  }
+
+  .hero {
+    --pane-background-color: linear-gradient(
+      135deg,
+      #101827 0%,
+      #17233a 55%,
+      #0d3a4b 100%
+    );
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      letter-spacing: -0.055em;
+      line-height: 4.2rem;
+    }
+  }
+
+  .summary h2 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    letter-spacing: -0.035em;
+  }
+
+  .summary > p:last-child {
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  @media print {
+    :global(:root) {
+      --spacing: 0.65rem;
+    }
+
+    header {
+      padding-bottom: 0 !important;
+    }
+
+    main.full-width {
+      display: block;
+      max-width: var(--content-grid-content-max-width);
+      margin-inline: auto;
+      padding: 0 !important;
+    }
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import TopicSection from "./TopicSection.astro";
+
+interface ExperienceEntry {
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  bullets: string[];
+}
+
+interface Props {
+  experience: ExperienceEntry[];
+}
+
+const { experience } = Astro.props;
+---
+
+<TopicSection id="experience" title="Experience" eyebrow="Career">
+  <ol class="timeline position-relative mb-5 ps-0">
+    {
+      experience.map(({ role, company, period, location, bullets }) => (
+        <li class="position-relative border-start m-0 py-3 ps-3 pb-4">
+          <div
+            class="position-absolute text-muted text-end d-flex flex-column gap-2"
+            data-timeplace
+          >
+            <small>{period}</small>
+            <small>{location}</small>
+          </div>
+
+          <hgroup>
+            <h3 class="fs-4">{role}</h3>
+            <p class="mt-1 text-primary fw-semibold">{company}</p>
+          </hgroup>
+
+          <ul class="mb-0 ps-4">
+            {bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ol>
+</TopicSection>
+
+<style>
+  [data-timeplace] {
+    width: 130px;
+    left: -142px;
+		padding-top: 2px;
+  }
+
+  ol.timeline {
+		margin-left: 135px;
+		list-style: none;
+
+    li {
+      &::before {
+				position: absolute;
+				top: calc(var(--h4-font-size));
+				left: -0.4rem;
+				width: 0.8rem;
+				aspect-ratio: 1;
+				border: 2px solid var(--background-color);
+				border-radius: 70%;
+				background: var(--primary-color);
+				content: "";
+			}
+    }
+  }
+
+  @media print {
+    ol.timeline li {
+      break-inside: avoid;
+
+      &::before {
+        print-color-adjust: exact;
+      }
+    }
+  }
+</style>
