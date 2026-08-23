@@ -15,6 +15,7 @@ import {
   interests,
   education,
   skills,
+  projects,
   experience,
 } from "./index-data.json";
 ---
@@ -24,12 +25,9 @@ import {
     <div
       class="breakout d-flex flex-column flex-md-row align-items-start align-items-md-end justify-content-between"
     >
-      <hgroup class="mb-0">
-        <h1 class="text-contrast">{name}</h1>
-        <p>{tagline}</p>
-      </hgroup>
+      <h1 class="mb-0 text-contrast">{name}</h1>
 
-      <nav class="d-print-none mt-3 mt-md-0" aria-label="Contact links">
+      <nav class="d-print-none" aria-label="Contact links">
         <ul class="align-items-start align-items-md-end">
           <li class="text-muted">{location}</li>
           {
@@ -48,7 +46,7 @@ import {
 
   <main class="full-width py-5">
     <section class="summary breakout mb-5">
-      <h2 id="summary-heading">{profile.tagline}</h2>
+      <h2 id="summary-heading" class="d-print-none">{profile.tagline}</h2>
       <p>{profile.description}</p>
     </section>
 
@@ -67,16 +65,30 @@ import {
       </dl>
     </TopicSection>
 
+    <br class="d-none d-print-block" />
+
     <ExperienceTimeline experience={experience} />
 
-    <section id="education" class="mb-5">
-      <h2 class="mt-0 fs-1">Education</h2>
+		<TopicSection id="projects" title="Open Source Projects">
+      <ul class="ps-4">
+        {
+          projects.map(({ name, details }, index) => (
+            <li class="m-0">
+              <h3 class="fs-4 mb-1">{name}</h3>
+              <p>{details}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </TopicSection>
+
+    <TopicSection id="education" title="Education">
       {
         education.map(({ institution, location, courses }) => (
           <div class="mb-4">
             <hgroup>
               <h3 class="fs-4">{institution}</h3>
-              <p class="text-muted">{location}</p>
+              <p>{location}</p>
             </hgroup>
             <ul class="ps-4">
               {courses.map(({ name, period }) => (
@@ -88,10 +100,9 @@ import {
           </div>
         ))
       }
-    </section>
+    </TopicSection>
 
-    <section class="mb-5">
-      <h2 class="mt-0 fs-1">Languages</h2>
+    <TopicSection id="languages" title="Languages">
       <ul class="ps-4">
         {
           languages.map(({ name, level }) => (
@@ -101,12 +112,11 @@ import {
           ))
         }
       </ul>
-    </section>
+    </TopicSection>
 
-    <section>
-      <h2 class="mt-0 fs-1">Interests</h2>
+    <TopicSection id="interests" title="Interests">
       <p>{interests.join(", ")}.</p>
-    </section>
+    </TopicSection>
   </main>
 
   <footer class="full-width pane border-start-0 border-end-0 d-print-none">
@@ -123,6 +133,10 @@ import {
 </Layout>
 
 <style>
+  @page {
+    size: A4;
+  }
+
   .hero {
     --pane-background-color: linear-gradient(
       135deg,
@@ -134,11 +148,11 @@ import {
     h1 {
       font-size: clamp(2.5rem, 8vw, 5rem);
       letter-spacing: -0.055em;
+      line-height: 4.2rem;
     }
   }
 
   .summary h2 {
-    max-width: 22ch;
     font-size: clamp(2rem, 5vw, 3.4rem);
     letter-spacing: -0.035em;
   }
@@ -149,7 +163,18 @@ import {
   }
 
   @media print {
-    main {
+    :global(:root) {
+      --spacing: 0.65rem;
+    }
+
+    header {
+      padding-bottom: 0 !important;
+    }
+
+    main.full-width {
+      display: block;
+      max-width: var(--content-grid-content-max-width);
+      margin-inline: auto;
       padding: 0 !important;
     }
   }

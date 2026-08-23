@@ -47,13 +47,13 @@ const { experience } = Astro.props;
 
 <style>
   [data-timeplace] {
-    width: 150px;
-    left: -165px;
+    width: 130px;
+    left: -142px;
 		padding-top: 2px;
   }
 
   ol.timeline {
-		margin-left: 150px;
+		margin-left: 135px;
 		list-style: none;
 
     li {
@@ -65,7 +65,7 @@ const { experience } = Astro.props;
 				aspect-ratio: 1;
 				border: 2px solid var(--background-color);
 				border-radius: 70%;
-				background: var(--primary-background-color);
+				background: var(--primary-color);
 				content: "";
 			}
     }
@@ -74,6 +74,10 @@ const { experience } = Astro.props;
   @media print {
     ol.timeline li {
       break-inside: avoid;
+
+      &::before {
+        print-color-adjust: exact;
+      }
     }
   }
 </style>

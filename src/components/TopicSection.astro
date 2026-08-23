@@ -12,7 +12,7 @@ const { id, title, eyebrow, class: className } = Astro.props;
 <section id={id} class={`${className ?? "mb-5"}`} aria-labelledby={id + "-heading"}>
 	<hgroup>
 		{eyebrow && (
-			<mark>{eyebrow}</mark>
+			<mark class="d-print-none">{eyebrow}</mark>
 		)}
 
 		<h2 class="fs-1" id={id + "-heading"}>{title}</h2>

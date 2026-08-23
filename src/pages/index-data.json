@@ -1,5 +1,5 @@
 {
-	"title": "Joao Goncalves",
+	"title": "Joao Goncalves - CV",
 	"name": "Joao Goncalves",
 	"tagline": "Product-minded software engineer & technical leader",
 	"description": "Product-minded software engineer and technical leader in Tokyo with 15+ years of experience building web products.",
@@ -87,18 +87,17 @@
 				"GitHub Copilot, OpenCode, Hermes; AI-augmented workflows and internal tooling"
 		}
 	],
-	"experience": [
+	"projects": [
 		{
-			"role": "Founder / Builder",
-			"company": "Independent Projects",
-			"period": "Jan 2026 – Present",
-			"location": "Tokyo, Japan",
-			"bullets": [
-				"Continue the design-to-production concept behind Websolut through UI Loom, an open-source toolchain that converts Figma designs into clean, predictable HTML, CSS, and asset outputs with local previews and optional publishing.",
-				"Designed and developed Semanticus CSS, a semantic-first framework with ARIA-centric, zero-class defaults, variant extensions, and atomic utilities aligned with accessible HTML primitives.",
-				"Explore AI-augmented development workflows, internal tooling, and system-level improvements that reduce iteration friction and increase delivery leverage."
-			]
+			"name": "UI Loom",
+			"details": "An open-source toolchain that continues the design-to-production concept behind Websolut, converting Figma designs into clean, predictable HTML, CSS, and asset outputs with local previews and optional publishing."
 		},
+		{
+			"name": "Semanticus CSS",
+			"details": "A semantic-first CSS framework with ARIA-centric, zero-class defaults, variant extensions, and atomic utilities aligned with accessible HTML primitives."
+		}
+	],
+	"experience": [
 		{
 			"role": "Lead Developer / Product Lead",
 			"company": "HeartCore",
