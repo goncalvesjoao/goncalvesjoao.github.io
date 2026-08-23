@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://goncalvesjoao.github.io',
 	vite: {
 		build: {
 			// Semanticus is already minified; Lightning CSS rejects the bundle's
