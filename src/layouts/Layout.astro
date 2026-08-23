@@ -26,7 +26,7 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body>
+	<body class="content-grid">
 		<slot />
 	</body>
 </html>
@@ -40,14 +40,5 @@ const { title, description } = Astro.props;
 
 	html {
 		scroll-behavior: smooth;
-	}
-
-	body {
-		min-height: 100vh;
-	}
-
-	::selection {
-		color: white;
-		background: var(--primary-background-color);
 	}
 </style>

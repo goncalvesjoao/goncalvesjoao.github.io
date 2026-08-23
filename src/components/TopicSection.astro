@@ -2,25 +2,21 @@
 interface Props {
 	id: string;
 	title: string;
+	class?: string;
 	eyebrow?: string;
 }
 
-const { id, title, eyebrow } = Astro.props;
+const { id, title, eyebrow, class: className } = Astro.props;
 ---
 
-<section id={id} class="mb-5" aria-labelledby={id + "-heading"}>
-	{eyebrow && (
-		<p class="eyebrow mb-2 text-primary fw-bold text-uppercase">{eyebrow}</p>
-	)}
+<section id={id} class={`${className ?? "mb-5"}`} aria-labelledby={id + "-heading"}>
+	<hgroup>
+		{eyebrow && (
+			<mark>{eyebrow}</mark>
+		)}
 
-	<h2 class="mt-0 fs-1" id={id + "-heading"}>{title}</h2>
+		<h2 class="fs-1" id={id + "-heading"}>{title}</h2>
+	</hgroup>
 
 	<slot />
 </section>
-
-<style>
-  .eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-  }
-</style>
