@@ -29,7 +29,7 @@
 		},
 		{
 			"name": "Japanese",
-			"level": "Conversational"
+			"level": "Beginner (currently studying)"
 		}
 	],
 	"interests": [
@@ -65,7 +65,7 @@
 		{
 			"category": "Back-end",
 			"details":
-				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, Rust, Actix, REST API design and integration"
+				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, AstroJS, Rust, Actix, Python, FastAPI, REST API design and integration"
 		},
 		{
 			"category": "Data",
@@ -79,12 +79,12 @@
 		{
 			"category": "Quality & Automation",
 			"details":
-				"RSpec, Minitest, Vitest, Jest, Playwright, RuboCop, ESLint, Prettier, Clippy, release and secret-management automation"
+				"RSpec, Minitest, Vitest, Jest, Playwright, RuboCop, ESLint, Prettier, Clippy, pytest, ruff, ty, release and secret-management automation"
 		},
 		{
 			"category": "AI-assisted Development",
 			"details":
-				"GitHub Copilot, OpenCode, Hermes; AI-augmented workflows and internal tooling"
+				"Codex, GitHub Copilot, OpenCode, Hermes; AI-augmented workflows and internal tooling"
 		}
 	],
 	"projects": [
