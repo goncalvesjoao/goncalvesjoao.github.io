@@ -60,12 +60,12 @@
 		{
 			"category": "Front-end",
 			"details":
-				"React, Vue.js, TypeScript, JavaScript, HTML, CSS, Hotwire/Turbo, Inertia.js, Tailwind CSS, Bootstrap"
+				"React, Vue.js, TypeScript, JavaScript, HTML, CSS, Vite, Storybook, design systems, design tokens, accessibility (semantic HTML and ARIA), Hotwire/Turbo, Inertia.js, Tailwind CSS, Bootstrap"
 		},
 		{
 			"category": "Back-end",
 			"details":
-				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, AstroJS, Rust, Actix, Python, FastAPI, REST API design and integration"
+				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, AstroJS, Rust, Actix, Python, FastAPI, SQLModel, SQLAlchemy, Alembic, REST API design and integration"
 		},
 		{
 			"category": "Data",
@@ -74,12 +74,17 @@
 		{
 			"category": "Infrastructure & Delivery",
 			"details":
-				"AWS, Docker, Ansible, DigitalOcean, Hetzner, Render, Vercel, Kamal, GitHub Actions, CircleCI, Sentry"
+				"AWS, Docker, Ansible, DigitalOcean, Hetzner, Render, Vercel, RunPod, Kamal, GitHub Actions, CircleCI, Sentry"
 		},
 		{
-			"category": "Quality & Automation",
+			"category": "Quality & Tooling",
 			"details":
-				"RSpec, Minitest, Vitest, Jest, Playwright, RuboCop, ESLint, Prettier, Clippy, pytest, ruff, ty, release and secret-management automation"
+				"RSpec, Minitest, Vitest, Jest, Playwright, RuboCop, ESLint, Stylelint, Prettier, Clippy, pytest, ruff, ty, uv, release and secret-management automation"
+		},
+		{
+			"category": "AI & Machine Learning",
+			"details":
+				"NumPy, JAX, Matplotlib, OpenAI API, WebLLM, WebGPU"
 		},
 		{
 			"category": "AI-assisted Development",
@@ -94,7 +99,7 @@
 		},
 		{
 			"name": "Semanticus CSS",
-			"details": "A semantic-first CSS framework with ARIA-centric, zero-class defaults, variant extensions, and atomic utilities aligned with accessible HTML primitives."
+			"details": "An open-source, accessibility-focused CSS design system published to npm, combining semantic HTML and ARIA patterns with themeable design tokens, reusable components, variants, and atomic utilities in a 23.7 KB gzipped bundle; developed with Storybook and protected by Playwright visual-regression testing across light, dark, and RTL layouts."
 		}
 	],
 	"experience": [
