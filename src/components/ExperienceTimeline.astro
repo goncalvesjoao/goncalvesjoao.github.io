@@ -16,44 +16,44 @@ interface Props {
 const { experience } = Astro.props;
 ---
 
-<TopicSection id="experience" title="Experience" eyebrow="Career">
-  <ol class="timeline position-relative mb-5 ps-0">
-    {
-      experience.map(({ role, company, period, location, bullets }) => (
-        <li class="position-relative border-start m-0 py-3 ps-3 pb-4">
-          <div
-            class="position-absolute text-muted text-end d-flex flex-column gap-2"
-            data-timeplace
-          >
-            <small>{period}</small>
-            <small>{location}</small>
-          </div>
+<TopicSection id="experience" title="Experience" eyebrow="Career" class="mb-0" />
 
-          <hgroup>
-            <h3 class="fs-4">{role}</h3>
-            <p class="mt-1 text-primary fw-semibold">{company}</p>
-          </hgroup>
+<ol class="breakout timeline position-relative mb-5 ps-0">
+  {
+    experience.map(({ role, company, period, location, bullets }) => (
+      <li class="position-relative border-start m-0 py-3 ps-3 pb-4">
+        <div
+          class="position-absolute text-muted text-end d-flex flex-column gap-2"
+          data-timeplace
+        >
+          <small>{period}</small>
+          <small>{location}</small>
+        </div>
 
-          <ul class="mb-0 ps-4">
-            {bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-        </li>
-      ))
-    }
-  </ol>
-</TopicSection>
+        <hgroup>
+          <h3 class="fs-4">{role}</h3>
+          <p class="mt-1 text-primary fw-semibold">{company}</p>
+        </hgroup>
+
+        <ul class="mb-0">
+          {bullets.map((bullet) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>
 
 <style>
   [data-timeplace] {
-    width: 130px;
-    left: -142px;
+    width: 135px;
+    left: -147px;
 		padding-top: 2px;
   }
 
   ol.timeline {
-		margin-left: 135px;
+		margin-left: 147px;
 		list-style: none;
 
     li {
@@ -72,11 +72,14 @@ const { experience } = Astro.props;
   }
 
   @media print {
-    ol.timeline li {
-      break-inside: avoid;
+    ol.timeline {
+		  margin-left: 130px;
+      li {
+        break-inside: avoid;
 
-      &::before {
-        print-color-adjust: exact;
+        &::before {
+          print-color-adjust: exact;
+        }
       }
     }
   }

@@ -42,9 +42,25 @@ const { title, description } = Astro.props;
 		scroll-behavior: smooth;
 	}
 
+	h2 {
+    letter-spacing: -0.035em;
+  }
+
+	ul {
+		padding-left: var(--spacing-4) !important;
+	}
+
+	@page {
+    size: A4;
+  }
+
 	@media print {
 		hgroup {
 			break-after: avoid;
+		}
+
+		ul {
+			padding-left: var(--spacing-5) !important;
 		}
 	}
 </style>

@@ -16,7 +16,7 @@
 	],
 	"profile": {
 		"tagline": "Building practical systems from ambiguous ideas",
-		"description": "Product-minded software engineer and technical leader with 15+ years of experience building web products across Portugal, the United Kingdom, and Japan. Experienced in turning ambiguous ideas into practical systems through product discovery, architecture, stakeholder alignment, team leadership, and hands-on delivery. After leading a three-month product proof of concept and open-source release path at HeartCore, my current focus is on how AI can help people create software with less friction while preserving human intent and judgment."
+		"description": "Product-minded software engineer and technical leader with 15+ years of experience building web products across Portugal, the United Kingdom, and Japan. Experienced in turning ambiguous ideas into practical systems through product discovery, architecture, stakeholder alignment, team leadership, and hands-on delivery. During nearly two years at HeartCore, I led a CMS modernization effort and, after a company pivot, took end-to-end ownership of a new product initiative—from client discovery and business case through a three-month proof of concept, team expansion, and an open-source launch. My current focus is on how AI can help people create software with less friction while preserving human intent and judgment."
 	},
 	"languages": [
 		{
@@ -111,9 +111,8 @@
 			"bullets": [
 				"Joined to lead the modernization of a Japan-focused CMS for a global market; after a company pivot, took end-to-end ownership of discovering and shaping a new product direction.",
 				"Interviewed clients to identify repeated friction between design, implementation, iteration, and deployment, then translated the findings into a product concept, business model, roadmap, and global infrastructure direction.",
-				"Secured approval for a three-month proof of concept with four teammates by presenting the cost range and revenue potential to management and demonstrating the working product to non-technical shareholders.",
-				"Led the proof of concept across technical direction, product decisions, project coordination, and mentorship, working with a senior designer, senior backend engineer, and two junior teammates.",
-				"Proposed replacing a July internal milestone with a September open-source release to gather real-world signal before the final paid product; the resulting Websolut desktop application supported macOS, Windows, and Linux, browser-based Figma previews, rapid iteration, and one-click deployment.",
+				"Secured approval for and led a three-month proof of concept with four teammates across technical direction, product decisions, coordination, and mentorship; presented the business case to management and demonstrated the working product to non-technical shareholders.",
+				"Proposed replacing a July internal milestone with a September open-source launch to gather real-world signal before committing to the paid product; Websolut shipped for macOS, Windows, and Linux with browser-based Figma previews, rapid iteration, and one-click deployment.",
 				"Turned an unexpected partner demo request into a reusable web implementation; the demo validated the accuracy of the design-to-implementation workflow and revealed the need to support established power-user workflows.",
 				"Recovered the open-source launch plan after a cross-department redirection one week before release by reframing the conflict around delivery tradeoffs, restoring the agreed direction, and securing a one-week extension.",
 				"Simplified a premature microservices approach by consolidating work into a monorepo, reducing coordination and pull-request review friction for the small team."
@@ -125,7 +124,7 @@
 			"period": "Nov 2021 – Aug 2023",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Worked as an ADVARRA contractor through Lisbon Nearshore, improving a production application across its Ruby on Rails back-end and Vue.js front-end."
+				"Improved a production ADVARRA application as a Lisbon Nearshore contractor, working across its Ruby on Rails back-end and Vue.js front-end."
 			]
 		},
 		{
@@ -143,7 +142,7 @@
 			"period": "Dec 2018 – Dec 2020",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Returned to the company to deliver new product work and maintain systems built during an earlier tenure."
+				"Delivered new product work and maintained systems I had helped build during an earlier tenure."
 			]
 		},
 		{
@@ -171,7 +170,7 @@
 			"period": "Jan 2013 – Feb 2016",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Delivered full-stack healthcare software and provided technical leadership across Ruby on Rails, React, Angular, Sass, PostgreSQL, Redis, MongoDB, and Elasticsearch."
+				"Provided technical leadership and full-stack development for a healthcare platform that centralized patient records across doctor- and patient-facing applications, sharing business logic and integrating with government systems across a broad stack including Ruby on Rails, React, Angular, Sass, PostgreSQL, Redis, MongoDB, and Elasticsearch."
 			]
 		},
 		{
