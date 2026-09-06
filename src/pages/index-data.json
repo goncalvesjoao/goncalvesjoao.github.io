@@ -101,7 +101,7 @@
 		{
 			"name": "Semanticus CSS",
 			"url": "https://semanticus.design",
-			"details": "An open-source, accessibility-focused CSS design system published to npm, combining semantic HTML and ARIA patterns with themeable design tokens, reusable components, variants, and atomic utilities in a 23.7 KB gzipped bundle; developed with Storybook and protected by Playwright visual-regression testing across light, dark, and RTL layouts."
+			"details": "An open-source, accessibility-focused CSS design system published to npm, combining semantic HTML and ARIA patterns with themeable design tokens, reusable components, variants, and atomic utilities; developed with Storybook and protected by Playwright visual-regression testing across light, dark themes."
 		}
 	],
 	"experience": [
