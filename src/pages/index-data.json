@@ -126,7 +126,8 @@
 			"period": "Nov 2021 – Aug 2023",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Improved a production ADVARRA application as a Lisbon Nearshore contractor, working across its Ruby on Rails back-end and Vue.js front-end."
+				"Contributed full-stack development to ADVARRA’s CIRBI research-review platform as a Lisbon Nearshore contractor, working across a Ruby on Rails API and Vue.js front-end for research submissions, review-board workflows, and document handling.",
+				"Worked in a system with role-based permissions, versioned submissions, and audit reporting, backed by PostgreSQL, Redis, and Sidekiq, with Minitest and Jest test suites."
 			]
 		},
 		{
@@ -144,7 +145,8 @@
 			"period": "Dec 2018 – Dec 2020",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Delivered new product work and maintained systems I had helped build during an earlier tenure."
+				"Delivered new product work and maintained systems I had helped build during my earlier tenure in 2016–2017.",
+				"Worked in a platform supporting real-time research quota updates and external collaborators’ answer-annotation workflows, with automated annotation API integration, background processing, and direct uploads to AWS using presigned URLs."
 			]
 		},
 		{
@@ -154,7 +156,8 @@
 			"location": "Tokyo, Japan",
 			"bullets": [
 				"Established Scrum practices that helped internal and remote teams work together, facilitating daily stand-ups, retrospectives, and sprint planning.",
-				"Advised the CEO on technology and service risks as the business plan evolved while continuing hands-on full-stack development, pull-request reviews, and junior developer guidance."
+				"Advised the CEO on technology and service risks as the business plan evolved while continuing hands-on full-stack development, pull-request reviews, and junior developer guidance.",
+				"Worked on a Rails operations platform spanning property listings, reservations, cleaning tasks, and owner financial reporting, with Airbnb integration and background synchronization connecting booking activity to day-to-day service delivery."
 			]
 		},
 		{
@@ -163,7 +166,7 @@
 			"period": "Mar 2016 – Feb 2017",
 			"location": "London, United Kingdom",
 			"bullets": [
-				"Helped redesign an Angular and Ruby on Rails application into a React and Rails system that could generate different dashboards for distinct data needs."
+				"Led the redesign of an outdated Angular and Ruby on Rails application into a React and Rails analytics platform, enabling configurable dashboards tailored to different consumer-research datasets."
 			]
 		},
 		{
