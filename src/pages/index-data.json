@@ -16,7 +16,7 @@
 	],
 	"profile": {
 		"tagline": "Building practical systems from ambiguous ideas",
-		"description": "Product-minded software engineer and technical leader with 15+ years of experience building web products across Portugal, the United Kingdom, and Japan. Experienced in turning ambiguous ideas into practical systems through product discovery, architecture, stakeholder alignment, team leadership, and hands-on delivery. During nearly two years at HeartCore, I led a CMS modernization effort and, after a company pivot, took end-to-end ownership of a new product initiative—from client discovery and business case through a three-month proof of concept, team expansion, and an open-source launch. My current focus is on how AI can help people create software with less friction while preserving human intent and judgment."
+		"description": "Product-minded software engineer and technical leader with 15+ years of experience building web products across Portugal, the United Kingdom, and Japan. Experienced in turning ambiguous ideas into practical systems through product discovery, architecture, stakeholder alignment, team leadership, and hands-on delivery. At HeartCore, I took end-to-end ownership of a new product initiative, from client discovery and business case through proof of concept to an open-source launch. My current focus is on how AI can help people create software with less friction while preserving human intent and judgment."
 	},
 	"languages": [
 		{
@@ -65,7 +65,7 @@
 		{
 			"category": "Back-end",
 			"details":
-				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, AstroJS, Rust, Actix, Python, FastAPI, SQLModel, SQLAlchemy, Alembic, REST and WebSocket API design and integration"
+				"Ruby, Ruby on Rails, Sinatra, Node.js, NestJS, Express, Fastify, TypeORM, AstroJS, Rust, Actix, Python, FastAPI, SQLModel, SQLAlchemy, Alembic, gRPC, Protocol Buffers, REST and WebSocket API design and integration"
 		},
 		{
 			"category": "Data",
@@ -96,12 +96,12 @@
 		{
 			"name": "Websolut",
 			"url": "https://github.com/wsolut/websolut",
-			"details": "An open-source product that enables a designer or product owner to move from Figma design through implementation and deployment without writing code, with real-time previews, content editing independent of Figma, and direct publishing to Vercel. Built with Vue 3/TypeScript, Electron, and NestJS."
+			"details": "Turns Figma designs into websites without writing code, with real-time previews, independent content editing, and publishing to Vercel. Built with Vue 3/TypeScript, Electron, and NestJS."
 		},
 		{
 			"name": "Semanticus CSS",
 			"url": "https://semanticus.design",
-			"details": "An open-source, accessibility-focused CSS design system published to npm, combining semantic HTML and ARIA patterns with themeable design tokens, reusable components, variants, and atomic utilities; developed with Storybook and protected by Playwright visual-regression testing across light, dark themes."
+			"details": "Accessibility-focused CSS design system built on semantic HTML, ARIA patterns, and themeable tokens. Published to npm, with Storybook documentation and Playwright visual-regression tests."
 		}
 	],
 	"experience": [
@@ -114,6 +114,7 @@
 				"Joined to lead the modernization of a Japan-focused CMS for a global market; after a company pivot, took end-to-end ownership of discovering and shaping a new product direction.",
 				"Interviewed clients to identify repeated friction between design, implementation, iteration, and deployment, then translated the findings into a product concept, business model, roadmap, and global infrastructure direction.",
 				"Secured approval for and led a three-month proof of concept with four teammates across technical direction, product decisions, coordination, and mentorship; presented the business case to management and demonstrated the working product to non-technical shareholders.",
+				"Built foundations for Websolut’s cloud product with NestJS/PostgreSQL microservices behind a REST API gateway, using gRPC and Protocol Buffers for service communication. Developed shared API contracts, validation, English/Japanese localization, and end-to-end tests across the gateway and services; also contributed to the Vue 3 administration interface.",
 				"Proposed replacing a July internal milestone with a September open-source launch to gather real-world signal before committing to the paid product, then led hands-on development of Websolut’s Vue 3/TypeScript interface. It enabled designers and product owners to preview changes in real time, edit content independently of Figma, and publish directly to Vercel without writing code.",
 				"Turned an unexpected partner demo request into a reusable web implementation; the demo validated the accuracy of the design-to-implementation workflow and revealed the need to support established power-user workflows.",
 				"Recovered the open-source launch plan after a cross-department redirection one week before release by reframing the conflict around delivery tradeoffs, restoring the agreed direction, and securing a one-week extension.",
@@ -134,9 +135,12 @@
 			"role": "Founder / Builder",
 			"company": "Browz, FitFans & TrainerX",
 			"period": "Dec 2020 – Dec 2023",
-			"location": "Tokyo, Japan / Lisbon, Portugal",
+			"location": "Japan / Portugal",
 			"bullets": [
-				"Co-built mobile products with two partners, contributing across front-end and back-end development, testing, DevOps, and architecture while balancing scalability, operating cost, and product maturity."
+				"Co-built Browz, FitFans, and TrainerX with two partners, taking primary responsibility for Rails backend development, administration interfaces, testing, and infrastructure.",
+				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with configurable workout and nutrition content, community features, and subscription integrations through Stripe and RevenueCat.",
+				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI-powered chat to an exercise catalogue and user-specific workout creation, with background processing, real-time updates, and automated integration tests.",
+				"Built Browz’s product-discovery backend, combining scheduled retailer scraping, catalogue administration, and personalised feeds based on followed stores and previously viewed items."
 			]
 		},
 		{
@@ -164,7 +168,7 @@
 			"role": "Lead Web Developer",
 			"company": "Streetbees",
 			"period": "Mar 2016 – Feb 2017",
-			"location": "London, United Kingdom",
+			"location": "London, UK",
 			"bullets": [
 				"Led the redesign of an outdated Angular and Ruby on Rails application into a React and Rails analytics platform, enabling configurable dashboards tailored to different consumer-research datasets."
 			]
