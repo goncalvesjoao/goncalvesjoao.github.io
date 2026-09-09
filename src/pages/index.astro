@@ -17,6 +17,7 @@ import {
   skills,
   projects,
   experience,
+  earlierExperience,
 } from "./index-data.json";
 ---
 
@@ -54,6 +55,17 @@ import {
     </section>
 
     <ExperienceTimeline experience={experience} />
+
+    <section class="mb-5" aria-labelledby="earlier-experience-heading">
+      <h2 class="fs-4" id="earlier-experience-heading">Earlier experience</h2>
+      <ul class="mb-0">
+        {earlierExperience.map(({ company, role, period, details }) => (
+          <li>
+            <strong>{company}</strong> — {role}, {period}. {details}
+          </li>
+        ))}
+      </ul>
+    </section>
 
 		<TopicSection id="skills" title="Technical Skills">
       <dl class="m-0">

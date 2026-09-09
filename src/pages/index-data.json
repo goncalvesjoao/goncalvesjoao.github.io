@@ -58,15 +58,15 @@
 		},
 		{
 			"category": "Application Engineering",
-			"details": "Ruby on Rails, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, TypeORM, Python/FastAPI; REST, OpenAPI / Swagger, WebSockets, gRPC and Protocol Buffers."
+			"details": "Ruby on Rails, Sinatra, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, TypeORM, Python/FastAPI; REST, GraphQL, OpenAPI / Swagger, WebSockets, gRPC and Protocol Buffers."
 		},
 		{
 			"category": "Data & Delivery",
-			"details": "PostgreSQL, Redis, MongoDB, Elasticsearch; AWS, Docker, GitHub Actions, Vercel; RSpec, Jest, Vitest and Playwright."
+			"details": "PostgreSQL, PostGIS, Redis, Sidekiq; AWS, Docker, GitHub Actions, Vercel; RSpec, Jest, Vitest and Playwright."
 		},
 		{
 			"category": "Interfaces & AI",
-			"details": "Design systems, accessibility, internationalization, Storybook; OpenAI API, NumPy, JAX, WebLLM/WebGPU; AI-assisted development workflows."
+			"details": "Design systems, accessibility, internationalization, Storybook, D3 data visualization; OpenAI API, NumPy, JAX, WebLLM/WebGPU; AI-assisted development workflows."
 		}
 	],
 	"projects": [
@@ -138,10 +138,11 @@
 			"period": "Dec 2018 – Dec 2020",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Delivered product work and maintained systems from my earlier tenure, within a platform supporting real-time quotas, external answer annotation, automated API integrations, background processing, and direct AWS uploads."
+				"Extended the internal admin area, REST API, and client-facing dashboards, building on the platform architecture and core features developed during my earlier tenure.",
+				"Across my time at Streetbees, contributed to survey quota functionality supporting campaign monitoring across target groups and locations."
 			],
 			"industry": "Consumer research",
-			"context": "Research platform with survey operations, answer annotation, and API integrations."
+			"context": "Returned as a senior developer to extend the consumer-research platform I had helped build, working alongside newly established engineering teams."
 		},
 		{
 			"role": "Chief Technology Officer",
@@ -166,11 +167,16 @@
 			"period": "Mar 2016 – Feb 2017",
 			"location": "London, UK",
 			"bullets": [
-				"Led an Angular/Rails redesign into a React/Rails analytics platform with configurable consumer-research dashboards."
+				"Led system architecture, foundational structure, and core feature development for a new platform built from scratch, with hands-on responsibility for the internal admin area, REST API, and client-facing dashboard. Coordinated integration with mobile and ETL components owned by dedicated developers.",
+				"Built administration features for configuring survey campaigns by country and user segment, alongside APIs serving structured survey data and associating media uploaded to S3 with survey responses.",
+				"Developed React dashboards with D3 visualizations for corporate marketing teams. The team also published reusable chart components as the honey-charts npm package.",
+				"Extended the admin area with dashboard customization tools so data analysts could configure visualizations from collected survey data without commissioning a new dashboard implementation."
 			],
 			"industry": "Consumer research",
-			"context": "Consumer-research analytics and configurable dashboards.",
-			"stack": "Ruby on Rails, Angular, React"
+			"context": "Consumer-research platform collecting survey responses and user-generated media. Joined to replace an Angular/Rails system where large spreadsheet datasets required days of bespoke dashboard development.",
+			"stack": "Ruby on Rails, Sinatra, ActiveRecord, PostgreSQL, PostGIS, Redis, Sidekiq, React, D3, REST APIs, GraphQL, AWS S3, Pusher, RSpec",
+			"outcome": "Enabled data analysts to create and configure client-facing visualizations through the admin interface, replacing the need to develop a bespoke dashboard for each survey. Marketing teams used the dashboards to present consumer insights.",
+			"stackLabel": "Tech stack across both tenures"
 		},
 		{
 			"role": "Senior Software Engineer",
@@ -182,42 +188,20 @@
 			],
 			"industry": "Healthcare",
 			"context": "Doctor and patient applications sharing patient records and business logic."
-		},
+		}
+	],
+	"earlierExperience": [
 		{
-			"role": "Ruby on Rails Developer",
 			"company": "Outitude",
+			"role": "Ruby on Rails Developer",
 			"period": "Nov 2011 – Jan 2013",
-			"location": "Lisbon, Portugal",
-			"bullets": [
-				"Built and operated features helping people discover and arrange experiences, from local paintball to hiking in the Amazon."
-			],
-			"industry": "Outdoor activities and travel",
-			"context": "Platform for discovering and arranging outdoor experiences.",
-			"stack": "Ruby on Rails, jQuery, CSS, PostgreSQL, Redis, Elasticsearch"
+			"details": "Built and operated features for an outdoor-activities platform."
 		},
 		{
-			"role": "Junior Ruby on Rails Developer",
 			"company": "Rupeal",
+			"role": "Junior Ruby on Rails Developer",
 			"period": "Apr 2011 – Oct 2011",
-			"location": "Lisbon, Portugal",
-			"bullets": [
-				"Designed and built the platform from scratch, covering promoter scheduling, report collection, and aggregate statistical reporting."
-			],
-			"industry": "Event promotion",
-			"context": "Platform for managing event promotion and field reporting.",
-			"stack": "Ruby on Rails, jQuery, CSS, MySQL"
-		},
-		{
-			"role": "PHP Developer",
-			"company": "Parkour Portugal",
-			"period": "2007 – 2011",
-			"location": "Lisbon, Portugal",
-			"bullets": [
-				"Developed and maintained the organization’s website."
-			],
-			"industry": "Sport and community",
-			"context": "Web presence for Parkour Portugal.",
-			"stack": "PHP, WordPress, jQuery, CSS, MySQL"
+			"details": "Built an event-promotion platform from scratch, covering scheduling and reporting."
 		}
 	]
 }

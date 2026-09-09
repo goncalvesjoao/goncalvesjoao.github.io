@@ -9,6 +9,7 @@ interface ExperienceEntry {
   industry: string;
   context: string;
   stack?: string;
+  stackLabel?: string;
   outcome?: string;
   bullets: string[];
 }
@@ -24,7 +25,7 @@ const { experience } = Astro.props;
 
 <ol class="breakout timeline position-relative mb-5 ps-0">
   {
-    experience.map(({ role, company, period, location, industry, context, stack, outcome, bullets }) => (
+    experience.map(({ role, company, period, location, industry, context, stack, stackLabel, outcome, bullets }) => (
       <li class="position-relative border-start m-0 py-3 ps-3 pb-4">
         <div
           class="position-absolute text-muted text-end d-flex flex-column gap-2"
@@ -41,7 +42,7 @@ const { experience } = Astro.props;
 
         <p class="mb-2"><strong>Product domain:</strong> {industry}</p>
         <p class="mb-2">{context}</p>
-        {stack && <p class="mb-3"><strong>Tech stack:</strong> {stack}</p>}
+        {stack && <p class="mb-3"><strong>{stackLabel ?? "Tech stack"}:</strong> {stack}</p>}
         {outcome && <p class="mb-3"><strong>Outcome:</strong> {outcome}</p>}
         <h4 class="fs-6 mb-2">Key contributions</h4>
         <ul class="mb-0">
