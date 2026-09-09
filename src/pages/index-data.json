@@ -149,12 +149,16 @@
 			"period": "Jan 2018 – Jul 2018",
 			"location": "Tokyo, Japan",
 			"bullets": [
-				"Established Scrum practices across internal and remote teams; advised the CEO on technology and service risks while contributing full-stack development, code reviews, and junior developer guidance.",
-				"Worked on a Rails property-operations platform covering reservations, cleaning, owner financial reporting, and Airbnb integration, with background synchronization connecting bookings to service delivery."
+				"Took full technical ownership while developing hands-on, mentoring two junior developers, and coordinating two agency developers and a project manager/QA. Reviewed code, guided delivery quality, and translated operations-team needs into technical requirements.",
+				"Refactored legacy code to improve structure, readability, and maintainability, coordinating changes around ongoing operations. Introduced Bootstrap, implemented example UI improvements, and guided the juniors in applying consistent interface standards.",
+				"Led delivery of Japanese localization, with locale-file translation implemented by a junior developer.",
+				"Introduced Scrum practices and daily meetings across the internal team, remote contractors, and CEO, improving communication and coordination while making progress and blockers visible.",
+				"Represented the technical team in Airbnb integration discussions and assessed the required transition from scraping-based synchronization to the API; the company closed before migration could proceed. Reported technical progress and risks to the company and CEO; recommended consolidating development with an expanded external team to reduce coordination overhead and respond to cost and integration pressures."
 			],
 			"industry": "Property management",
-			"context": "Property operations connecting reservations, cleaning, and owner reporting.",
-			"stack": "Ruby on Rails, Airbnb integration"
+			"context": "Live Rails property-operations platform supporting reservations, cleaning, and owner reporting; inherited after the original developers had departed, with limited architectural context available.",
+			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment (multi-tenancy), jQuery, Bootstrap, AWS S3, Docker, Heroku, RSpec, Capybara",
+			"outcome": "Delivered Japanese localization and a more consistent interface for the operations team, addressing an identified usability issues and improving overall user experience. Established shared development practices and daily coordination across internal developers, remote contractors, and leadership."
 		},
 		{
 			"role": "Lead Web Developer",
