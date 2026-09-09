@@ -16,7 +16,7 @@
 	],
 	"profile": {
 		"tagline": "Building practical systems from ambiguous ideas",
-		"description": "Product-minded software engineer and technical leader with 15+ years across Portugal, the UK, and Japan. Combines product discovery, architecture, stakeholder alignment, and hands-on delivery. At HeartCore, led a new product from client discovery to an open-source launch. Current focus: AI-assisted software creation that preserves human intent and judgment."
+		"description": "Product-minded software engineer and technical leader with 15+ years across Portugal, the UK, and Japan. Combines product discovery, architecture, stakeholder alignment, and hands-on delivery. Led a new product from client discovery to an open-source launch. Current focus: AI-assisted software creation that preserves human intent and judgment."
 	},
 	"languages": [
 		{
@@ -58,7 +58,7 @@
 		},
 		{
 			"category": "Application Engineering",
-			"details": "Ruby on Rails, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, TypeORM, Python/FastAPI; REST, WebSockets, gRPC and Protocol Buffers."
+			"details": "Ruby on Rails, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, TypeORM, Python/FastAPI; REST, OpenAPI / Swagger, WebSockets, gRPC and Protocol Buffers."
 		},
 		{
 			"category": "Data & Delivery",
@@ -73,12 +73,14 @@
 		{
 			"name": "Websolut",
 			"url": "https://github.com/wsolut/websolut",
-			"details": "Turns Figma designs into websites without writing code, with real-time previews, independent content editing, and publishing to Vercel. Built with Vue 3/TypeScript, Electron, and NestJS."
+			"details": "Website builder developed at HeartCore. Converts Figma designs into websites with real-time previews, independent content editing, and publishing to Vercel.",
+			"stack": "Vue 3, TypeScript, Electron, NestJS, OpenAPI / Swagger, Vercel"
 		},
 		{
 			"name": "Semanticus CSS",
 			"url": "https://semanticus.design",
-			"details": "Accessibility-focused CSS design system built on semantic HTML, ARIA patterns. Published to npm, with Storybook documentation and Playwright visual-regression tests."
+			"details": "Accessibility-focused design system using semantic HTML and ARIA patterns. Published to npm with Storybook documentation and Playwright visual-regression tests.",
+			"stack": "CSS, HTML, ARIA, Storybook, Playwright"
 		}
 	],
 	"experience": [
@@ -88,21 +90,32 @@
 			"period": "Nov 2023 – Oct 2025",
 			"location": "Tokyo, Japan",
 			"bullets": [
-				"After a pivot from CMS modernization, took ownership of a new product direction. Interviewed clients about design-to-delivery friction and translated findings into a product concept, business model, roadmap, and infrastructure direction.",
-				"Secured approval for and led a three-month proof of concept with four teammates, covering technical direction, product decisions, coordination, and mentorship. Presented the business case to management and demonstrated the product to non-technical shareholders.",
-				"Built Websolut’s cloud foundations with NestJS/PostgreSQL microservices, a REST gateway, and gRPC/Protocol Buffers. Developed shared contracts, validation, English/Japanese localization, and end-to-end tests; contributed to the Vue 3 administration interface.",
-				"Proposed an open-source launch to gather real-world feedback before committing to a paid product. Led hands-on Vue 3/TypeScript development, enabling Figma-to-website creation, real-time previews, independent content editing, and Vercel publishing.",
-				"Simplified a premature microservices approach into a monorepo spanning Electron/Vite, a NestJS REST/WebSocket API, and a tested TypeScript conversion engine, reducing coordination and pull-request review friction."
-			]
+				"Translated client interviews about design-to-delivery friction into a product concept, specifications, user flows, technical requirements, and a roadmap. Collaborated with a senior designer to define staffing and budget needs, and presented the product direction and business case to stakeholders.",
+				"Led a three-person, three-month proof of concept with a senior designer and a junior developer. Designed the system architecture and implemented core functionality, guiding the junior developer through technical Jira specifications, documentation, and code reviews.",
+				"Built cloud foundations with NestJS/PostgreSQL microservices, a REST gateway, and gRPC/Protocol Buffers. Developed shared contracts, validation, English/Japanese localization, and end-to-end tests; contributed to the Vue 3 administration interface. Continued to guide technical direction and code quality as the team expanded.",
+				"Proposed and led the public release of Websolut while WebSora was under development, making the tool available earlier and creating an opportunity to gather feedback. Led hands-on Vue 3/TypeScript development of the design-to-website workflow. Integrated OpenAPI / Swagger and maintained API documentation.",
+				"Consolidated frontend and backend repositories into a monorepo, enabling synchronized checkouts and simplifying staging and production releases by removing the need to coordinate dependent pull-request merges across repositories."
+			],
+			"industry": "CMS and website creation software",
+			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation. Websolut: the open-source website builder publicly released while SaaS development continued.",
+			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, PostgreSQL, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel",
+			"outcome": "Demonstrated the feasibility of fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Delivered an open-source website builder with near-real-time design previews, independent content editing, and Vercel publishing. Reduced development and release coordination overhead through repository consolidation."
 		},
 		{
-			"role": "Senior Full-stack Developer",
-			"company": "Lisbon Nearshore / ADVARRA",
+			"role": "Senior Full-stack Developer · Client assignment",
+			"company": "Lisbon Nearshore — Client: ADVARRA",
 			"period": "Nov 2021 – Aug 2023",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Contributed to CIRBI’s research-review platform across a Rails API and Vue.js interface, supporting submissions, review-board workflows, document handling, role-based permissions, versioning, and audit reporting. Worked with PostgreSQL, Redis, Sidekiq, Minitest, and Jest."
-			]
+				"Implemented and maintained Rails backend functionality and Vue forms from detailed product specifications, with automated tests, strict coding standards, peer review, and QA validation. Worked within established auditability and traceability requirements for research-submission workflows.",
+				"Built an interactive Node.js CLI that fetched Jira specifications through the API, parsed form requirements, prompted developers for missing details, and generated Vue components, validation logic, and test stubs.",
+				"Proactively investigated V2 errors tracked in Datadog, documented actionable Jira tickets, and followed issues through resolution.",
+				"Migrated Vue 2 components to Vue 3 and applied accessibility patterns within the project’s coding standards."
+			],
+			"industry": "Clinical research",
+			"context": "CIRBI V2: reimplementation of an established research-submission and review platform, intended to preserve V1 functionality and improve usability. V2 remained pre-launch during my tenure, with development guided by product specifications and QA feedback.",
+			"stack": "Ruby on Rails, JavaScript, Vue 2/3, Pinia, Vite, Node.js, Tailwind CSS, PostgreSQL, Redis, Sidekiq, Minitest, Jest, Vue Test Utils, OpenAPI / Swagger, Datadog",
+			"outcome": "Reduced repetitive form-development work and improved consistency through automated code generation. Modernized legacy Vue components to support ongoing maintenance."
 		},
 		{
 			"role": "Founder / Builder",
@@ -110,11 +123,14 @@
 			"period": "Dec 2020 – Dec 2023",
 			"location": "Japan / Portugal",
 			"bullets": [
-				"Co-built three products with two partners, taking primary responsibility for Rails backends, administration interfaces, testing, and infrastructure.",
+				"Took primary responsibility for Rails backends, administration interfaces, testing, and infrastructure across all three products. Integrated OpenAPI / Swagger and maintained API documentation.",
 				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with workout and nutrition content, community features, and Stripe/RevenueCat subscription integrations.",
 				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI-powered chat to an exercise catalogue and personalized workout creation, with background processing, real-time updates, and integration tests.",
 				"Built Browz’s product-discovery backend with scheduled retailer scraping, catalogue administration, and personalized feeds based on followed stores and viewed items."
-			]
+			],
+			"industry": "Fitness and product discovery",
+			"context": "Three products built with two partners: FitFans, TrainerX, and Browz.",
+			"stack": "Ruby on Rails, PostgreSQL, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat"
 		},
 		{
 			"role": "Senior Software Engineer",
@@ -122,8 +138,10 @@
 			"period": "Dec 2018 – Dec 2020",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Delivered product work and maintained systems from my earlier tenure, within a research platform supporting real-time quotas, external answer annotation, automated API integrations, background processing, and direct AWS uploads."
-			]
+				"Delivered product work and maintained systems from my earlier tenure, within a platform supporting real-time quotas, external answer annotation, automated API integrations, background processing, and direct AWS uploads."
+			],
+			"industry": "Consumer research",
+			"context": "Research platform with survey operations, answer annotation, and API integrations."
 		},
 		{
 			"role": "Chief Technology Officer",
@@ -133,7 +151,10 @@
 			"bullets": [
 				"Established Scrum practices across internal and remote teams; advised the CEO on technology and service risks while contributing full-stack development, code reviews, and junior developer guidance.",
 				"Worked on a Rails property-operations platform covering reservations, cleaning, owner financial reporting, and Airbnb integration, with background synchronization connecting bookings to service delivery."
-			]
+			],
+			"industry": "Property management",
+			"context": "Property operations connecting reservations, cleaning, and owner reporting.",
+			"stack": "Ruby on Rails, Airbnb integration"
 		},
 		{
 			"role": "Lead Web Developer",
@@ -142,7 +163,10 @@
 			"location": "London, UK",
 			"bullets": [
 				"Led an Angular/Rails redesign into a React/Rails analytics platform with configurable consumer-research dashboards."
-			]
+			],
+			"industry": "Consumer research",
+			"context": "Consumer-research analytics and configurable dashboards.",
+			"stack": "Ruby on Rails, Angular, React"
 		},
 		{
 			"role": "Senior Software Engineer",
@@ -150,8 +174,10 @@
 			"period": "Jan 2013 – Feb 2016",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Provided technical leadership and full-stack development for a healthcare platform sharing patient records and business logic across doctor/patient applications and government integrations."
-			]
+				"Provided technical leadership and full-stack development across doctor/patient applications and government integrations."
+			],
+			"industry": "Healthcare",
+			"context": "Doctor and patient applications sharing patient records and business logic."
 		},
 		{
 			"role": "Ruby on Rails Developer",
@@ -159,8 +185,11 @@
 			"period": "Nov 2011 – Jan 2013",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Built and operated features for an outdoor activity platform helping people discover and arrange experiences, from local paintball to hiking in the Amazon, using Ruby on Rails, jQuery, CSS, PostgreSQL, Redis, and Elasticsearch."
-			]
+				"Built and operated features helping people discover and arrange experiences, from local paintball to hiking in the Amazon."
+			],
+			"industry": "Outdoor activities and travel",
+			"context": "Platform for discovering and arranging outdoor experiences.",
+			"stack": "Ruby on Rails, jQuery, CSS, PostgreSQL, Redis, Elasticsearch"
 		},
 		{
 			"role": "Junior Ruby on Rails Developer",
@@ -168,8 +197,11 @@
 			"period": "Apr 2011 – Oct 2011",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Designed and built a web platform from scratch for event promotion, promoter scheduling, report collection, and aggregate statistical reporting using Ruby on Rails, jQuery, CSS, and MySQL."
-			]
+				"Designed and built the platform from scratch, covering promoter scheduling, report collection, and aggregate statistical reporting."
+			],
+			"industry": "Event promotion",
+			"context": "Platform for managing event promotion and field reporting.",
+			"stack": "Ruby on Rails, jQuery, CSS, MySQL"
 		},
 		{
 			"role": "PHP Developer",
@@ -177,8 +209,11 @@
 			"period": "2007 – 2011",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Developed and maintained the organization’s web presence using PHP, WordPress, jQuery, CSS, and MySQL."
-			]
+				"Developed and maintained the organization’s website."
+			],
+			"industry": "Sport and community",
+			"context": "Web presence for Parkour Portugal.",
+			"stack": "PHP, WordPress, jQuery, CSS, MySQL"
 		}
 	]
 }

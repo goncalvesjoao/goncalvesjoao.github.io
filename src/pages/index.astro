@@ -73,7 +73,7 @@ import {
 		<TopicSection id="projects" title="Open Source Projects">
       <ul>
         {
-          projects.map(({ name, url, details }) => (
+          projects.map(({ name, url, details, stack }) => (
             <li class="m-0">
               <h3 class="fs-4 mb-1">
                 {url ? (
@@ -83,6 +83,7 @@ import {
                 ) : name}
               </h3>
               <p>{details}</p>
+              <p><strong>Tech stack:</strong> {stack}</p>
             </li>
           ))
         }

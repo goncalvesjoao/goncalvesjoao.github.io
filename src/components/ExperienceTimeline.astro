@@ -6,6 +6,10 @@ interface ExperienceEntry {
   company: string;
   period: string;
   location: string;
+  industry: string;
+  context: string;
+  stack?: string;
+  outcome?: string;
   bullets: string[];
 }
 
@@ -20,7 +24,7 @@ const { experience } = Astro.props;
 
 <ol class="breakout timeline position-relative mb-5 ps-0">
   {
-    experience.map(({ role, company, period, location, bullets }) => (
+    experience.map(({ role, company, period, location, industry, context, stack, outcome, bullets }) => (
       <li class="position-relative border-start m-0 py-3 ps-3 pb-4">
         <div
           class="position-absolute text-muted text-end d-flex flex-column gap-2"
@@ -31,10 +35,15 @@ const { experience } = Astro.props;
         </div>
 
         <hgroup>
-          <h3 class="fs-4">{role}</h3>
-          <p class="mt-1 text-primary fw-semibold">{company}</p>
+          <h3 class="fs-4">{company}</h3>
+          <p class="mt-1 text-primary fw-semibold">{role}</p>
         </hgroup>
 
+        <p class="mb-2"><strong>Product domain:</strong> {industry}</p>
+        <p class="mb-2">{context}</p>
+        {stack && <p class="mb-3"><strong>Tech stack:</strong> {stack}</p>}
+        {outcome && <p class="mb-3"><strong>Outcome:</strong> {outcome}</p>}
+        <h4 class="fs-6 mb-2">Key contributions</h4>
         <ul class="mb-0">
           {bullets.map((bullet) => (
             <li>{bullet}</li>
@@ -56,7 +65,7 @@ const { experience } = Astro.props;
 		margin-left: 147px;
 		list-style: none;
 
-    li {
+    > li {
       &::before {
 				position: absolute;
 				top: calc(var(--h4-font-size));
@@ -71,10 +80,24 @@ const { experience } = Astro.props;
     }
   }
 
+  @media screen and (max-width: 575px) {
+    ol.timeline {
+      margin-left: 0;
+    }
+
+    [data-timeplace] {
+      position: static !important;
+      width: auto;
+      text-align: left !important;
+      gap: 0 !important;
+      margin-bottom: 0.75rem;
+    }
+  }
+
   @media print {
     ol.timeline {
 		  margin-left: 130px;
-      li {
+      > li {
         break-inside: avoid;
 
         &::before {
