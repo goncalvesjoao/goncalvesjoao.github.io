@@ -186,10 +186,15 @@
 			"period": "Jan 2013 – Feb 2016",
 			"location": "Lisbon, Portugal",
 			"bullets": [
-				"Provided technical leadership and full-stack development across doctor/patient applications and government integrations."
+				"Worked with product and QA colleagues in Three Amigos sessions to clarify requirements from partner doctors, assess their value, and define acceptance criteria. Helped shape technical approaches and implementation plans, supporting developers through delivery.",
+				"Built foundational components and technical prototypes, including shared services for business logic used by the doctor and patient applications.",
+				"Took responsibility for the prescription-pricing service, translating government documentation into calculation rules based on official medication data and patient-specific eligibility. Integrated INFARMED data supplied in Microsoft Access format, including medication prices and pharmacy stock information as of each database update.",
+				"Transformed medication data into a denormalized PostgreSQL table, trading storage redundancy for fast lookups and price calculations. Built an API supporting medication autocomplete with calculated prices and availability information while doctors typed."
 			],
 			"industry": "Healthcare",
-			"context": "Doctor and patient applications sharing patient records and business logic."
+			"context": "Doctor and patient applications supporting appointment management, patient records, electronic prescriptions, and online video consultations using WebRTC.",
+			"stack": "Ruby on Rails, Sinatra, React, Turbolinks, Bootstrap, Sass, Webpack, WebRTC, Pusher, Twilio (SMS), PostgreSQL, Microsoft Access, RabbitMQ, Redis, Memcached, Sidekiq, Docker, AWS, Azure, RSpec, Capybara, New Relic, Zendesk",
+			"outcome": "Enabled doctors to compare medication prices within the prescribing workflow through responsive autocomplete and patient-specific price calculations. Established shared services for business logic used across the doctor and patient applications."
 		}
 	],
 	"earlierExperience": [
