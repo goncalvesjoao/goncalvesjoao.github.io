@@ -96,7 +96,7 @@
 				"Proposed and led the public release of Websolut while WebSora was under development, making the tool available earlier and creating an opportunity to gather feedback. Led hands-on Vue 3/TypeScript development of the design-to-website workflow. Integrated OpenAPI / Swagger and maintained API documentation.",
 				"Consolidated frontend and backend repositories into a monorepo, enabling synchronized checkouts and simplifying staging and production releases by removing the need to coordinate dependent pull-request merges across repositories."
 			],
-			"industry": "CMS and website creation software",
+			"industry": "Website creation software",
 			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation. Websolut: the open-source website builder publicly released while SaaS development continued.",
 			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, PostgreSQL, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel",
 			"outcome": "Demonstrated the feasibility of fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Delivered an open-source website builder with near-real-time design previews, independent content editing, and Vercel publishing. Reduced development and release coordination overhead through repository consolidation."
