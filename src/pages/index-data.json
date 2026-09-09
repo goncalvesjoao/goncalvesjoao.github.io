@@ -161,7 +161,7 @@
 			"industry": "Property management",
 			"context": "Live Rails property-operations platform supporting reservations, cleaning, and owner reporting; inherited after the original developers had departed, with limited architectural context available.",
 			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment (multi-tenancy), jQuery, Bootstrap, AWS S3, Docker, Heroku, RSpec, Capybara",
-			"outcome": "Delivered Japanese localization and a more consistent interface for the operations team, addressing an identified usability issues and improving overall user experience. Established shared development practices and daily coordination across internal developers, remote contractors, and leadership."
+			"outcome": "Delivered Japanese localization and a more consistent interface for the operations team, addressing identified usability issues and improving overall user experience. Established shared development practices and daily coordination across internal developers, remote contractors, and leadership."
 		},
 		{
 			"role": "Lead Developer",
