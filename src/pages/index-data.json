@@ -130,7 +130,7 @@
 				"Built Browz’s configurable retailer-ingestion pipeline with browser automation, scheduled crawling, catalogue administration, and personalized feeds based on followed stores and previously viewed items."
 			],
 			"industry": "Fitness and product discovery",
-			"context": "Three products built with two partners: FitFans, TrainerX, and Browz.",
+			"context": "FitFans: a platform for fitness creators to offer branded mobile apps with workout programs, nutrition content, community features, and subscriptions. TrainerX: an AI-assisted fitness app that turns conversational onboarding and workout requests into personalized, guided exercise sessions. Browz: a shopping-discovery app for browsing products from followed retailers and saving finds to personal collections.",
 			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Selenium, RSpec, Ansible, Capistrano",
 			"outcome": "Enabled branded fitness apps to share a configurable platform while retaining distinct branding, navigation, and content. Connected conversational AI to structured, user-specific workouts, and automated retailer catalogue ingestion to support personalized product discovery."
 		},
