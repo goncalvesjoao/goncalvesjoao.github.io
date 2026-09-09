@@ -58,15 +58,15 @@
 		},
 		{
 			"category": "Application Engineering",
-			"details": "Ruby on Rails, Sinatra, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, TypeORM, Python/FastAPI; REST, GraphQL, OpenAPI / Swagger, WebSockets, gRPC and Protocol Buffers."
+			"details": "Ruby on Rails, Sinatra, Vue 3, React, TypeScript, Node.js, NestJS, Fastify, Python/FastAPI; REST, GraphQL, OpenAPI / Swagger, WebSockets, gRPC and Protocol Buffers."
 		},
 		{
 			"category": "Data & Delivery",
-			"details": "PostgreSQL, PostGIS, Redis, Sidekiq; AWS, Docker, GitHub Actions, Vercel; RSpec, Jest, Vitest and Playwright."
+			"details": "PostgreSQL, PostGIS, Redis, Sidekiq; AWS, Docker, Ansible, Capistrano, GitHub Actions, Vercel; RSpec, Jest, Vitest, Playwright and Selenium."
 		},
 		{
 			"category": "Interfaces & AI",
-			"details": "Design systems, accessibility, internationalization, Storybook, D3 data visualization; OpenAI API, NumPy, JAX, WebLLM/WebGPU; AI-assisted development workflows."
+			"details": "Design systems, accessibility, internationalization, Storybook, D3 data visualization; OpenAI API and function calling, NumPy, JAX, WebLLM/WebGPU; AI-assisted development workflows."
 		}
 	],
 	"projects": [
@@ -123,14 +123,16 @@
 			"period": "Dec 2020 – Dec 2023",
 			"location": "Japan / Portugal",
 			"bullets": [
-				"Took primary responsibility for Rails backends, administration interfaces, testing, and infrastructure across all three products. Integrated OpenAPI / Swagger and maintained API documentation.",
-				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with workout and nutrition content, community features, and Stripe/RevenueCat subscription integrations.",
-				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI-powered chat to an exercise catalogue and personalized workout creation, with background processing, real-time updates, and integration tests.",
-				"Built Browz’s product-discovery backend with scheduled retailer scraping, catalogue administration, and personalized feeds based on followed stores and viewed items."
+				"Worked with a product manager and mobile developer, taking primary responsibility for Rails backends, administration interfaces, automated tests, and infrastructure across all three products. Integrated OpenAPI / Swagger and maintained API documentation.",
+				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with administration-controlled branding, navigation, content, and feature availability, plus Stripe/RevenueCat subscription and purchase-restoration workflows.",
+				"Integrated imgix for CDN-backed image delivery and optimization, helping images load faster in the mobile apps.",
+				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI function calling to catalogue-based workout creation, with persisted workout records, background processing, real-time chat updates, and integration tests.",
+				"Built Browz’s configurable retailer-ingestion pipeline with browser automation, scheduled crawling, catalogue administration, and personalized feeds based on followed stores and previously viewed items."
 			],
 			"industry": "Fitness and product discovery",
 			"context": "Three products built with two partners: FitFans, TrainerX, and Browz.",
-			"stack": "Ruby on Rails, PostgreSQL, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat"
+			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Selenium, RSpec, Ansible, Capistrano",
+			"outcome": "Enabled branded fitness apps to share a configurable platform while retaining distinct branding, navigation, and content. Connected conversational AI to structured, user-specific workouts, and automated retailer catalogue ingestion to support personalized product discovery."
 		},
 		{
 			"role": "Senior Software Engineer",
