@@ -73,13 +73,13 @@
 		{
 			"name": "Websolut",
 			"url": "https://github.com/wsolut/websolut",
-			"details": "Website builder developed at HeartCore. Converts Figma designs into websites with real-time previews, independent content editing, and publishing to Vercel.",
+			"details": "Turns Figma designs into websites without writing code, with real-time previews, independent content editing, and publishing to Vercel.",
 			"stack": "Vue 3, TypeScript, Electron, NestJS, OpenAPI / Swagger, Vercel"
 		},
 		{
 			"name": "Semanticus CSS",
 			"url": "https://semanticus.design",
-			"details": "Accessibility-focused design system using semantic HTML and ARIA patterns. Published to npm with Storybook documentation and Playwright visual-regression tests.",
+			"details": "Accessibility-focused CSS design system built on semantic HTML, ARIA patterns. Published to npm, with Storybook documentation and Playwright visual-regression tests.",
 			"stack": "CSS, HTML, ARIA, Storybook, Playwright"
 		}
 	],
@@ -97,7 +97,7 @@
 				"Consolidated frontend and backend repositories into a monorepo, enabling synchronized checkouts and simplifying staging and production releases by removing the need to coordinate dependent pull-request merges across repositories."
 			],
 			"industry": "Website creation software",
-			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation. Websolut: the open-source website builder publicly released while SaaS development continued.",
+			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation.\nWebsolut: the open-source website builder publicly released while SaaS development continued.",
 			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, PostgreSQL, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel",
 			"outcome": "Demonstrated the feasibility of fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Delivered an open-source website builder with near-real-time design previews, independent content editing, and Vercel publishing. Reduced development and release coordination overhead through repository consolidation."
 		},
@@ -125,12 +125,12 @@
 			"bullets": [
 				"Worked with a product manager and mobile developer, taking primary responsibility for Rails backends, administration interfaces, automated tests, and infrastructure across all three products. Integrated OpenAPI / Swagger and maintained API documentation.",
 				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with administration-controlled branding, navigation, content, and feature availability, plus Stripe/RevenueCat subscription and purchase-restoration workflows.",
-				"Integrated imgix for CDN-backed image delivery and optimization, helping images load faster in the mobile apps.",
+				"Integrated CDN-backed image delivery and optimization, helping images load faster in the mobile apps.",
 				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI function calling to catalogue-based workout creation, with persisted workout records, background processing, real-time chat updates, and integration tests.",
 				"Built Browz’s configurable retailer-ingestion pipeline with browser automation, scheduled crawling, catalogue administration, and personalized feeds based on followed stores and previously viewed items."
 			],
 			"industry": "Fitness and product discovery",
-			"context": "FitFans: a platform for fitness creators to offer branded mobile apps with workout programs, nutrition content, community features, and subscriptions. TrainerX: an AI-assisted fitness app that turns conversational onboarding and workout requests into personalized, guided exercise sessions. Browz: a shopping-discovery app for browsing products from followed retailers and saving finds to personal collections.",
+			"context": "FitFans: a platform for fitness creators to offer branded mobile apps with workout programs, nutrition content, community features, and subscriptions.\nTrainerX: an AI-assisted fitness app that turns conversational onboarding and workout requests into personalized, guided exercise sessions.\nBrowz: a shopping-discovery app for browsing products from followed retailers and saving finds to personal collections.",
 			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Selenium, RSpec, Ansible, Capistrano",
 			"outcome": "Enabled branded fitness apps to share a configurable platform while retaining distinct branding, navigation, and content. Connected conversational AI to structured, user-specific workouts, and automated retailer catalogue ingestion to support personalized product discovery."
 		},
