@@ -16,7 +16,7 @@
 	],
 	"profile": {
 		"tagline": "Building practical systems from ambiguous ideas",
-		"description": "Product-minded software engineer and technical leader with 15+ years across Portugal, the UK, and Japan. Combines product discovery, architecture, stakeholder alignment, and hands-on delivery. Led a new product from client discovery to an open-source launch. Current focus: AI-assisted software creation that preserves human intent and judgment."
+		"description": "Product-minded software engineer and technical leader with 15+ years across Portugal, the UK, and Japan. Combines product discovery, architecture, stakeholder alignment, and hands-on delivery. Led a new product from client discovery to an open-source launch. Current focus: AI-assisted development workflows."
 	},
 	"languages": [
 		{
@@ -98,7 +98,7 @@
 			],
 			"industry": "Website creation software",
 			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation.\nWebsolut: the open-source website builder publicly released while SaaS development continued.",
-			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, PostgreSQL, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel",
+			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel, PostgreSQL",
 			"outcome": "Demonstrated the feasibility of fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Delivered an open-source website builder with near-real-time design previews, independent content editing, and Vercel publishing. Reduced development and release coordination overhead through repository consolidation."
 		},
 		{
@@ -114,7 +114,7 @@
 			],
 			"industry": "Clinical research",
 			"context": "CIRBI V2: reimplementation of an established research-submission and review platform, intended to preserve V1 functionality and improve usability. V2 remained pre-launch during my tenure, with development guided by product specifications and QA feedback.",
-			"stack": "Ruby on Rails, JavaScript, Vue 2/3, Pinia, Vite, Node.js, Tailwind CSS, PostgreSQL, Redis, Sidekiq, Minitest, Jest, Vue Test Utils, OpenAPI / Swagger, Datadog",
+			"stack": "Vue 2/3, Pinia, Vite, Node.js, Tailwind CSS, Jest, Vue Test Utils, OpenAPI/Swagger, Datadog, Ruby on Rails, PostgreSQL, Redis, Sidekiq, Minitest",
 			"outcome": "Reduced repetitive form-development work and improved consistency through automated code generation. Modernized legacy Vue components to support ongoing maintenance."
 		},
 		{
@@ -131,7 +131,7 @@
 			],
 			"industry": "Fitness and product discovery",
 			"context": "FitFans: a platform for fitness creators to offer branded mobile apps with workout programs, nutrition content, community features, and subscriptions.\nTrainerX: an AI-assisted fitness app that turns conversational onboarding and workout requests into personalized, guided exercise sessions.\nBrowz: a shopping-discovery app for browsing products from followed retailers and saving finds to personal collections.",
-			"stack": "Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Selenium, RSpec, Ansible, Capistrano",
+			"stack": "OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Ansible, Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, Selenium, RSpec",
 			"outcome": "Enabled branded fitness apps to share a configurable platform while retaining distinct branding, navigation, and content. Connected conversational AI to structured, user-specific workouts, and automated retailer catalogue ingestion to support personalized product discovery."
 		},
 		{
@@ -170,13 +170,13 @@
 			"location": "London, UK",
 			"bullets": [
 				"Led system architecture, foundational structure, and core feature development for a new platform built from scratch, with hands-on responsibility for the internal admin area, REST API, and client-facing dashboard. Coordinated integration with mobile and ETL components owned by dedicated developers.",
-				"Built administration features for configuring survey campaigns by country and user segment, alongside APIs serving structured survey data and associating media uploaded to S3 with survey responses.",
 				"Developed React dashboards with D3 visualizations for corporate marketing teams. The team also published reusable chart components as the honey-charts npm package.",
+				"Built administration features for configuring survey campaigns by country and user segment, alongside APIs serving structured survey data and associating media uploaded to S3 with survey responses.",
 				"Extended the admin area with dashboard customization tools so data analysts could configure visualizations from collected survey data without commissioning a new dashboard implementation."
 			],
 			"industry": "Consumer research",
 			"context": "Consumer-research platform collecting survey responses and user-generated media. Joined to replace an Angular/Rails system where large spreadsheet datasets required days of bespoke dashboard development.",
-			"stack": "Ruby on Rails, Sinatra, ActiveRecord, PostgreSQL, PostGIS, Redis, Sidekiq, React, D3, REST APIs, GraphQL, AWS S3, Pusher, RSpec",
+			"stack": "React, D3, REST APIs, GraphQL, AWS, Ruby on Rails, Sinatra, ActiveRecord, PostgreSQL, PostGIS, Redis, Sidekiq, Pusher, RSpec",
 			"outcome": "Enabled data analysts to create and configure client-facing visualizations through the admin interface, replacing the need to develop a bespoke dashboard for each survey. Marketing teams used the dashboards to present consumer insights.",
 			"stackLabel": "Tech stack across both tenures"
 		},
@@ -193,7 +193,7 @@
 			],
 			"industry": "Healthcare",
 			"context": "Doctor and patient applications supporting appointment management, patient records, electronic prescriptions, and online video consultations using WebRTC.",
-			"stack": "Ruby on Rails, Sinatra, React, Turbolinks, Bootstrap, Sass, Webpack, WebRTC, Pusher, Twilio (SMS), PostgreSQL, Microsoft Access, RabbitMQ, Redis, Memcached, Sidekiq, Docker, AWS, Azure, RSpec, Capybara, New Relic, Zendesk",
+			"stack": "React, WebRTC, Ruby on Rails, Sinatra, Turbolinks, Bootstrap, Sass, Webpack, Pusher, Twilio (SMS), PostgreSQL, Microsoft Access, RabbitMQ, Redis, Memcached, Sidekiq, Docker, AWS, Azure, RSpec, Capybara, New Relic, Zendesk",
 			"outcome": "Enabled doctors to compare medication prices within the prescribing workflow through responsive autocomplete and patient-specific price calculations. Established shared services for business logic used across the doctor and patient applications."
 		}
 	],
