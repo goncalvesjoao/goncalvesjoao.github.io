@@ -96,16 +96,16 @@
 			"period": "Nov 2023 – Oct 2025",
 			"location": "Tokyo, Japan",
 			"bullets": [
-				"Translated client interviews about design-to-delivery friction into a product concept, specifications, user flows, technical requirements, and a roadmap. Collaborated with a senior designer to define staffing and budget needs, and presented the product direction and business case to stakeholders.",
-				"Led a three-person, three-month proof of concept with a senior designer and a junior developer. Designed the system architecture and implemented core functionality, guiding the junior developer through technical Jira specifications, documentation, and code reviews.",
-				"Built cloud foundations with NestJS/PostgreSQL microservices, a REST gateway, and gRPC/Protocol Buffers. Developed shared contracts, validation, English/Japanese localization, and end-to-end tests; contributed to the Vue 3 administration interface. Continued to guide technical direction and code quality as the team expanded.",
-				"Proposed and led the public release of Websolut while WebSora was under development, making the tool available earlier and creating an opportunity to gather feedback. Led hands-on Vue 3/TypeScript development of the design-to-website workflow. Integrated OpenAPI / Swagger and maintained API documentation.",
-				"Consolidated frontend and backend repositories into a monorepo, enabling synchronized checkouts and simplifying staging and production releases by removing the need to coordinate dependent pull-request merges across repositories."
+				"Turned client interviews into a product concept, specifications, user flows, technical requirements, and a roadmap. Worked with a senior designer on staffing and budget needs, and presented the business case to stakeholders.",
+				"Led a three-person, three-month proof of concept with a senior designer and junior developer. Designed the architecture, implemented core functionality, and mentored the developer through Jira specifications, documentation, and code reviews.",
+				"Built NestJS/PostgreSQL microservices with a REST gateway and gRPC/Protocol Buffers. Developed shared contracts, validation, English/Japanese localization, and end-to-end tests. Contributed to the Vue 3 admin interface and guided technical direction as the team expanded.",
+				"Proposed and led Websolut's public release to make the tool available earlier and gather feedback. Led Vue 3/TypeScript development of the design-to-website workflow and maintained OpenAPI/Swagger documentation.",
+				"Consolidated frontend and backend repositories into a monorepo, synchronizing checkouts and simplifying staging and production releases by eliminating coordination of dependent merges across repositories."
 			],
 			"industry": "Website creation software",
-			"context": "WebSora: a planned cloud SaaS platform for Figma-to-website creation.\nWebsolut: the open-source website builder publicly released while SaaS development continued.",
-			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, REST, OpenAPI / Swagger, WebSockets, gRPC, Protocol Buffers, Vercel, PostgreSQL",
-			"outcome": "Demonstrated the feasibility of fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Delivered an open-source website builder with near-real-time design previews, independent content editing, and Vercel publishing. Reduced development and release coordination overhead through repository consolidation."
+			"context": "WebSora was a planned cloud SaaS platform for Figma-to-website creation.\nWebsolut was the open-source website builder released while SaaS development continued.",
+			"stack": "Vue 3, TypeScript, Electron, Vite, NestJS, REST, OpenAPI/Swagger, WebSockets, gRPC, Protocol Buffers, Vercel, PostgreSQL.",
+			"outcome": "Demonstrated fast Figma-to-code conversion, securing management approval for continued SaaS development and team expansion. Released a website builder with near-real-time previews, independent content editing, and Vercel publishing. Reduced release coordination through repository consolidation."
 		},
 		{
 			"role": "Senior Full-stack Developer · Client assignment",
@@ -129,16 +129,16 @@
 			"period": "Dec 2020 – Dec 2023",
 			"location": "Japan / Portugal",
 			"bullets": [
-				"Worked with a product manager and mobile developer, taking primary responsibility for Rails backends, administration interfaces, automated tests, and infrastructure across all three products. Integrated OpenAPI / Swagger and maintained API documentation.",
-				"Built FitFans’ multi-tenant Rails/PostgreSQL platform for branded fitness apps, with administration-controlled branding, navigation, content, and feature availability, plus Stripe/RevenueCat subscription and purchase-restoration workflows.",
-				"Integrated CDN-backed image delivery and optimization, helping images load faster in the mobile apps.",
-				"Developed TrainerX’s AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI function calling to catalogue-based workout creation, with persisted workout records, background processing, real-time chat updates, and integration tests.",
-				"Built Browz’s configurable retailer-ingestion pipeline with browser automation, scheduled crawling, catalogue administration, and personalized feeds based on followed stores and previously viewed items."
+				"Worked with a product manager and mobile developer, taking primary responsibility for Rails backends, administration interfaces, automated tests, and infrastructure across all three products. Integrated OpenAPI/Swagger and maintained API documentation.",
+				"Built FitFans' multi-tenant Rails/PostgreSQL platform with configurable branding, navigation, content, and features. Integrated Stripe/RevenueCat subscriptions and purchase restoration.",
+				"Integrated CDN-backed image delivery and optimization to improve mobile image loading.",
+				"Built TrainerX's AI-assisted workout workflow in 2023, connecting conversational onboarding and OpenAI function calling to catalogue-based workout creation. Implemented persisted workout records, background processing, real-time chat updates, and integration tests.",
+				"Built Browz's configurable retailer-ingestion pipeline with browser automation, scheduled crawling, catalogue administration, and personalized feeds based on followed stores and previously viewed products."
 			],
 			"industry": "Fitness and product discovery",
-			"context": "FitFans: a platform for fitness creators to offer branded mobile apps with workout programs, nutrition content, community features, and subscriptions.\nTrainerX: an AI-assisted fitness app that turns conversational onboarding and workout requests into personalized, guided exercise sessions.\nBrowz: a shopping-discovery app for browsing products from followed retailers and saving finds to personal collections.",
-			"stack": "OpenAPI / Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, imgix, Ansible, Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, Selenium, RSpec",
-			"outcome": "Enabled branded fitness apps to share a configurable platform while retaining distinct branding, navigation, and content. Connected conversational AI to structured, user-specific workouts, and automated retailer catalogue ingestion to support personalized product discovery."
+			"context": "FitFans let fitness creators offer branded mobile apps with workouts, nutrition content, community features, and subscriptions.\nTrainerX turned conversational onboarding and workout requests into personalized exercise sessions using AI.\nBrowz let users discover products from followed retailers and save them to collections.",
+			"stack": "OpenAPI/Swagger, OpenAI API, Stripe, RevenueCat, AWS S3, Ansible, Ruby on Rails, PostgreSQL, Redis, Sidekiq, Apartment, Stimulus, Selenium, RSpec.",
+			"outcome": "Delivered a shared fitness platform with configurable branding, navigation, and content. Connected conversational AI to structured, personalized workouts. Automated retailer catalogue ingestion to support personalized product discovery."
 		},
 		{
 			"role": "Senior Software Engineer",
